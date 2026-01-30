@@ -11,10 +11,10 @@
 carpentry: 'incubator'
 
 # Overall title for pages.
-title: 'Software Testing for Research - Python'
+title: 'Testing and Continuous Integration'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: '2024-03-08'
+created: '2026-01-30'
 
 # Comma-separated list of keywords for the lesson
 keywords: 'software, data, lesson, The Carpentries, Testing, FAIR4RS, Python, CI, Continuous Integration, Tests'
@@ -27,13 +27,13 @@ life_cycle: 'pre-alpha'
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/SylviaWhittle/python-testing-for-research'
+source: 'https://github.com/ResearchCodingClub/python-testing-for-research'
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'sylvia.whittle@sheffield.ac.uk'
+contact: 'liam.pattinson@york.ac.uk'
 
 # Navigation ------------------------------------------------
 #
@@ -84,7 +84,7 @@ profiles:
 #
 # This space below is where custom yaml items (e.g. pinning
 # sandpaper and varnish versions) should live
-varnish: RSE-Sheffield/uos-varnish@main
-url: 'https://sylviawhittle.github.io/python-testing-for-research/'
+varnish: ResearchCodingClub/uoy-varnish@main
+url: 'https://researchcodingclub.github.io/python-testing-for-research/'
 
 
