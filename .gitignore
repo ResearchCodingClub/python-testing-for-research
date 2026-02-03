@@ -62,3 +62,8 @@ __pycache__/
 
 # OSX
 .DS_Store
+
+# expect these to be generated
+renv
+.Rprofile
+renv.lock
