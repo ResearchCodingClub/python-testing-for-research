@@ -26,7 +26,7 @@ of running tests on every code change to ensure that the code is working as
 expected. GitHub provides a feature called GitHub Actions that allows you to
 integrate this into your projects.
 
-In this lesson we will go over the very basics of how to set up a GitHub Action
+In this lesson we will go over the basics of how to set up a GitHub Action
 to run tests on your code.
 
 :::::: prereq
@@ -95,10 +95,11 @@ on:
   push:
 
 # This is a list of jobs that the action will run. In this case, we have only
-# one job called build.
+# one job called test.
 jobs:
 
-  build:
+  # This is the name of the job 
+  test:
 
     # This is the environment that the job will run on. In this case, we are
     # using the latest version of Ubuntu, however you can use other operating
@@ -166,77 +167,6 @@ individual stages of the workflow and inspect the terminal output.
 ![Detailed view of a GitHub workflow run](fig/github_action.png){alt="Detailed view of a GitHub workflow run"}
 
 
-## Enable running the tests on a Pull Request
-
-The typical use-case for a CI system is to run the tests when a pull request is
-made to the `main` branch to add a feature or fix a bug. However, there is a
-subtlety to consider: what if the tests pass on your feature branch, but would
-fail after merging into `main` due to a divergence between the two branches?
-
-To verify this, we can set our workflow to run on both `push` and
-`pull_request` by modifying the `tests.yaml` file so that the `on:` sections
-reads:
-
-```yaml
-on:
-  push:
-  pull_request:
-```
-
-Let's test it out.
-
-- From within your `main` branch, add a new file `sandwich.py` containing the
-  following function:
-
-```python
-def sandwich():
-    bread = "======"
-    filling = "jam"
-    return "\n".join([bread, filling, bread])
-```
-
-- Create a new branch in your repository called `sanwich_test` using `git switch -c sandwich_test`
-- Add a new file `test_sandwich.py` with the function:
-
-```python
-from sandwich import sandwich
-
-def test_sandwich():
-    assert sandwich() == "======\njam\n======"
-```
-
-- Push this to your repo with `git push -u origin sandwich_test`, but don't
-  raise a pull request just yet.
-- Imagine that somebody else modifies the `main` branch before your branch can
-  be merged -- something that happens all too often in open source projets!
-  Return to the `main` branch using `git switch main`, and modify
-  `sandwich.py`:
-
-```python
-def sandwich():
-    bread = "======"
-    filling = "cheese"
-    return "\n".join([bread, filling, bread])
-```
-
-- Push this change to `main` with `git push`.
-- Now raise a pull request on your respository to merge `sandwich_test` into
-  `main`.
-
-After raising the pull request, you should see that the GitHub Action runs twice:
-once for a push, which will pass, and once for a pull request, which will fail:
-
-![Example of tests failing on pull requests.](fig/pull_request_test_failed.png){alt="Example of tests failing on pull requests."}
-
-To fix this:
-
-- Switch to the `sandwich_test` branch, and call `git merge main`.
-- Fix the test on the `sandwich_test` branch, ensure the tests pass locally,
-  and commit/push the changes.
-
-The tests should now pass for both `push` and `pull_request`.
-
-
 ## Testing across multiple platforms
 
 A very useful feature of GitHub Actions is the ability to test over a wider
@@ -250,7 +180,7 @@ We can achieve this by setting `jobs.<job_id>.strategy.matrix` in our workflow:
 
 ```yaml
 jobs:
-  build:
+  test:
     strategy:
       matrix:
         python_version: ["3.12", "3.13", "3.14"]
@@ -272,13 +202,24 @@ Later in the file, the `setup-python` step should be changed to:
 By default, all combinations in the matrix will be run in separate jobs. The
 syntax `${{ matrix.x }}` inserts the text from the `x` list for the given matrix job.
 
-- Switch to a new branch `matrix_test` using `git switch -c matrix_test`
-- Make the changes above to `.github/workflows/tests.yaml`
-- Commit, push, and raise a pull request to `main`.
+::::::::::::::::::::::::::::::::::::: challenge 
 
-You should now see that _12_ separate jobs run!
+## Upgrade the workflow to run across multiple platforms
 
-![Completed matrix jobs.](fig/matrix_tests.png){alt="Completed matrix tests."}
+- Make the changes above to your workflow file, being careful to get the indentation right!
+- Commit the changes and push to GitHub.
+- Check the latest jobs in the Actions panel.
+
+:::::::::::::::::::::::: solution 
+
+You should see that a total of 6 jobs have run, and hopefully all will have passed!
+
+![Image showing completed matrix jobs.](fig/matrix_tests.png){alt="Completed matrix tests."}
+
+:::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 This ensures that code that runs on your machine should, in theory, run on many
 other peoples' machines too. However, it's best to restrict the matrix to the
@@ -298,11 +239,11 @@ can do so with a list of exclusions:
             python_version: "3.13"
 ````
 
+## Running on other events
 
-## Other tips
-
-You may have wondered why there is a trailing colon when we specify `push:` or `pull_request:`.
-The reason is that we can optionally set additional conditions on when they'll run. For example:
+You may have wondered why there is a trailing colon when we specify `push:` at
+the top of the file. The reason is that we can optionally set additional
+conditions on when CI jobs will run. For example:
 
 ```yaml
 on:
@@ -312,17 +253,72 @@ on:
     paths:
       - '**.py'
       - 'pyproject.toml'
+    # Only check when somebody raises a push to main.
+    # (not recommended in general!)
+    branches: [main]
+```
+
+Doing this can prevent pointless CI jobs from running and save resources.
+
+You can also run on events other than a push. For example:
+
+```yaml
+on:
+  push:
+    paths:
+      - '**.py'
+      - 'pyproject.toml'
+  # Run on code in pull requests.
   pull_request:
     paths:
       - '**.py'
       - 'pyproject.toml'
-    # Only check when somebody raises a pull_request to main.
-    branches: [main]
-  # This allows you to run the tests manually if you choose
+  # This allows you to launch the job manually
   workflow_dispatch:
 ```
 
-Doing this can prevent pointless CI jobs from running and save resources.
+There is an important subtlety to running on `pull_request` versus
+`push`:
+
+- `push` runs directly on the commits you push to GitHub.
+- `pull_request` runs on the code that would result _after_ the pull request
+  has been merged into its target branch.
+
+In collaborative coding projects, it is entirely possible that `main` will have
+diverged from your branch while you were working on it, and tests that pass on
+your branch will fail after the merge. For this reason, it's recommended to
+always include both `push` and `pull_request` in your testing workflows.
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+## Running on pull requests (advanced)
+
+Can you engineer a situation where a CI job passes on `push` but
+fails on `pull_request`?
+
+- Write a new function, commit the changes, and push it to your `main`
+  branch.
+- Switch to a new branch `my_branch` with `git switch -c my_branch`,
+  and write a test for that function.
+- Check that the test passes, and commit it.
+- Push `my_branch` to GitHub with `git push -u origin my_branch`,
+  but don't raise a pull request yet.
+- Return to your `main` branch, and modify the function being tested.
+- Push the changes to `main`.
+- Now raise a pull request from `my_branch` into `main`.
+
+:::::::::::::::::::::::: solution 
+
+The code on the new branch will be testing the old implementation,
+and should pass. However, following the merge, the test would fail.
+This results in the `push` test passing, and the `pull_request` test
+failing.
+
+![Example of tests failing on pull requests.](fig/pull_request_test_failed.png){alt="Example of tests failing on pull requests."}
+
+:::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Keypoints
 
