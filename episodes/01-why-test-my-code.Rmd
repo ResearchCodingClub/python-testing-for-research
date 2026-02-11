@@ -135,7 +135,7 @@ def test_gradient():
       print("Test failed!")
 ```
 
-And we could have ammended the function:
+And we could have amended the function:
 
 ```python
 def gradient(x1, y1, x2, y2):
