@@ -36,7 +36,7 @@ conda activate myenv
 There are some python packages that will be needed in this course, you can install them using the following command:
 
 ```bash
-pip install numpy pandas matplotlib pytest pytest-regtest pytest-mpl
+pip install numpy pandas matplotlib pytest pytest-regtest pytest-mpl snaptol
 ```
 
 ### Git
