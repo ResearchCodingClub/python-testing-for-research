@@ -71,9 +71,9 @@ def test_numpy_arrays():
     np.testing.assert_array_equal(array1, array2)
 
 
-def test_nested_numpy_arrays():
-    """Test that nested numpy arrays are equal"""
-    # Create two nested numpy arrays
+def test_2d_numpy_arrays():
+    """Test that 2d numpy arrays are equal"""
+    # Create two 2d numpy arrays
     array1 = np.array([[1, 2], [3, 4]])
     array2 = np.array([[1, 2], [3, 4]])
     # Check that the nested arrays are equal
