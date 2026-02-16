@@ -432,7 +432,7 @@
         
 <section id="aio-00-introduction"><p>Content from <a href="00-introduction.html">Introduction</a></p>
 <hr>
-<p>Last updated on 2026-02-10 |
+<p>Last updated on 2026-02-16 |
 
         <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/episodes/00-introduction.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -582,7 +582,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-01-why-test-my-code"><p>Content from <a href="01-why-test-my-code.html">Why Test My Code?</a></p>
 <hr>
-<p>Last updated on 2026-02-10 |
+<p>Last updated on 2026-02-16 |
 
         <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/episodes/01-why-test-my-code.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -619,9 +619,9 @@ expected</li>
 <hr class="half-width">
 <p>Software testing is the process of checking that code is working as
 expected. You may have data processing functions or automations that you
-use in your work - how do you know that they are doing what you expect
+use in your work. How do you know that they are doing what you expect
 them to do?</p>
-<p>Software testing is most commonly done by writing code (tests) that
+<p>Software testing is most commonly done by writing test code that
 check that your code works as expected.</p>
 <p>This might seem like a lot of effort, so let’s go over some of the
 reasons you might want to add tests to your project.</p>
@@ -658,11 +658,11 @@ therefore whether they can trust it.</li>
 works as expected. Every time we make a change, we can run our tests to
 automatically make sure that our code still works as expected.</p>
 <p>If we were writing a test from scratch for the <code>add</code>
-function, think for a moment on how we would do it. We would need to
-write a function that runs the <code>add</code> function on a set of
-inputs, checking each case to ensure it does what we expect. Let’s write
-a test for the <code>add</code> function and call it
-<code>test_add</code>:</p>
+function, think for a moment on how we would do it.</p>
+<p>We would need to write a function that runs the <code>add</code>
+function on a set of inputs, checking each case to ensure it does what
+we expect. Let’s write a test for the <code>add</code> function and call
+it <code>test_add</code>:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -680,13 +680,13 @@ a test for the <code>add</code> function and call it
 <p>Here we check that the function works for a set of test cases. We
 ensure that it works for positive numbers, negative numbers, and
 zero.</p>
-<div id="challenge-1-what-could-go-wrong" class="callout challenge">
+<div id="what-could-go-wrong" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-1-what-could-go-wrong" class="callout-inner">
-<h3 class="callout-title">Challenge 1: What could go wrong?</h3>
+<div id="what-could-go-wrong" class="callout-inner">
+<h3 class="callout-title">What could go wrong?</h3>
 <div class="callout-content">
 <p>When writing functions, sometimes we don’t anticipate all the ways
 that they could go wrong.</p>
@@ -710,9 +710,7 @@ these functions:</p>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  Answer
-  </h4>
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
@@ -742,7 +740,7 @@ this unexpected behaviour:</p>
 <span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>   <span class="cf">if</span> gradient(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>) <span class="op">!=</span> <span class="st">"Undefined"</span>:</span>
 <span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span></code></pre>
 </div>
-<p>And we could have ammened the function:</p>
+<p>And we could have amended the function:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -803,13 +801,13 @@ carefully about how your code behaves and how you will verify that it
 works as expected. This can help you to write more structured code, as
 you will need to think about how to test it as well as how it could
 fail.</p>
-<div id="challenge-2-what-could-go-wrong" class="callout challenge">
+<div id="what-could-go-wrong-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-2-what-could-go-wrong" class="callout-inner">
-<h3 class="callout-title">Challenge 2: What could go wrong?</h3>
+<div id="what-could-go-wrong-1" class="callout-inner">
+<h3 class="callout-title">What could go wrong?</h3>
 <div class="callout-content">
 <p>Consider a function that controls a driverless car.</p>
 <ul>
@@ -819,13 +817,11 @@ use?</li>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a></span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="kw">def</span> drive_car(speed, direction):</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>   ... <span class="co"># complex car driving code</span></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>    <span class="cf">return</span> speed, direction, brake_status</span>
-<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>   </span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">def</span> drive_car(speed, direction):</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>   ... <span class="co"># complex car driving code</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>    <span class="cf">return</span> speed, direction, brake_status</span></code></pre>
 </div>
 </div>
 </div>
@@ -833,18 +829,15 @@ use?</li>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
-  Answer
-  </h4>
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ul>
-<li><p>We might want to check that the speed is within a safe
-range.</p></li>
-<li><p>We might want to check that the direction is a valid direction.
-ie not towards a tree, and if so, the car should be applying the
-brakes.</p></li>
+<li>We might want to check that the speed is within a safe range.</li>
+<li>We might want to check that the direction is a valid direction. ie
+not towards a tree, and if so, the car should be applying the
+brakes.</li>
 </ul>
 </div>
 </div>
@@ -876,7 +869,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02-simple-tests"><p>Content from <a href="02-simple-tests.html">Simple Tests</a></p>
 <hr>
-<p>Last updated on 2026-02-10 |
+<p>Last updated on 2026-02-16 |
 
         <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/episodes/02-simple-tests.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -917,13 +910,15 @@ any links that you are not going to use.
 output for a function is correct by checking that it is equal to a
 certain value.</p>
 <p>Let’s take the <code>add</code> function example from the previous
-chapter and the test we conceptualised for it and write it in code.</p>
+chapter and the test we conceptualised for it and write it in code.
+We’ll aim to write the test in such a way that it can be run using
+Pytest, the most commonly used testing framework in Python.</p>
 <ul>
 <li>Make a folder called <code>my_project</code> (or whatever you want
 to call it for these lessons) and inside it, create a file called
 ‘calculator.py’, and another file called ‘test_calculator.py’.</li>
 </ul>
-<p>So your directory structure should look like this:</p>
+<p>Your directory structure should look like this:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -946,7 +941,9 @@ for those functions.</p>
 </div>
 <ul>
 <li>And in <code>test_calculator.py</code>, write the test for the add
-function that we conceptualised in the previous lesson:</li>
+function that we conceptualised in the previous lesson, but use the
+<code>assert</code> keyword in place of if statements and print
+functions:</li>
 </ul>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -956,28 +953,24 @@ function that we conceptualised in the previous lesson:</li>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="kw">def</span> test_add():</span>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>   <span class="co"># Check that it adds two positive integers</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>   <span class="cf">if</span> add(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">!=</span> <span class="dv">3</span>:</span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>      <span class="cf">raise</span> <span class="pp">AssertionError</span>(<span class="st">"Test failed!"</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>   <span class="co"># Check that it adds zero</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>   <span class="cf">if</span> add(<span class="dv">5</span>, <span class="dv">0</span>) <span class="op">!=</span> <span class="dv">5</span>:</span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>      <span class="cf">raise</span> <span class="pp">AssertionError</span>(<span class="st">"Test failed!"</span>)</span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>   <span class="co"># Check that it adds two negative integers</span></span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>   <span class="cf">if</span> add(<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>) <span class="op">!=</span> <span class="op">-</span><span class="dv">3</span>:</span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>      <span class="cf">raise</span> <span class="pp">AssertionError</span>(<span class="st">"Test failed!"</span>)</span></code></pre>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>   <span class="cf">assert</span> add(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>   <span class="co"># Check that it adds zero</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>   <span class="cf">assert</span> add(<span class="dv">5</span>, <span class="dv">0</span>) <span class="op">==</span> <span class="dv">5</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>   <span class="co"># Check that it adds two negative integers</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>   <span class="cf">assert</span> add(<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span></code></pre>
 </div>
-<p>(Note that the <code>AssertionError</code> is a way to tell Python to
-crash the test, so Pytest knows that the test has failed.)</p>
+<p>The <code>assert</code> statement will crash the test by raising an
+<code>AssertionError</code> if the condition following it is false.
+Pytest uses these to tell that the test has failed.</p>
 <p>This system of placing functions in a file and then tests for those
-functions in another file, is a common pattern in software development.
+functions in another file is a common pattern in software development.
 It allows you to keep your code organised and separate your tests from
 your actual code.</p>
-<p>With Pytest, the expectation is to name your test functions with the
-prefix <code>test_</code>.</p>
+<p>With Pytest, the expectation is to name your test files and functions
+with the prefix <code>test_</code>. If you do so, Pytest will
+automatically find and execute each test function.</p>
 <p>Now, let’s run the test. We can do this by running the following
 command in the terminal:</p>
 <p>(make sure you’re in the <code>my_project</code> directory before
@@ -987,7 +980,7 @@ running this command)</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">❯</span> pytest ./</span></code></pre>
 </div>
-<p>This command tells pytest to run all the tests in the current
+<p>This command tells Pytest to run all the tests in the current
 directory.</p>
 <p>When you run the test, you should see that the test runs
 successfully, indicated by some <span style="color:green"><strong>green</strong></span>. text in the terminal.
@@ -997,44 +990,39 @@ passed, and <span style="color:red"><strong>red</strong></span> means
 that the test failed.</p>
 <p>Try changing the <code>add</code> function to return the wrong value,
 and run the test again to see that the test now fails and the text turns
-<span style="color:red"><strong>red</strong></span> - neat!</p>
-</section><section><h2 class="section-heading" id="the-assert-keyword">The <code>assert</code> keyword<a class="anchor" aria-label="anchor" href="#the-assert-keyword"></a>
-</h2>
-<hr class="half-width">
-<p>Writing these <code>if</code> blocks for each test case is
-cumbersome. Fortunately, Python has a keyword to do this for us - the
-<code>assert</code> keyword.</p>
-<p>The <code>assert</code> keyword checks if a statement is true and if
-it is, the test continues, but if it isn’t, then the test will crash,
-printing an error in the terminal. This enables us to write succinct
-tests without lots of if-statements.</p>
-<p>The <code>assert</code> keyword is used like this:</p>
-<div class="codewrapper sourceCode" id="cb5">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="cf">assert</span> add(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">3</span></span></code></pre>
-</div>
-<p>which is equivalent to:</p>
-<div class="codewrapper sourceCode" id="cb6">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="cf">if</span> add(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">!=</span> <span class="dv">3</span>:</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>  <span class="co"># Crash the test</span></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>  <span class="cf">raise</span> <span class="pp">AssertionError</span></span></code></pre>
-</div>
-<div id="challenge-1-use-the-assert-keyword-to-update-the-test-for-the-add-function" class="callout challenge">
+<span style="color:red"><strong>red</strong></span> - neat! If this was
+a real testing situation, we would know to investigate the
+<code>add</code> function to see why it’s not behaving as expected.</p>
+<div id="write-a-test-for-a-multiply-function" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-1-use-the-assert-keyword-to-update-the-test-for-the-add-function" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Use the assert keyword to update
-the test for the add function</h3>
+<div id="write-a-test-for-a-multiply-function" class="callout-inner">
+<h3 class="callout-title">Write a test for a multiply function</h3>
 <div class="callout-content">
-<p>Use the <code>assert</code> keyword to update the test for the
-<code>add</code> function to make it more concise and readable.</p>
-<p>Then re-run the test using <code>pytest ./</code> to check that it
-still passes.</p>
+<p>Try using what we have covered to write a test for a
+<code>multiply</code> function that multiplies two numbers together.</p>
+<ul>
+<li>Place this multiply function in <code>calculator.py</code>:</li>
+</ul>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> multiply(a, b):</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">*</span> b</span></code></pre>
+</div>
+<ul>
+<li>Then write a test for this function in
+<code>test_calculator.py</code>. Remember to import the
+<code>multiply</code> function from <code>calculator.py</code> at the
+top of the file like this:</li>
+</ul>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="im">from</span> calculator <span class="im">import</span> multiply</span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1045,94 +1033,26 @@ still passes.</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb7">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="im">from</span> calculator <span class="im">import</span> add</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="kw">def</span> test_add():</span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>  <span class="cf">assert</span> add(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">3</span> <span class="co"># Check that it adds to positive integers</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>  <span class="cf">assert</span> add(<span class="dv">5</span>, <span class="dv">0</span>) <span class="op">==</span> <span class="dv">5</span> <span class="co"># Check that it adds zero</span></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>  <span class="cf">assert</span> add(<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">3</span> <span class="co"># Check that it adds wro negative numbers</span></span></code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>Now that we are using the <code>assert</code> keyword, pytest will
-let us know if our test fails.</p>
-<p>What’s more, is that if any of these assert statements fail, it will
-flag to pytest that the test has failed, and pytest will let you
-know.</p>
-<p>Make the <code>add</code> function return the wrong value, and run
-the test again to see that the test fails and the text turns <span style="color:red"><strong>red</strong></span> as we expect.</p>
-<p>So if this was a real testing situation, we would know to investigate
-the <code>add</code> function to see why it’s not behaving as
-expected.</p>
-<div id="challenge-2-write-a-test-for-a-multiply-function" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-2-write-a-test-for-a-multiply-function" class="callout-inner">
-<h3 class="callout-title">Challenge 2: Write a test for a multiply
-function</h3>
-<div class="callout-content">
-<p>Try using what we have covered to write a test for a
-<code>multiply</code> function that multiplies two numbers together.</p>
-<ul>
-<li>Place this multiply function in <code>calculator.py</code>:</li>
-</ul>
-<div class="codewrapper sourceCode" id="cb8">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">def</span> multiply(a, b):</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">*</span> b</span></code></pre>
-</div>
-<ul>
-<li>Then write a test for this function in
-<code>test_calculator.py</code>. Remember to import the
-<code>multiply</code> function from <code>calculator.py</code> at the
-top of the file like this:</li>
-</ul>
-<div class="codewrapper sourceCode" id="cb9">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="im">from</span> calculator <span class="im">import</span> multiply</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Solution: </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
-<div class="accordion-body">
 <p>There are many different test cases that you could include, but it’s
 important to check that different types of cases are covered. A test for
 this function could look like this:</p>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">def</span> test_multiply():</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  <span class="co"># Check that positive numbers work</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>  <span class="cf">assert</span> multiply(<span class="dv">5</span>, <span class="dv">5</span>) <span class="op">==</span> <span class="dv">25</span></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>  <span class="co"># Check that multiplying by 1 works</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>  <span class="cf">assert</span> multiply(<span class="dv">1</span>, <span class="dv">5</span>) <span class="op">==</span> <span class="dv">5</span></span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>  <span class="co"># Check that multiplying by 0 works</span></span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>  <span class="cf">assert</span> multiply(<span class="dv">0</span>, <span class="dv">3</span>) <span class="op">==</span> <span class="dv">0</span></span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>  <span class="co"># Check that negative numbers work</span></span>
-<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>  <span class="cf">assert</span> multiply(<span class="op">-</span><span class="dv">5</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">10</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> test_multiply():</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  <span class="co"># Check that positive numbers work</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  <span class="cf">assert</span> multiply(<span class="dv">5</span>, <span class="dv">5</span>) <span class="op">==</span> <span class="dv">25</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>  <span class="co"># Check that multiplying by 1 works</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>  <span class="cf">assert</span> multiply(<span class="dv">1</span>, <span class="dv">5</span>) <span class="op">==</span> <span class="dv">5</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>  <span class="co"># Check that multiplying by 0 works</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>  <span class="cf">assert</span> multiply(<span class="dv">0</span>, <span class="dv">3</span>) <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>  <span class="co"># Check that negative numbers work</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>  <span class="cf">assert</span> multiply(<span class="op">-</span><span class="dv">5</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">10</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>Run the test using <code>pytest ./</code> to check that it passes. If
-it doesn’t, don’t worry, that’s the point of testing - to find bugs in
-code.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1142,8 +1062,7 @@ code.</p>
 <div class="callout-content">
 <ul>
 <li>The <code>assert</code> keyword is used to check if a statement is
-true and is a shorthand for writing <code>if</code> statements in
-tests.</li>
+true.</li>
 <li>Pytest is invoked by running the command <code>pytest ./</code> in
 the terminal.</li>
 <li>
@@ -1165,7 +1084,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-03-interacting-with-tests"><p>Content from <a href="03-interacting-with-tests.html">Interacting with Tests</a></p>
 <hr>
-<p>Last updated on 2026-02-10 |
+<p>Last updated on 2026-02-16 |
 
         <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/episodes/03-interacting-with-tests.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1520,7 +1439,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-04-unit-tests-best-practices"><p>Content from <a href="04-unit-tests-best-practices.html">Unit tests &amp; Testing Practices</a></p>
 <hr>
-<p>Last updated on 2026-02-10 |
+<p>Last updated on 2026-02-16 |
 
         <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/episodes/04-unit-tests-best-practices.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2072,7 +1991,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-05-testing-exceptions"><p>Content from <a href="05-testing-exceptions.html">Testing for Exceptions</a></p>
 <hr>
-<p>Last updated on 2026-02-10 |
+<p>Last updated on 2026-02-16 |
 
         <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/episodes/05-testing-exceptions.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2184,7 +2103,7 @@ denominator is zero.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2221,7 +2140,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-06-testing-data-structures"><p>Content from <a href="06-testing-data-structures.html">Testing Data Structures</a></p>
 <hr>
-<p>Last updated on 2026-02-10 |
+<p>Last updated on 2026-02-16 |
 
         <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/episodes/06-testing-data-structures.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2828,7 +2747,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-07-fixtures"><p>Content from <a href="07-fixtures.html">Fixtures</a></p>
 <hr>
-<p>Last updated on 2026-02-10 |
+<p>Last updated on 2026-02-16 |
 
         <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/episodes/07-fixtures.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3319,7 +3238,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-08-parametrization"><p>Content from <a href="08-parametrization.html">Parametrization</a></p>
 <hr>
-<p>Last updated on 2026-02-10 |
+<p>Last updated on 2026-02-16 |
 
         <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/episodes/08-parametrization.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3588,7 +3507,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-09-testing-output-files"><p>Content from <a href="09-testing-output-files.html">Regression Testing and Plots</a></p>
 <hr>
-<p>Last updated on 2026-02-10 |
+<p>Last updated on 2026-02-16 |
 
         <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/episodes/09-testing-output-files.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3894,7 +3813,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-10-CI"><p>Content from <a href="10-CI.html">Continuous Integration with GitHub Actions</a></p>
 <hr>
-<p>Last updated on 2026-02-10 |
+<p>Last updated on 2026-02-16 |
 
         <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/episodes/10-CI.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4199,8 +4118,8 @@ any links that you are not going to use.
   "url": "https://researchcodingclub.github.io/python-testing-for-research/aio.html",
   "identifier": "https://researchcodingclub.github.io/python-testing-for-research/aio.html",
   "dateCreated": "2026-01-30",
-  "dateModified": "2026-02-10",
-  "datePublished": "2026-02-10"
+  "dateModified": "2026-02-16",
+  "datePublished": "2026-02-16"
 }
 
   </script><script>

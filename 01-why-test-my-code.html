@@ -380,7 +380,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Why Test My Code?</h1>
-        <p>Last updated on 2026-02-10 |
+        <p>Last updated on 2026-02-16 |
 
         <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/episodes/01-why-test-my-code.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -417,9 +417,9 @@ expected</li>
 <section><h2 class="section-heading" id="what-is-software-testing">What is software testing?<a class="anchor" aria-label="anchor" href="#what-is-software-testing"></a></h2>
 <hr class="half-width"><p>Software testing is the process of checking that code is working as
 expected. You may have data processing functions or automations that you
-use in your work - how do you know that they are doing what you expect
+use in your work. How do you know that they are doing what you expect
 them to do?</p>
-<p>Software testing is most commonly done by writing code (tests) that
+<p>Software testing is most commonly done by writing test code that
 check that your code works as expected.</p>
 <p>This might seem like a lot of effort, so let’s go over some of the
 reasons you might want to add tests to your project.</p>
@@ -450,11 +450,11 @@ therefore whether they can trust it.</li>
 works as expected. Every time we make a change, we can run our tests to
 automatically make sure that our code still works as expected.</p>
 <p>If we were writing a test from scratch for the <code>add</code>
-function, think for a moment on how we would do it. We would need to
-write a function that runs the <code>add</code> function on a set of
-inputs, checking each case to ensure it does what we expect. Let’s write
-a test for the <code>add</code> function and call it
-<code>test_add</code>:</p>
+function, think for a moment on how we would do it.</p>
+<p>We would need to write a function that runs the <code>add</code>
+function on a set of inputs, checking each case to ensure it does what
+we expect. Let’s write a test for the <code>add</code> function and call
+it <code>test_add</code>:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -472,13 +472,13 @@ a test for the <code>add</code> function and call it
 <p>Here we check that the function works for a set of test cases. We
 ensure that it works for positive numbers, negative numbers, and
 zero.</p>
-<div id="challenge-1-what-could-go-wrong" class="callout challenge">
+<div id="what-could-go-wrong" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-1-what-could-go-wrong" class="callout-inner">
-<h3 class="callout-title">Challenge 1: What could go wrong?</h3>
+<div id="what-could-go-wrong" class="callout-inner">
+<h3 class="callout-title">What could go wrong?</h3>
 <div class="callout-content">
 <p>When writing functions, sometimes we don’t anticipate all the ways
 that they could go wrong.</p>
@@ -502,9 +502,7 @@ these functions:</p>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  Answer
-  </h4>
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
@@ -534,7 +532,7 @@ this unexpected behaviour:</p>
 <span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>   <span class="cf">if</span> gradient(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>) <span class="op">!=</span> <span class="st">"Undefined"</span>:</span>
 <span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span></code></pre>
 </div>
-<p>And we could have ammened the function:</p>
+<p>And we could have amended the function:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -589,13 +587,13 @@ carefully about how your code behaves and how you will verify that it
 works as expected. This can help you to write more structured code, as
 you will need to think about how to test it as well as how it could
 fail.</p>
-<div id="challenge-2-what-could-go-wrong" class="callout challenge">
+<div id="what-could-go-wrong-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-2-what-could-go-wrong" class="callout-inner">
-<h3 class="callout-title">Challenge 2: What could go wrong?</h3>
+<div id="what-could-go-wrong-1" class="callout-inner">
+<h3 class="callout-title">What could go wrong?</h3>
 <div class="callout-content">
 <p>Consider a function that controls a driverless car.</p>
 <ul><li>What checks might we add to make sure it is not dangerous to
@@ -603,13 +601,11 @@ use?</li>
 </ul><div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a></span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="kw">def</span> drive_car(speed, direction):</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>   ... <span class="co"># complex car driving code</span></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>    <span class="cf">return</span> speed, direction, brake_status</span>
-<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>   </span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">def</span> drive_car(speed, direction):</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>   ... <span class="co"># complex car driving code</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>    <span class="cf">return</span> speed, direction, brake_status</span></code></pre>
 </div>
 </div>
 </div>
@@ -617,17 +613,14 @@ use?</li>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
-  Answer
-  </h4>
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<ul><li><p>We might want to check that the speed is within a safe
-range.</p></li>
-<li><p>We might want to check that the direction is a valid direction.
-ie not towards a tree, and if so, the car should be applying the
-brakes.</p></li>
+<ul><li>We might want to check that the speed is within a safe range.</li>
+<li>We might want to check that the direction is a valid direction. ie
+not towards a tree, and if so, the car should be applying the
+brakes.</li>
 </ul></div>
 </div>
 </div>
@@ -719,8 +712,8 @@ any links that you are not going to use.
   "url": "https://researchcodingclub.github.io/python-testing-for-research/01-why-test-my-code.html",
   "identifier": "https://researchcodingclub.github.io/python-testing-for-research/01-why-test-my-code.html",
   "dateCreated": "2026-01-30",
-  "dateModified": "2026-02-10",
-  "datePublished": "2026-02-10"
+  "dateModified": "2026-02-16",
+  "datePublished": "2026-02-16"
 }
 
   </script><script>
