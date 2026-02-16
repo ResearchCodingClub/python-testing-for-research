@@ -52,7 +52,7 @@ you may find it helpful to review the Research Coding Course's
 ```
 pytest
 numpy
-pandas
+snaptol
 ```
 
 This is just a list of all the packages that your project uses and will be
