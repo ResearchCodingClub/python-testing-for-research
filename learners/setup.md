@@ -65,7 +65,7 @@ and GitHub](https://researchcodingclub.github.io/course/#version-control-introdu
 
 ### A GitHub account
 A GitHub accound is required for the Continuous Integration section of this course.
-You can sign up for a GitHub account on the [GitHub Website](github.com)
+You can sign up for a GitHub account on the [GitHub Website](https://github.com/)
 
 
 
