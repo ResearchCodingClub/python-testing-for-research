@@ -712,7 +712,7 @@ these functions:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The first function will incorrectly greet the user, as it is missing
 a space after “Hello”. It would print <code>HelloAlice!</code> instead
@@ -831,7 +831,7 @@ use?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ul>
 <li>We might want to check that the speed is within a safe range.</li>
@@ -1031,7 +1031,7 @@ top of the file like this:</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>There are many different test cases that you could include, but it’s
 important to check that different types of cases are covered. A test for
@@ -3128,7 +3128,7 @@ input data.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3855,17 +3855,31 @@ of code changes into a project. In the context of software testing, CI
 is the practice of running tests on every code change to ensure that the
 code is working as expected. GitHub provides a feature called GitHub
 Actions that allows you to integrate this into your projects.</p>
-<p>In this lesson we will go over the very basics of how to set up a
-GitHub Action to run tests on your code.</p>
+<p>In this lesson we will go over the basics of how to set up a GitHub
+Action to run tests on your code.</p>
+<div id="prereq1" class="callout prereq">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check"></i>
+</div>
+<span class="callout-header">Prerequisite</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>This lesson assumes a working knowledge of Git and GitHub. If you get
+stuck, you may find it helpful to review the Research Coding Course’s <a href="https://researchcodingclub.github.io/course/#version-control-introduction-to-git-and-github" class="external-link">material
+on version control</a></p>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="setting-up-your-project-repository">Setting up your project repository<a class="anchor" aria-label="anchor" href="#setting-up-your-project-repository"></a>
 </h2>
 <hr class="half-width">
 <ul>
 <li>Create a new repository on GitHub for this lesson called
-“python-testing-course” (whatever you like really)</li>
+“python-testing-course” (whatever you like really). We recommended
+making it public for now.</li>
 <li>Clone the repository into your local machine using
-<code>git clone &lt;repository-url&gt;</code> or GitKraken if you use
-that.</li>
+<code>git clone   &lt;repository-url&gt;</code> or via Github
+Desktop.</li>
 <li>Move over all your code from the previous lessons into this
 repository.</li>
 <li>Commit the changes using <code>git add .</code> and
@@ -3876,21 +3890,33 @@ of your repository and add the following contents:</li>
 </ul>
 <pre><code><span><span class="va">pytest</span></span>
 <span><span class="va">numpy</span></span>
-<span><span class="va">pandas</span></span>
-<span><span class="va">pytest</span><span class="op">-</span><span class="va">mpl</span></span>
-<span><span class="va">pytest</span><span class="op">-</span><span class="va">regtest</span></span>
-<span><span class="va">matplotlib</span></span></code></pre>
+<span><span class="va">snaptol</span></span></code></pre>
 <p>This is just a list of all the packages that your project uses and
 will be needed later. Recall that each of these are used in various
 lessons in this course.</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Nowadays it is usually preferable to list dependencies in a file
+called <code>pyproject.toml</code>, which also allows Python packages to
+be installed and published. Look out for our upcoming course on
+reproducible environments to learn more!</p>
+</div>
+</div>
+</div>
 <p>Now we have a repository with all our code in it online on
 GitHub.</p>
 </section><section><h2 class="section-heading" id="creating-a-github-action">Creating a GitHub Action<a class="anchor" aria-label="anchor" href="#creating-a-github-action"></a>
 </h2>
 <hr class="half-width">
-<p>GitHub Actions are defined in <code>yaml</code> files (these are just
-simple text files that contain a list of instructions). They are stored
-in the <code>.github/workflows</code> directory in your repository.</p>
+<p>GitHub Actions are defined in <code>yaml</code> files – a structured
+text file which is commonly used to pass settings to programs. They are
+stored in the <code>.github/workflows</code> directory in your
+repository.</p>
 <ul>
 <li>Create a new directory in your repository called
 <code>.github</code>
@@ -3911,42 +3937,59 @@ run the tests for your code.</p>
 <pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># This is just the name of the action, you can call it whatever you like.</span></span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Tests (pytest)</span></span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># This is the event that triggers the action. In this case, we are telling GitHub to run the tests whenever a pull request is made to the main branch.</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="at">    </span><span class="fu">pull_request</span><span class="kw">:</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="at">        </span><span class="fu">branches</span><span class="kw">:</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="at">            </span><span class="kw">-</span><span class="at"> main</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># This sets the events that trigger the action. In this case, we are telling</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co"># GitHub to run the tests whenever a push is made to the repository.</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co"># The trailing colon is intentional!</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
 <span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co"># This is a list of jobs that the action will run. In this case, we have only one job called build.</span></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="at">    </span><span class="fu">build</span><span class="kw">:</span></span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">        # This is the environment that the job will run on. In this case, we are using the latest version of Ubuntu, however you can ues other operating systems like Windows or MacOS if you like!</span></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="at">        </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">        # This is a list of steps that the job will run. Each step is a command that will be executed on the environment.</span></span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="at">        </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="co">            # This command tells GitHub to use a pre-built action. In this case, we are using the actions/checkout action to check out the repository. This just means that GitHub will use this repository's code to run the tests.</span></span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="at">            </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span><span class="co"> # Check out the repository on github</span></span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="co">            # This is the name of the step. This is just a label that will be displayed in the GitHub UI.</span></span>
-<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="at">            </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python 3.10</span></span>
-<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a><span class="co">              # This command tells GitHub to use a pre-built action. In this case, we are using the actions/setup-python action to set up Python 3.10.</span></span>
-<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a><span class="at">              </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v3</span></span>
-<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a><span class="at">              </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a><span class="at">                  </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.10"</span></span>
-<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a><span class="at">            </span></span>
-<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a><span class="co">            # This step installs the dependencies for the project such as pytest, numpy, pandas, etc using the requirements.txt file we created earlier.</span></span>
-<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="at">            </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
-<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a><span class="fu">              run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a>                python -m pip install --upgrade pip</span>
-<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a>                pip install -r requirements.txt</span>
-<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a>                    </span>
-<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a><span class="co">            # This step runs the tests using the pytest command. Remember to use the --mpl and --regtest flags to run the tests that use matplotlib and pytest-regtest.</span></span>
-<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a><span class="at">            </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run tests</span></span>
-<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a><span class="fu">              run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a>                pytest --mpl --regtest</span></code></pre>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co"># This is a list of jobs that the action will run. In this case, we have only</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co"># one job called test.</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">  # This is the name of the job </span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="at">  </span><span class="fu">test</span><span class="kw">:</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="co">    # This is the environment that the job will run on. In this case, we are</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="co">    # using the latest version of Ubuntu, however you can use other operating</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="co">    # systems like Windows or MacOS if you like!</span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a><span class="co">    # This is a list of steps that the job will run. Each step is a command</span></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a><span class="co">    # that will be executed on the environment.</span></span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a><span class="co">      # This command tells GitHub to use a pre-built action. In this case, we</span></span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a><span class="co">      # are using the actions/checkout action to check out the repository. This</span></span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="co">      # just means that GitHub will clone this repository to the current</span></span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a><span class="co">      # working directory.</span></span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v6</span></span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="co">      # This is the name of the step. This is just a label that will be</span></span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a><span class="co">      # displayed in the GitHub UI.</span></span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python 3.12</span></span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a><span class="co">        # This command tells GitHub to use a pre-built action. In this case, we</span></span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a><span class="co">        # are using the actions/setup-python action to set up Python 3.12.</span></span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v6</span></span>
+<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a><span class="at">            </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.12"</span></span>
+<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a><span class="co">      # This step installs the dependencies for the project such as pytest,</span></span>
+<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a><span class="co">      # numpy, pandas, etc using the requirements.txt file we created earlier.</span></span>
+<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
+<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a>          python -m pip install --upgrade pip</span>
+<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a>          pip install -r requirements.txt</span>
+<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a><span class="co">      # This step runs the tests using the pytest command. </span></span>
+<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run tests</span></span>
+<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a>          pytest</span></code></pre>
 </div>
 <p>This is a simple GitHub Action that runs the tests for your code
-whenever a pull request is made to the main branch.</p>
+whenever code is pushed to the repository, regardless of what was
+changed in the repository or which branch you push too. We’ll see later
+how to run tests only when certain criteria are fulfilled.</p>
 </section><section><h2 class="section-heading" id="upload-the-workflow-to-github">Upload the workflow to GitHub<a class="anchor" aria-label="anchor" href="#upload-the-workflow-to-github"></a>
 </h2>
 <hr class="half-width">
@@ -3956,75 +3999,217 @@ to upload it to GitHub.</p>
 <li>Commit the changes using <code>git add .</code> and
 <code>git commit -m "Add GitHub Action to run tests"</code>
 </li>
-<li>Push the changes to GitHub using
-<code>git push origin main</code>
+<li>Push the changes to GitHub using <code>git push</code>
 </li>
-</ul></section><section><h2 class="section-heading" id="enable-running-the-tests-on-a-pull-request">Enable running the tests on a Pull Request<a class="anchor" aria-label="anchor" href="#enable-running-the-tests-on-a-pull-request"></a>
+</ul>
+<p>This should trigger a workflow on the repository. While it’s running,
+you’ll see an orange circle next to your profile name at the top of the
+repo. When it’s done, it’ll change to a green tick if it finished
+successfully, or a red cross if it didn’t.</p>
+<figure><img src="fig/github_repo_view.png" alt="GitHub repository view with a green tick indicating a successful workflow run" class="figure mx-auto d-block"><div class="figcaption">GitHub repository view with a green tick
+indicating a successful workflow run</div>
+</figure><p>You can view all previous workflow runs by clicking the ‘Actions’
+button on the top bar of your repository.</p>
+<figure><img src="fig/github_actions_button.png" alt="GitHub Actions Button" class="figure mx-auto d-block"><div class="figcaption">GitHub Actions button</div>
+</figure><p>If you click on the orange circle/green tick/red cross, you can also
+view the individual stages of the workflow and inspect the terminal
+output.</p>
+<figure><img src="fig/github_action.png" alt="Detailed view of a GitHub workflow run" class="figure mx-auto d-block"><div class="figcaption">Detailed view of a GitHub workflow run</div>
+</figure></section><section><h2 class="section-heading" id="testing-across-multiple-platforms">Testing across multiple platforms<a class="anchor" aria-label="anchor" href="#testing-across-multiple-platforms"></a>
 </h2>
 <hr class="half-width">
-<p>The typical use-case for a CI system is to run the tests whenever a
-pull request is made to the main branch to add a feature.</p>
-<!-- figure
-![branch protection visual instruction](episodes/fig/github-branch-protection.png) -->
+<p>A very useful feature of GitHub Actions is the ability to test over a
+wider range of platforms than just your own machine:</p>
 <ul>
-<li>Go to your GitHub repository</li>
-<li>Click on the “Settings” tab</li>
-<li>Scroll down to “Branches”</li>
-<li>Under “Branch protection rules” / “Branch name pattern” type
-“main”</li>
-<li>Select the checkbox for “Require status checks to pass before
-merging”</li>
-<li>Select the checkbox for “Require branches to be up to date before
-merging”</li>
+<li>Operating systems</li>
+<li>Python versions</li>
+<li>Compiler versions (for those writing C/C++/Fortran/etc)</li>
 </ul>
-<p>This makes it so when a Pull Request is made, trying to merge code
-into main, it will need to have all of its tests passing before the code
-can be merged.</p>
-<p>Let’s test it out.</p>
-<ul>
-<li>Create a new branch in your repository called <code>subtract</code>
-using <code>git checkout -b subtract</code>
-</li>
-<li>Add a new function in your <code>calculator.py</code> file that
-subtracts two numbers, but make it wrong on purpose:</li>
-</ul>
+<p>We can achieve this by setting
+<code>jobs.&lt;job_id&gt;.strategy.matrix</code> in our workflow:</p>
 <div class="codewrapper sourceCode" id="cb3">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">def</span> subtract(a, b):</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="at">  </span><span class="fu">test</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="at">    </span><span class="fu">strategy</span><span class="kw">:</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="at">      </span><span class="fu">matrix</span><span class="kw">:</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="at">        </span><span class="fu">python_version</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"3.12"</span><span class="kw">,</span><span class="at"> </span><span class="st">"3.13"</span><span class="kw">,</span><span class="at"> </span><span class="st">"3.14"</span><span class="kw">]</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="at">        </span><span class="fu">os</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"ubuntu-latest"</span><span class="kw">,</span><span class="at"> </span><span class="st">"windows-latest"</span><span class="kw">]</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ${{ matrix.os }}</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="at">      ...</span></span></code></pre>
 </div>
-<ul>
-<li>Then add a test for this function in your
-<code>test_calculator.py</code> file:</li>
-</ul>
+<p>Later in the file, the <code>setup-python</code> step should be
+changed to:</p>
 <div class="codewrapper sourceCode" id="cb4">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">def</span> test_subtract():</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>    <span class="cf">assert</span> subtract(<span class="dv">5</span>, <span class="dv">3</span>) <span class="op">==</span> <span class="dv">2</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python ${{ matrix.python_version }}</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v6</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="at">            </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> ${{ matrix.python_version }}</span></span></code></pre>
 </div>
+<p>By default, all combinations in the matrix will be run in separate
+jobs. The syntax <code>${{ matrix.x }}</code> inserts the text from the
+<code>x</code> list for the given matrix job.</p>
+<div id="upgrade-the-workflow-to-run-across-multiple-platforms" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="upgrade-the-workflow-to-run-across-multiple-platforms" class="callout-inner">
+<h3 class="callout-title">Upgrade the workflow to run across multiple
+platforms</h3>
+<div class="callout-content">
 <ul>
-<li><p>Commit the changes using <code>git add .</code> and
-<code>git commit -m "Add subtract function"</code></p></li>
-<li><p>Push the changes to GitHub using
-<code>git push origin subtract</code></p></li>
-<li><p>Now go to your GitHub repository and create a new Pull Request to
-merge the <code>subtract</code> branch into <code>main</code></p></li>
+<li>Make the changes above to your workflow file, being careful to get
+the indentation right!</li>
+<li>Commit the changes and push to GitHub.</li>
+<li>Check the latest jobs in the Actions panel.</li>
 </ul>
-<p>You should see that the GitHub Action runs the tests and fails
-because the test for the <code>subtract</code> function is failing.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<p>You should see that a total of 6 jobs have run, and hopefully all
+will have passed!</p>
+<figure><img src="fig/matrix_tests.png" alt="Completed matrix tests." class="figure mx-auto d-block"><div class="figcaption">Image showing completed matrix jobs.</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>This ensures that code that runs on your machine should, in theory,
+run on many other peoples’ machines too. However, it’s best to restrict
+the matrix to the minimum number of necessary platforms to ensure you
+don’t waste resources. You can do so with a list of exclusions:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="at">    </span><span class="fu">strategy</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="at">      </span><span class="fu">matrix</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="at">        </span><span class="fu">python_version</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"3.12"</span><span class="kw">,</span><span class="at"> </span><span class="st">"3.13"</span><span class="kw">,</span><span class="at"> </span><span class="st">"3.14"</span><span class="kw">]</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="at">        </span><span class="fu">os</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"ubuntu-latest"</span><span class="kw">,</span><span class="at"> </span><span class="st">"windows-latest"</span><span class="kw">]</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">        # Only run windows on latest Python version</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="at">        </span><span class="fu">exclude</span><span class="kw">:</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span><span class="fu">os</span><span class="kw">:</span><span class="at"> </span><span class="st">"windows-latest"</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="at">            </span><span class="fu">python_version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.12"</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span><span class="fu">os</span><span class="kw">:</span><span class="at"> </span><span class="st">"windows-latest"</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="at">            </span><span class="fu">python_version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.13"</span></span></code></pre>
+</div>
+</section><section><h2 class="section-heading" id="running-on-other-events">Running on other events<a class="anchor" aria-label="anchor" href="#running-on-other-events"></a>
+</h2>
+<hr class="half-width">
+<p>You may have wondered why there is a trailing colon when we specify
+<code>push:</code> at the top of the file. The reason is that we can
+optionally set additional conditions on when CI jobs will run. For
+example:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">    # Only check when Python files are changed.</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co">    # Don't need to check when the README is updated!</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="at">    </span><span class="fu">paths</span><span class="kw">:</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'**.py'</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'pyproject.toml'</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">    # Only check when somebody raises a push to main.</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co">    # (not recommended in general!)</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">main</span><span class="kw">]</span></span></code></pre>
+</div>
+<p>Doing this can prevent pointless CI jobs from running and save
+resources.</p>
+<p>You can also run on events other than a push. For example:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="at">    </span><span class="fu">paths</span><span class="kw">:</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'**.py'</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'pyproject.toml'</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">  # Run on code in pull requests.</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="at">    </span><span class="fu">paths</span><span class="kw">:</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'**.py'</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'pyproject.toml'</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">  # This allows you to launch the job manually</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="at">  </span><span class="fu">workflow_dispatch</span><span class="kw">:</span></span></code></pre>
+</div>
+<p>There is an important subtlety to running on
+<code>pull_request</code> versus <code>push</code>:</p>
 <ul>
-<li>Let’s now fix the test and commit the changes:
-<code>git add .</code> and
-<code>git commit -m "Fix subtract function"</code>
-</li>
-<li>Push the changes to GitHub using
-<code>git push origin subtract</code> again</li>
-<li>Go back to the Pull Request on GitHub and you should see that the
-tests are now passing and you can merge the code into the main
+<li>
+<code>push</code> runs directly on the commits you push to
+GitHub.</li>
+<li>
+<code>pull_request</code> runs on the code that would result
+<em>after</em> the pull request has been merged into its target
 branch.</li>
 </ul>
+<p>In collaborative coding projects, it is entirely possible that
+<code>main</code> will have diverged from your branch while you were
+working on it, and tests that pass on your branch will fail after the
+merge. For this reason, it’s recommended to always include both
+<code>push</code> and <code>pull_request</code> in your testing
+workflows.</p>
+<div id="running-on-pull-requests-advanced" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="running-on-pull-requests-advanced" class="callout-inner">
+<h3 class="callout-title">Running on pull requests (advanced)</h3>
+<div class="callout-content">
+<p>Can you engineer a situation where a CI job passes on
+<code>push</code> but fails on <code>pull_request</code>?</p>
+<ul>
+<li>Write a new function, commit the changes, and push it to your
+<code>main</code> branch.</li>
+<li>Switch to a new branch <code>my_branch</code> with
+<code>git switch -c my_branch</code>, and write a test for that
+function.</li>
+<li>Check that the test passes, and commit it.</li>
+<li>Push <code>my_branch</code> to GitHub with
+<code>git push -u origin my_branch</code>, but don’t raise a pull
+request yet.</li>
+<li>Return to your <code>main</code> branch, and modify the function
+being tested.</li>
+<li>Push the changes to <code>main</code>.</li>
+<li>Now raise a pull request from <code>my_branch</code> into
+<code>main</code>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<p>The code on the new branch will be testing the old implementation,
+and should pass. However, following the merge, the test would fail. This
+results in the <code>push</code> test passing, and the
+<code>pull_request</code> test failing.</p>
+<figure><img src="fig/pull_request_test_failed.png" alt="Example of tests failing on pull requests." class="figure mx-auto d-block"><div class="figcaption">Example of tests failing on pull requests.</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="keypoints">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints"></a>
+</h2>
+<hr class="half-width">
 <p>So now, when you or your team want to make a feature or just update
 the code, the workflow is as follows:</p>
 <ul>
@@ -4053,8 +4238,8 @@ merging of code changes into a project.</li>
 the testing of your code.</li>
 <li>GitHub Actions are defined in <code>yaml</code> files and are stored
 in the <code>.github/workflows</code> directory in your repository.</li>
-<li>You can use GitHub Actions to only allow code to be merged into the
-main branch if the tests pass.</li>
+<li>You can use GitHub Actions to ensure your tests pass before merging
+new code into your <code>main</code> branch.</li>
 </ul>
 </div>
 </div>
