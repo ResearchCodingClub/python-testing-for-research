@@ -269,8 +269,12 @@ def test_something(snaptolshot):
 
     print(result)
 
-    assert snaptolshot(rtol=1e-03, atol=0.0) == result
+    snaptolshot.assert_allclose(result, rtol=1e-03, atol=0.0)
 ```
+
+Notice that here we use a method of the `snaptolshot` object called `assert_allclose`. This is a wrapper around the
+`numpy.testing.assert_allclose` function, as discussed in the "Floating Point Data" module, and allows us to specify
+tolerances for the comparison rather than asserting an exact equality.
 
 Let's run the test initially like before but create the snapshot file straight away by running in update mode,
 
@@ -291,10 +295,9 @@ tolerance to account for the randomness.
 
 :::::::::::::::::::::::::::::::::::::::::::::
 
-In the test above, you may have noticed that we supplied `rtol` and `atol` arguments to the `snaptolshot` fixture. These
-are used to control the tolerance of the comparison between the snapshot and the actual output. This means on future
-runs of the test, the computed value will not be required to exactly match the snapshot, but rather within the given
-tolerance. Remember,
+In the test above, we supplied `rtol` and `atol` arguments to the function in the assertion. These  are used to control
+the tolerance of the comparison between the snapshot and the actual output. This means on future runs of the test, the
+computed value will not be required to exactly match the snapshot, but rather within the given tolerance. Remember,
 
 - `rtol` is the relative tolerance, useful for handling large numbers (e.g magnitude much greater than 1),
 - `atol` is the absolute tolerance, useful for numbers "near zero" (e.g magnitude much less than 1).
@@ -360,6 +363,8 @@ def test_something():
 
 - Using the `approximate_pi` function above, implement a regression test using the `snaptolshot` object.
 
+- Ensure to use the `assert_allclose` method to compare the result to the snapshot carefully.
+
 - On the first pass, ensure that it fails due to a `FileNotFoundError`.
 
 - Run it in update mode to save the snapshot, and ensure it passes successfuly on future runs.
@@ -379,7 +384,7 @@ def test_something(snaptolshot):
 
     result = approximate_pi(random_points_in_square)
 
-    assert snaptolshot(rtol=1e-03, atol=0.0) == result
+    snaptolshot.assert_allclose(result, rtol=1e-03, atol=0.0)
 ```
 
 :::::::::::::::::::::::::::::::::
@@ -412,12 +417,12 @@ def approximate_pi():
 
 def test_pi_passes(snaptolshot, approximate_pi):
     # Passes due to loose tolerance.
-    assert snaptolshot(rtol=1e-03, atol=0.0) == approximate_pi
+    snaptolshot.assert_allclose(approximate_pi, rtol=1e-03, atol=0.0)
 
 def test_pi_fails(snaptolshot, approximate_pi):
     # Fails due to tight tolerance.
     with pytest.raises(AssertionError):
-        assert snaptolshot(rtol=1e-04, atol=0.0) == approximate_pi
+        snaptolshot.assert_allclose(approximate_pi, rtol=1e-04, atol=0.0)
 ```
 
 :::::::::::::::::::::::::::::::::
