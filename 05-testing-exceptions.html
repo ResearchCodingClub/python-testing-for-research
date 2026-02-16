@@ -275,7 +275,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="06-testing-data-structures.html">7. Testing Data Structures</a>
+        <a href="06-floating-point-data.html">7. Floating Point Data</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -360,7 +360,7 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="04-unit-tests-best-practices.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="06-testing-data-structures.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="06-floating-point-data.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -368,8 +368,8 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Unit tests &amp; Testing
         </a>
-        <a class="chapter-link float-end" href="06-testing-data-structures.html" rel="next">
-          Next: Testing Data...
+        <a class="chapter-link float-end" href="06-floating-point-data.html" rel="next">
+          Next: Floating Point Data...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -483,7 +483,7 @@ denominator is zero.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -519,7 +519,7 @@ any links that you are not going to use.
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="04-unit-tests-best-practices.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="06-testing-data-structures.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="06-floating-point-data.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -527,8 +527,8 @@ any links that you are not going to use.
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Unit tests &amp; Testing
         </a>
-        <a class="chapter-link float-end" href="06-testing-data-structures.html" rel="next">
-          Next: Testing Data...
+        <a class="chapter-link float-end" href="06-floating-point-data.html" rel="next">
+          Next: Floating Point Data...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -536,13 +536,9 @@ any links that you are not going to use.
 <!-- END:   inst/pkgdown/templates/content-instructor.html-->
 
       </div><!--/div.row-->
-      		<footer class="row footer mx-md-3"><hr><div class="col-md-2">
-        <a href="https://docs.hpc.shef.ac.uk/en/latest/stanage/index.html" class="external-link">
-          <img alt="Stanage HPC" src="https://docs.hpc.shef.ac.uk/en/latest/_images/Stanage_Black.png" style="width: 100%;"></a>
-        <p><a href="https://sites.google.com/sheffield.ac.uk/research-training/research-training" class="external-link">Research Computing Training Home</a></p>
-			</div>
-			<div class="col-md-5">
-        <p>Lesson developed by <a href="https://rse.shef.ac.uk" class="external-link">RSE</a> &amp; <a href="https://www.sheffield.ac.uk/it-services/research" class="external-link">RIT</a></p>
+      		<footer class="row footer mx-md-3"><hr><div class="col-md-6">
+        <p>Lesson developed by the <a href="https://researchcodingclub.github.io" class="external-link">University of York Research Coding Club</a></p>
+        <p>Building on material from <a href="https://fair2-for-research-software.github.io" class="external-link">FAIR<sup>2</sup> for Research Software</a>, <a href="https://rse.shef.ac.uk" class="external-link">University of Sheffield RSE</a> &amp; <a href="https://www.sheffield.ac.uk/it-services/research" class="external-link">RIT</a></p>
         <p>
 
           <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/episodes/05-testing-exceptions.Rmd" class="external-link">Edit on GitHub</a>
@@ -554,7 +550,7 @@ any links that you are not going to use.
         <a href="https://github.com/ResearchCodingClub/python-testing-for-research/blob/main/" class="external-link">Cite</a>
         | <a href="mailto:liam.pattinson@york.ac.uk">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 		</div>
-		<div class="col-md-5">
+		<div class="col-md-6">
 
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 

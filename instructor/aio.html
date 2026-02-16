@@ -320,7 +320,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="06-testing-data-structures.html">7. Testing Data Structures</a>
+        <a href="06-floating-point-data.html">7. Floating Point Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -550,7 +550,7 @@ working as expected?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li>Perhaps during a project your code kept breaking and taking up a lot
@@ -1036,7 +1036,7 @@ top of the file like this:</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>There are many different test cases that you could include, but it’s
 important to check that different types of cases are covered. A test for
@@ -1506,7 +1506,7 @@ function as an example:</p>
 <span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(data_negative_removed)):</span>
 <span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>        <span class="cf">if</span> data_negative_removed[i] <span class="op">&lt;=</span> maximum_value:</span>
 <span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>            data_maximum_removed.append(data_negative_removed[i])</span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>    </span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a></span>
 <span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>    <span class="co"># Calculate the mean</span></span>
 <span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>    mean <span class="op">=</span> <span class="bu">sum</span>(data_maximum_removed) <span class="op">/</span> <span class="bu">len</span>(data_maximum_removed)</span>
 <span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a></span>
@@ -1527,10 +1527,23 @@ function as an example:</p>
 <span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    <span class="cf">assert</span> mean <span class="op">==</span> <span class="dv">3</span></span>
 <span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>    <span class="cf">assert</span> std_dev <span class="op">==</span> <span class="fl">1.5811388300841898</span></span></code></pre>
 </div>
-<p>This test is very complex and hard to debug if it fails. Imagine if
-the calculation of the mean broke - the test would fail but it would not
-tell us what part of the function was broken, requiring us to check each
-function manually to find the bug. Not very efficient!</p>
+<p>This test is hard to debug if it fails. Imagine if the calculation of
+the mean broke - the test would fail but it would not tell us what part
+of the function was broken, requiring us to check each function manually
+to find the bug. Not very efficient!</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Asserting that the standard deviation is equal to 16 decimal places
+is also quite error prone. We’ll see in a later lesson how to improve
+this test.</p>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="unit-testing">Unit Testing<a class="anchor" aria-label="anchor" href="#unit-testing"></a>
 </h2>
 <hr class="half-width">
@@ -1632,10 +1645,10 @@ yourself and others reading your code.</p>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> test_calculate_mean():</span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>    <span class="co"># Arrange</span></span>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>    data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    </span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
 <span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    <span class="co"># Act</span></span>
 <span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>    mean <span class="op">=</span> calculate_mean(data)</span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>    </span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a></span>
 <span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>    <span class="co"># Assert</span></span>
 <span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>    <span class="cf">assert</span> mean <span class="op">==</span> <span class="dv">3</span></span></code></pre>
 </div>
@@ -1673,10 +1686,10 @@ are hard to find and fix.</p>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="kw">def</span> test_calculate_mean():</span>
 <span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>    <span class="co"># Arrange</span></span>
 <span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>    data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>    </span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a></span>
 <span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>    <span class="co"># Act</span></span>
 <span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>    mean <span class="op">=</span> calculate_mean(data)</span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>    </span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a></span>
 <span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>    <span class="co"># Assert</span></span>
 <span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>    <span class="cf">assert</span> mean <span class="op">==</span> <span class="fl">3.5</span></span></code></pre>
 </div>
@@ -1758,21 +1771,21 @@ project directory</li>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="kw">def</span> randomly_sample_and_filter_participants(</span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>    participants: <span class="bu">list</span>, </span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>    sample_size: <span class="bu">int</span>, </span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>    min_age: <span class="bu">int</span>, </span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>    max_age: <span class="bu">int</span>, </span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>    min_height: <span class="bu">int</span>, </span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>    participants: <span class="bu">list</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>    sample_size: <span class="bu">int</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>    min_age: <span class="bu">int</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>    max_age: <span class="bu">int</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>    min_height: <span class="bu">int</span>,</span>
 <span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>    max_height: <span class="bu">int</span></span>
 <span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>):</span>
 <span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>    <span class="co">"""Participants is a list of tuples, containing the age and height of each participant</span></span>
 <span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co">    participants = [</span></span>
-<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">                      {age: 25, height: 180}, </span></span>
-<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">                      {age: 30, height: 170}, </span></span>
-<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="co">                      {age: 35, height: 160}, </span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">                      {age: 25, height: 180},</span></span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">                      {age: 30, height: 170},</span></span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="co">                      {age: 35, height: 160},</span></span>
 <span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="co">    ]</span></span>
 <span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a>    </span>
+<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a></span>
 <span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a>    <span class="co"># Get the indexes to sample</span></span>
 <span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a>    indexes <span class="op">=</span> random.sample(<span class="bu">range</span>(<span class="bu">len</span>(participants)), sample_size)</span>
 <span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a></span>
@@ -1780,13 +1793,13 @@ project directory</li>
 <span id="cb10-23"><a href="#cb10-23" tabindex="-1"></a>    sampled_participants <span class="op">=</span> []</span>
 <span id="cb10-24"><a href="#cb10-24" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> indexes:</span>
 <span id="cb10-25"><a href="#cb10-25" tabindex="-1"></a>        sampled_participants.append(participants[i])</span>
-<span id="cb10-26"><a href="#cb10-26" tabindex="-1"></a>    </span>
+<span id="cb10-26"><a href="#cb10-26" tabindex="-1"></a></span>
 <span id="cb10-27"><a href="#cb10-27" tabindex="-1"></a>    <span class="co"># Remove participants that are outside the age range</span></span>
 <span id="cb10-28"><a href="#cb10-28" tabindex="-1"></a>    sampled_participants_age_filtered <span class="op">=</span> []</span>
 <span id="cb10-29"><a href="#cb10-29" tabindex="-1"></a>    <span class="cf">for</span> participant <span class="kw">in</span> sampled_participants:</span>
 <span id="cb10-30"><a href="#cb10-30" tabindex="-1"></a>        <span class="cf">if</span> participant[<span class="st">'age'</span>] <span class="op">&gt;=</span> min_age <span class="kw">and</span> participant[<span class="st">'age'</span>] <span class="op">&lt;=</span> max_age:</span>
 <span id="cb10-31"><a href="#cb10-31" tabindex="-1"></a>            sampled_participants_age_filtered.append(participant)</span>
-<span id="cb10-32"><a href="#cb10-32" tabindex="-1"></a>    </span>
+<span id="cb10-32"><a href="#cb10-32" tabindex="-1"></a></span>
 <span id="cb10-33"><a href="#cb10-33" tabindex="-1"></a>    <span class="co"># Remove participants that are outside the height range</span></span>
 <span id="cb10-34"><a href="#cb10-34" tabindex="-1"></a>    sampled_participants_height_filtered <span class="op">=</span> []</span>
 <span id="cb10-35"><a href="#cb10-35" tabindex="-1"></a>    <span class="cf">for</span> participant <span class="kw">in</span> sampled_participants_age_filtered:</span>
@@ -1821,7 +1834,7 @@ can be tested separately:</p>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="kw">def</span> sample_participants(</span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>    participants: <span class="bu">list</span>, </span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>    participants: <span class="bu">list</span>,</span>
 <span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>    sample_size: <span class="bu">int</span></span>
 <span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>):</span>
 <span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>    indexes <span class="op">=</span> random.sample(<span class="bu">range</span>(<span class="bu">len</span>(participants)), sample_size)</span>
@@ -1831,8 +1844,8 @@ can be tested separately:</p>
 <span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a>    <span class="cf">return</span> sampled_participants</span>
 <span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a></span>
 <span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a><span class="kw">def</span> filter_participants_by_age(</span>
-<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a>    participants: <span class="bu">list</span>, </span>
-<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a>    min_age: <span class="bu">int</span>, </span>
+<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a>    participants: <span class="bu">list</span>,</span>
+<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a>    min_age: <span class="bu">int</span>,</span>
 <span id="cb11-16"><a href="#cb11-16" tabindex="-1"></a>    max_age: <span class="bu">int</span></span>
 <span id="cb11-17"><a href="#cb11-17" tabindex="-1"></a>):</span>
 <span id="cb11-18"><a href="#cb11-18" tabindex="-1"></a>    filtered_participants <span class="op">=</span> []</span>
@@ -1842,8 +1855,8 @@ can be tested separately:</p>
 <span id="cb11-22"><a href="#cb11-22" tabindex="-1"></a>    <span class="cf">return</span> filtered_participants</span>
 <span id="cb11-23"><a href="#cb11-23" tabindex="-1"></a></span>
 <span id="cb11-24"><a href="#cb11-24" tabindex="-1"></a><span class="kw">def</span> filter_participants_by_height(</span>
-<span id="cb11-25"><a href="#cb11-25" tabindex="-1"></a>    participants: <span class="bu">list</span>, </span>
-<span id="cb11-26"><a href="#cb11-26" tabindex="-1"></a>    min_height: <span class="bu">int</span>, </span>
+<span id="cb11-25"><a href="#cb11-25" tabindex="-1"></a>    participants: <span class="bu">list</span>,</span>
+<span id="cb11-26"><a href="#cb11-26" tabindex="-1"></a>    min_height: <span class="bu">int</span>,</span>
 <span id="cb11-27"><a href="#cb11-27" tabindex="-1"></a>    max_height: <span class="bu">int</span></span>
 <span id="cb11-28"><a href="#cb11-28" tabindex="-1"></a>):</span>
 <span id="cb11-29"><a href="#cb11-29" tabindex="-1"></a>    filtered_participants <span class="op">=</span> []</span>
@@ -1853,11 +1866,11 @@ can be tested separately:</p>
 <span id="cb11-33"><a href="#cb11-33" tabindex="-1"></a>    <span class="cf">return</span> filtered_participants</span>
 <span id="cb11-34"><a href="#cb11-34" tabindex="-1"></a></span>
 <span id="cb11-35"><a href="#cb11-35" tabindex="-1"></a><span class="kw">def</span> randomly_sample_and_filter_participants(</span>
-<span id="cb11-36"><a href="#cb11-36" tabindex="-1"></a>    participants: <span class="bu">list</span>, </span>
-<span id="cb11-37"><a href="#cb11-37" tabindex="-1"></a>    sample_size: <span class="bu">int</span>, </span>
-<span id="cb11-38"><a href="#cb11-38" tabindex="-1"></a>    min_age: <span class="bu">int</span>, </span>
-<span id="cb11-39"><a href="#cb11-39" tabindex="-1"></a>    max_age: <span class="bu">int</span>, </span>
-<span id="cb11-40"><a href="#cb11-40" tabindex="-1"></a>    min_height: <span class="bu">int</span>, </span>
+<span id="cb11-36"><a href="#cb11-36" tabindex="-1"></a>    participants: <span class="bu">list</span>,</span>
+<span id="cb11-37"><a href="#cb11-37" tabindex="-1"></a>    sample_size: <span class="bu">int</span>,</span>
+<span id="cb11-38"><a href="#cb11-38" tabindex="-1"></a>    min_age: <span class="bu">int</span>,</span>
+<span id="cb11-39"><a href="#cb11-39" tabindex="-1"></a>    max_age: <span class="bu">int</span>,</span>
+<span id="cb11-40"><a href="#cb11-40" tabindex="-1"></a>    min_height: <span class="bu">int</span>,</span>
 <span id="cb11-41"><a href="#cb11-41" tabindex="-1"></a>    max_height: <span class="bu">int</span></span>
 <span id="cb11-42"><a href="#cb11-42" tabindex="-1"></a>):</span>
 <span id="cb11-43"><a href="#cb11-43" tabindex="-1"></a>    sampled_participants <span class="op">=</span> sample_participants(participants, sample_size)</span>
@@ -2111,7 +2124,7 @@ denominator is zero.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2146,12 +2159,12 @@ exception.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-06-testing-data-structures"><p>Content from <a href="06-testing-data-structures.html">Testing Data Structures</a></p>
+</section></section><section id="aio-06-floating-point-data"><p>Content from <a href="06-floating-point-data.html">Floating Point Data</a></p>
 <hr>
 <p>Last updated on 2026-02-16 |
 
-        <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/episodes/06-testing-data-structures.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
+        <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/episodes/06-floating-point-data.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -2163,9 +2176,9 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do you compare data structures such as lists and
-dictionaries?</li>
-<li>How do you compare objects in libraries like <code>pandas</code> and
+<li>What are the best practices when working with floating point
+data?</li>
+<li>How do you compare objects in libraries like
 <code>numpy</code>?</li>
 </ul>
 </div>
@@ -2176,236 +2189,109 @@ dictionaries?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Learn how to compare lists and dictionaries in Python.</li>
-<li>Learn how to compare objects in libraries like <code>pandas</code>
-and <code>numpy</code>.</li>
+<li>Learn how to test floating point data with tolerances.</li>
+<li>Learn how to compare objects in libraries like
+<code>numpy</code>.</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="data-structures">Data structures<a class="anchor" aria-label="anchor" href="#data-structures"></a>
+<section><h2 class="section-heading" id="floating-point-data">Floating Point Data<a class="anchor" aria-label="anchor" href="#floating-point-data"></a>
 </h2>
 <hr class="half-width">
-<p>When writing tests for your code, you often need to compare data
-structures such as lists, dictionaries, and objects from libraries like
-<code>numpy</code> and <code>pandas</code>. Here we will go over some of
-the more common data structures that you may use in research and how to
-test them.</p>
+<p>Real numbers are encountered very frequently in research, but it’s
+quite likely that they won’t be ‘nice’ numbers like 2.0 or 0.0. Instead,
+the outcome of our code might be something like
+<code>2.34958124890e-31</code>, and we may only be confident in that
+answer to a certain precision.</p>
+<p>Computers typically represent real numbers using a ‘floating point’
+representation, which truncates their precision to a certain number of
+decimal places. Floating point arithmetic errors can cause a significant
+amount of noise in the last few decimal places. This can be affected
+by:</p>
+<ul>
+<li>Choice of algorithm.</li>
+<li>Precise order of operations.</li>
+<li>Order in which parallel processes finish.</li>
+<li>Inherent randomness in the calculation.</li>
+</ul>
+<p>We could therefore test our code using
+<code>assert result == 2.34958124890e-31</code>, but it’s possible that
+this test could erroneously fail in future for reasons outside our
+control. This lesson will teach best practices for handling this type of
+data.</p>
+<p>Libraries like NumPy, SciPy, and Pandas are commonly used to interact
+with large quantities of floating point numbers. NumPy provides special
+functions to assist with testing.</p>
 <div class="section level3">
-<h3 id="lists">Lists<a class="anchor" aria-label="anchor" href="#lists"></a>
+<h3 id="relative-and-absolute-tolerances">Relative and Absolute Tolerances<a class="anchor" aria-label="anchor" href="#relative-and-absolute-tolerances"></a>
 </h3>
-<p>Python lists can be tested using the usual <code>==</code> operator
-as we do for numbers.</p>
+<p>Rather than testing that a floating point number is exactly equal to
+another, it is preferable to test that it is within a certain tolerance.
+In most cases, it is best to use a <em>relative</em> tolerance:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">def</span> test_lists_equal():</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="co">"""Test that lists are equal"""</span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="co"># Create two lists</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    list1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>    list2 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>    <span class="co"># Check that the lists are equal</span></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>    <span class="cf">assert</span> list1 <span class="op">==</span> list2</span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>    <span class="co"># Two lists, different order</span></span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>    list3 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>    list4 <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>    <span class="cf">assert</span> list3 <span class="op">!=</span> list4</span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>    <span class="co"># Create two different lists</span></span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>    list5 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>    list6 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>]</span>
-<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>    <span class="co"># Check that the lists are not equal</span></span>
-<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a>    <span class="cf">assert</span> list5 <span class="op">!=</span> list6</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> fabs</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">def</span> test_float_rtol():</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    actual <span class="op">=</span> my_function()</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    expected <span class="op">=</span> <span class="fl">7.31926e12</span>  <span class="co"># Reference solution</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>    rtol <span class="op">=</span> <span class="fl">1e-3</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>    <span class="co"># Use fabs to ensure a positive result!</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>    <span class="cf">assert</span> fabs((actual <span class="op">-</span> expected) <span class="op">/</span> expected) <span class="op">&lt;</span> rtol</span></code></pre>
 </div>
-<p>Note that the order of elements in the list matters. If you want to
-check that two lists contain the same elements but in different order,
-you can use the <code>sorted</code> function.</p>
+<p>In some situations, such as testing a number is close to zero without
+caring about exactly how large it is, it is preferable to test within an
+<em>absolute</em> tolerance:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> test_sorted_lists_equal():</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    <span class="co">"""Test that lists are equal"""</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>    <span class="co"># Create two lists</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>    list1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    list2 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>    <span class="co"># Check that the lists are equal</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">sorted</span>(list1) <span class="op">==</span> <span class="bu">sorted</span>(list2)</span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>    <span class="co"># Two lists, different order</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>    list3 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>    list4 <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">sorted</span>(list3) <span class="op">==</span> <span class="bu">sorted</span>(list4)</span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>    <span class="co"># Create two different lists</span></span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>    list5 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>    list6 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>]</span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>    <span class="co"># Check that the lists are not equal</span></span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">sorted</span>(list5) <span class="op">!=</span> <span class="bu">sorted</span>(list6)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> fabs</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="kw">def</span> test_float_atol():</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>    actual <span class="op">=</span> my_function()</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    expected <span class="op">=</span> <span class="fl">0.0</span>  <span class="co"># Reference solution</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>    atol <span class="op">=</span> <span class="fl">1e-5</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>    <span class="co"># Use fabs to ensure a positive result!</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>    <span class="cf">assert</span> fabs(actual <span class="op">-</span> expected) <span class="op">&lt;</span> atol</span></code></pre>
 </div>
-</div>
-<div class="section level3">
-<h3 id="dictionaries">Dictionaries<a class="anchor" aria-label="anchor" href="#dictionaries"></a>
-</h3>
-<p>Python dictionaries can also be tested using the <code>==</code>
-operator, however, the order of the keys does not matter. This means
-that if you have two dictionaries with the same keys and values, but in
-different order, they will still be considered equal.</p>
-<p>The reason for this is that dictionaries are unordered collections of
-key-value pairs. (If you need to preserve the order of keys, you can use
-the <code>collections.OrderedDict</code> class.)</p>
-<div class="codewrapper sourceCode" id="cb3">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">def</span> test_dictionaries_equal():</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>    <span class="co">"""Test that dictionaries are equal"""</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>    <span class="co"># Create two dictionaries</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    dict1 <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">1</span>, <span class="st">"b"</span>: <span class="dv">2</span>, <span class="st">"c"</span>: <span class="dv">3</span>}</span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    dict2 <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">1</span>, <span class="st">"b"</span>: <span class="dv">2</span>, <span class="st">"c"</span>: <span class="dv">3</span>}</span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>    <span class="co"># Check that the dictionaries are equal</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>    <span class="cf">assert</span> dict1 <span class="op">==</span> dict2</span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>    <span class="co"># Create two dictionaries, different order</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>    dict3 <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">1</span>, <span class="st">"b"</span>: <span class="dv">2</span>, <span class="st">"c"</span>: <span class="dv">3</span>}</span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>    dict4 <span class="op">=</span> {<span class="st">"c"</span>: <span class="dv">3</span>, <span class="st">"b"</span>: <span class="dv">2</span>, <span class="st">"a"</span>: <span class="dv">1</span>}</span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>    <span class="cf">assert</span> dict3 <span class="op">==</span> dict4</span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>    <span class="co"># Create two different dictionaries</span></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>    dict5 <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">1</span>, <span class="st">"b"</span>: <span class="dv">2</span>, <span class="st">"c"</span>: <span class="dv">3</span>}</span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>    dict6 <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">1</span>, <span class="st">"b"</span>: <span class="dv">2</span>, <span class="st">"c"</span>: <span class="dv">4</span>}</span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>    <span class="co"># Check that the dictionaries are not equal</span></span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>    <span class="cf">assert</span> dict5 <span class="op">!=</span> dict6</span></code></pre>
-</div>
-</div>
-<div class="section level3">
-<h3 id="numpy">numpy<a class="anchor" aria-label="anchor" href="#numpy"></a>
-</h3>
-<p>Numpy is a common library used in research. Instead of the usual
-<code>assert a == b</code>, numpy has its own testing functions that are
-more suitable for comparing numpy arrays. These two functions are the
-ones you are most likely to use: -
-<code>numpy.testing.assert_array_equal</code> is used to compare two
-numpy arrays. - <code>numpy.testing.assert_allclose</code> is used to
-compare two numpy arrays with a tolerance for floating point numbers. -
-<code>numpy.testing.assert_equal</code> is used to compare two objects
-such as lists or dictionaries that contain numpy arrays.</p>
-<p>Here are some examples of how to use these functions:</p>
-<div class="codewrapper sourceCode" id="cb4">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">def</span> test_numpy_arrays():</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>    <span class="co">"""Test that numpy arrays are equal"""</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    <span class="co"># Create two numpy arrays</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    array1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>    array2 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>    <span class="co"># Check that the arrays are equal</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    np.testing.assert_array_equal(array1, array2)</span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co"># Note that np.testing.assert_array_equal even works with nested numpy arrays!</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="kw">def</span> test_nested_numpy_arrays():</span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>    <span class="co">"""Test that nested numpy arrays are equal"""</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>    <span class="co"># Create two nested numpy arrays</span></span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>    array1 <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a>    array2 <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a>    <span class="co"># Check that the nested arrays are equal</span></span>
-<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>    np.testing.assert_array_equal(array1, array2)</span>
-<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="kw">def</span> test_numpy_arrays_with_tolerance():</span>
-<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a>    <span class="co">"""Test that numpy arrays are equal with tolerance"""</span></span>
-<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a>    <span class="co"># Create two numpy arrays</span></span>
-<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a>    array1 <span class="op">=</span> np.array([<span class="fl">1.0</span>, <span class="fl">2.0</span>, <span class="fl">3.0</span>])</span>
-<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a>    array2 <span class="op">=</span> np.array([<span class="fl">1.00009</span>, <span class="fl">2.0005</span>, <span class="fl">3.0001</span>])</span>
-<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a>    <span class="co"># Check that the arrays are equal with tolerance</span></span>
-<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a>    np.testing.assert_allclose(array1, array2, atol<span class="op">=</span><span class="fl">1e-3</span>)</span></code></pre>
-</div>
-<div id="data-structures-with-numpy-arrays" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="data-structures-with-numpy-arrays" class="callout-inner">
-<h3 class="callout-title">Data structures with numpy arrays</h3>
-<div class="callout-content">
-<p>When you have data structures that contain numpy arrays, such as
-lists or dictionaries, you cannot use <code>==</code> to compare them.
-Instead, you can use <code>numpy.testing.assert_equal</code> to compare
-the data structures.</p>
-<div class="codewrapper sourceCode" id="cb5">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> test_dictionaries_with_numpy_arrays():</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>    <span class="co">"""Test that dictionaries with numpy arrays are equal"""</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>    <span class="co"># Create two dictionaries with numpy arrays</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    dict1 <span class="op">=</span> {<span class="st">"a"</span>: np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]), <span class="st">"b"</span>: np.array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])}</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    dict2 <span class="op">=</span> {<span class="st">"a"</span>: np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]), <span class="st">"b"</span>: np.array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])}</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>    <span class="co"># Check that the dictionaries are equal</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>    np.testing.assert_equal(dict1, dict2)</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section level3">
-<h3 id="pandas">pandas<a class="anchor" aria-label="anchor" href="#pandas"></a>
-</h3>
-<p>Pandas is another common library used in research for storing and
-manipulating datasets. Pandas has its own testing functions that are
-more suitable for comparing pandas objects. These two functions are the
-ones you are most likely to use: -
-<code>pandas.testing.assert_frame_equal</code> is used to compare two
-pandas DataFrames. - <code>pandas.testing.assert_series_equal</code> is
-used to compare two pandas Series.</p>
-<p>Here are some examples of how to use these functions:</p>
-<div class="codewrapper sourceCode" id="cb6">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="kw">def</span> test_pandas_dataframes():</span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>    <span class="co">"""Test that pandas DataFrames are equal"""</span></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>    <span class="co"># Create two pandas DataFrames</span></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>    df1 <span class="op">=</span> pd.DataFrame({<span class="st">"A"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="st">"B"</span>: [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]})</span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>    df2 <span class="op">=</span> pd.DataFrame({<span class="st">"A"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="st">"B"</span>: [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]})</span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>    <span class="co"># Check that the DataFrames are equal</span></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>    pd.testing.assert_frame_equal(df1, df2)</span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="kw">def</span> test_pandas_series():</span>
-<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>    <span class="co">"""Test that pandas Series are equal"""</span></span>
-<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>    <span class="co"># Create two pandas Series</span></span>
-<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a>    s1 <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>    s2 <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a>    <span class="co"># Check that the Series are equal</span></span>
-<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a>    pd.testing.assert_series_equal(s1, s2)</span></code></pre>
-</div>
-<div id="checking-if-lists-are-equal" class="callout challenge">
+<p>Let’s practice with a function that estimates the value of pi (very
+inefficiently!).</p>
+<div id="testing-with-tolerances" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="checking-if-lists-are-equal" class="callout-inner">
-<h3 class="callout-title">Checking if lists are equal</h3>
+<div id="testing-with-tolerances" class="callout-inner">
+<h3 class="callout-title">Testing with tolerances</h3>
 <div class="callout-content">
-<p>In <code>statistics/stats.py</code> add this function to remove
-anomalies from a list:</p>
-<div class="codewrapper sourceCode" id="cb7">
+<ul>
+<li>Write this function to a file <code>estimate_pi.py</code>:</li>
+</ul>
+<div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> remove_anomalies(data: <span class="bu">list</span>, maximum_value: <span class="bu">float</span>, minimum_value: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    <span class="co">"""Remove anomalies from a list of numbers"""</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    result <span class="op">=</span> []</span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> data:</span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>        <span class="cf">if</span> i <span class="op">&lt;=</span> maximum_value <span class="kw">and</span> i <span class="op">&gt;=</span> minimum_value:</span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>            result.append(i)</span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>    </span>
-<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="kw">def</span> estimate_pi(iterations):</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    num_inside <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(iterations):</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>        x <span class="op">=</span> random.random()</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>        y <span class="op">=</span> random.random()</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>        <span class="cf">if</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span> <span class="op">&lt;</span> <span class="dv">1</span>:</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>            num_inside <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">4</span> <span class="op">*</span> num_inside <span class="op">/</span> iterations</span></code></pre>
 </div>
-<p>Then write a test for this function by comparing lists.</p>
+<ul>
+<li>Add a file <code>test_estimate_pi.py</code>, and include a test for
+this function using both absolute and relative tolerances.</li>
+<li>Find an appropriate number of iterations so that the test finishes
+quickly, but keep in mind that both <code>atol</code> and
+<code>rtol</code> will need to be modified accordingly!</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2414,55 +2300,57 @@ anomalies from a list:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="im">from</span> stats <span class="im">import</span> remove_anomalies</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="kw">def</span> test_remove_anomalies():</span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>    <span class="co">"""Test remove_anomalies function"""</span></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>    data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]</span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>    maximum_value <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>    minimum_value <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>    expected_result <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>    <span class="cf">assert</span> remove_anomalies(data, maximum_value, minimum_value) <span class="op">==</span> expected_result</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> fabs</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="im">from</span> estimate_pi <span class="im">import</span> estimate_pi</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="kw">def</span> test_estimate_pi():</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>    random.seed(<span class="dv">0</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    expected <span class="op">=</span> <span class="fl">3.141592654</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>    actual <span class="op">=</span> estimate_pi(iterations<span class="op">=</span><span class="dv">10000</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>    <span class="co"># Test absolute tolerance</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>    atol <span class="op">=</span> <span class="fl">1e-2</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>    <span class="cf">assert</span> fabs(actual <span class="op">-</span> expected) <span class="op">&lt;</span> atol</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>    <span class="co"># Test relative tolerance</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>    rtol <span class="op">=</span> <span class="fl">5e-3</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>    <span class="cf">assert</span> fabs((actual <span class="op">-</span> expected) <span class="op">/</span> expected) <span class="op">&lt;</span> rtol</span></code></pre>
+</div>
+<p>In this case the absolute and relative tolerances should be similar,
+as the expected result is close in magnitude to 1.0, but in principle
+they could be very different!</p>
 </div>
 </div>
 </div>
 </div>
+<p>The built-in function <code>math.isclose</code> can be used to
+simplify these checks:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="cf">assert</span> math.isclose(a, b, rel_tol<span class="op">=</span>rtol, abs_tol<span class="op">=</span>atol)</span></code></pre>
 </div>
-<div id="checking-if-dictionaries-are-equal" class="callout challenge">
+<p>Both <code>rel_tol</code> and <code>abs_tol</code> may be provided,
+and it will return <code>True</code> if either of the conditions are
+satisfied.</p>
+<div id="using-math.isclose" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="checking-if-dictionaries-are-equal" class="callout-inner">
-<h3 class="callout-title">Checking if dictionaries are equal</h3>
-<div class="callout-content">
-<p>In <code>statistics/stats.py</code> add this function to calculate
-the frequency of each element in a list:</p>
-<div class="codewrapper sourceCode" id="cb9">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<div id="using-math.isclose" class="callout-inner">
+<h3 class="callout-title">Using <code>math.isclose</code>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">def</span> calculate_frequency(data: <span class="bu">list</span>) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>    <span class="co">"""Calculate the frequency of each element in a list"""</span></span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>    frequencies <span class="op">=</span> {}</span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>    <span class="co"># Iterate over each value in the list</span></span>
-<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>    <span class="cf">for</span> value <span class="kw">in</span> data:</span>
-<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>        <span class="co"># If the value is already in the dictionary, increment the count</span></span>
-<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a>        <span class="cf">if</span> value <span class="kw">in</span> frequencies:</span>
-<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a>            frequencies[value] <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a>        <span class="co"># Otherwise, add the value to the dictionary with a count of 1</span></span>
-<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a>            frequencies[value] <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a></span>
-<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a>    <span class="cf">return</span> frequencies</span></code></pre>
-</div>
-<p>Then write a test for this function by comparing dictionaries.</p>
+<div class="callout-content">
+<ul>
+<li>Adapt the test you wrote in the previous challenge to make use of
+the <code>math.isclose</code> function.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2471,20 +2359,96 @@ the frequency of each element in a list:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="im">from</span> stats <span class="im">import</span> calculate_frequency</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="kw">def</span> test_calculate_frequency():</span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>    <span class="co">"""Test calculate_frequency function"""</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>    data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>]</span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>    expected_result <span class="op">=</span> {<span class="dv">1</span>: <span class="dv">4</span>, <span class="dv">2</span>: <span class="dv">2</span>, <span class="dv">3</span>: <span class="dv">4</span>}</span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>    <span class="cf">assert</span> calculate_frequency(data) <span class="op">==</span> expected_result</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="im">from</span> estimate_pi <span class="im">import</span> estimate_pi</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="kw">def</span> test_estimate_pi():</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>    random.seed(<span class="dv">0</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>    expected <span class="op">=</span> <span class="fl">3.141592654</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>    actual <span class="op">=</span> estimate_pi(iterations<span class="op">=</span><span class="dv">10000</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>    atol <span class="op">=</span> <span class="fl">1e-2</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>    rtol <span class="op">=</span> <span class="fl">5e-3</span></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>    <span class="cf">assert</span> math.isclose(actual, expected, abs_tol<span class="op">=</span>atol, rel_tol<span class="op">=</span>rtol)</span></code></pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="numpy">NumPy<a class="anchor" aria-label="anchor" href="#numpy"></a>
+</h3>
+<p>NumPy is a common library used in research. Instead of the usual
+<code>assert a == b</code>, NumPy has its own testing functions that are
+more suitable for comparing NumPy arrays. These functions are the ones
+you are most likely to use:</p>
+<ul>
+<li>
+<code>numpy.testing.assert_array_equal</code> is used to compare two
+NumPy arrays for equality – best used for integer data.</li>
+<li>
+<code>numpy.testing.assert_allclose</code> is used to compare two
+NumPy arrays with a tolerance for floating point numbers.</li>
+</ul>
+<p>Here are some examples of how to use these functions:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="kw">def</span> test_numpy_arrays():</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>    <span class="co">"""Test that numpy arrays are equal"""</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    <span class="co"># Create two numpy arrays</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    array1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>    array2 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    <span class="co"># Check that the arrays are equal</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>    np.testing.assert_array_equal(array1, array2)</span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co"># Note that np.testing.assert_array_equal even works with multidimensional numpy arrays!</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="kw">def</span> test_2d_numpy_arrays():</span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a>    <span class="co">"""Test that 2d numpy arrays are equal"""</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a>    <span class="co"># Create two 2d numpy arrays</span></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a>    array1 <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a>    array2 <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a>    <span class="co"># Check that the nested arrays are equal</span></span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a>    np.testing.assert_array_equal(array1, array2)</span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a><span class="kw">def</span> test_numpy_arrays_with_tolerance():</span>
+<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a>    <span class="co">"""Test that numpy arrays are equal with tolerance"""</span></span>
+<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a>    <span class="co"># Create two numpy arrays</span></span>
+<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a>    array1 <span class="op">=</span> np.array([<span class="fl">1.0</span>, <span class="fl">2.0</span>, <span class="fl">3.0</span>])</span>
+<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a>    array2 <span class="op">=</span> np.array([<span class="fl">1.00009</span>, <span class="fl">2.0005</span>, <span class="fl">3.0001</span>])</span>
+<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a>    <span class="co"># Check that the arrays are equal with tolerance</span></span>
+<span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a>    np.testing.assert_allclose(array1, array2, atol<span class="op">=</span><span class="fl">1e-3</span>)</span></code></pre>
+</div>
+<p>The NumPy testing functions can be used on anything NumPy considers
+to be ‘array-like’. This includes lists, tuples, and even individual
+floating point numbers if you choose. They can also be used for other
+objects in the scientific Python ecosystem, such as Pandas
+Series/DataFrames.</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>The Pandas library also provides its own testing functions:</p>
+<ul>
+<li><code>pandas.testing.assert_frame_equal</code></li>
+<li><code>pandas.testing.assert_series_equal</code></li>
+</ul>
+<p>These functions can also take <code>rtol</code> and <code>atol</code>
+arguments, so can fulfill the role of both
+<code>numpy.testing.assert_array_equal</code> and
+<code>numpy.testing.assert_allclose</code>.</p>
 </div>
 </div>
 </div>
@@ -2494,27 +2458,27 @@ the frequency of each element in a list:</p>
 </div>
 <span class="callout-header">Challenge</span>
 <div id="checking-if-numpy-arrays-are-equal" class="callout-inner">
-<h3 class="callout-title">Checking if numpy arrays are equal</h3>
+<h3 class="callout-title">Checking if NumPy arrays are equal</h3>
 <div class="callout-content">
 <p>In <code>statistics/stats.py</code> add this function to calculate
-the cumulative sum of a numpy array:</p>
-<div class="codewrapper sourceCode" id="cb11">
+the cumulative sum of a NumPy array:</p>
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="kw">def</span> calculate_cumulative_sum(array: np.ndarray) <span class="op">-&gt;</span> np.ndarray:</span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>    <span class="co">"""Calculate the cumulative sum of a numpy array"""</span></span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>    </span>
-<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>    <span class="co"># don't use the built-in numpy function</span></span>
-<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>    result <span class="op">=</span> np.zeros(array.shape)</span>
-<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>    result[<span class="dv">0</span>] <span class="op">=</span> array[<span class="dv">0</span>]</span>
-<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(array)):</span>
-<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a>        result[i] <span class="op">=</span> result[i<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> array[i]</span>
-<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a></span>
-<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="kw">def</span> calculate_cumulative_sum(array: np.ndarray) <span class="op">-&gt;</span> np.ndarray:</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>    <span class="co">"""Calculate the cumulative sum of a numpy array"""</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>    </span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>    <span class="co"># don't use the built-in numpy function</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>    result <span class="op">=</span> np.zeros(array.shape)</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>    result[<span class="dv">0</span>] <span class="op">=</span> array[<span class="dv">0</span>]</span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(array)):</span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a>        result[i] <span class="op">=</span> result[i<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> array[i]</span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre>
 </div>
-<p>Then write a test for this function by comparing numpy arrays.</p>
+<p>Then write a test for this function by comparing NumPy arrays.</p>
 </div>
 </div>
 </div>
@@ -2523,205 +2487,19 @@ the cumulative sum of a numpy array:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="im">from</span> stats <span class="im">import</span> calculate_cumulative_sum</span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="kw">def</span> test_calculate_cumulative_sum():</span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>    <span class="co">"""Test calculate_cumulative_sum function"""</span></span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>    array <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>    expected_result <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">15</span>])</span>
-<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a>    np.testing.assert_array_equal(calculate_cumulative_sum(array), expected_result)</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="checking-if-data-structures-with-numpy-arrays-are-equal" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="checking-if-data-structures-with-numpy-arrays-are-equal" class="callout-inner">
-<h3 class="callout-title">Checking if data structures with numpy arrays
-are equal</h3>
-<div class="callout-content">
-<p>In <code>statistics/stats.py</code> add this function to calculate
-the total score of each player in a dictionary:</p>
-<div class="codewrapper sourceCode" id="cb13">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="kw">def</span> calculate_player_total_scores(participants: <span class="bu">dict</span>):</span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>    <span class="co">"""Calculate the total score of each player in a dictionary.</span></span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co">    Example input:</span></span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co">    {</span></span>
-<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="co">        "Alice": {</span></span>
-<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co">            "scores": np.array([1, 2, 3])</span></span>
-<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="co">        },</span></span>
-<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="co">        "Bob": {</span></span>
-<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co">            "scores": np.array([4, 5, 6])</span></span>
-<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a><span class="co">        },</span></span>
-<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a><span class="co">        "Charlie": {</span></span>
-<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a><span class="co">            "scores": np.array([7, 8, 9])</span></span>
-<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a><span class="co">        },</span></span>
-<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a><span class="co">    }</span></span>
-<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a></span>
-<span id="cb13-18"><a href="#cb13-18" tabindex="-1"></a><span class="co">    Example output:</span></span>
-<span id="cb13-19"><a href="#cb13-19" tabindex="-1"></a><span class="co">    {</span></span>
-<span id="cb13-20"><a href="#cb13-20" tabindex="-1"></a><span class="co">        "Alice": {</span></span>
-<span id="cb13-21"><a href="#cb13-21" tabindex="-1"></a><span class="co">            "scores": np.array([1, 2, 3]),</span></span>
-<span id="cb13-22"><a href="#cb13-22" tabindex="-1"></a><span class="co">            "total_score": 6</span></span>
-<span id="cb13-23"><a href="#cb13-23" tabindex="-1"></a><span class="co">        },</span></span>
-<span id="cb13-24"><a href="#cb13-24" tabindex="-1"></a><span class="co">        "Bob": {</span></span>
-<span id="cb13-25"><a href="#cb13-25" tabindex="-1"></a><span class="co">            "scores": np.array([4, 5, 6]),</span></span>
-<span id="cb13-26"><a href="#cb13-26" tabindex="-1"></a><span class="co">            "total_score": 15</span></span>
-<span id="cb13-27"><a href="#cb13-27" tabindex="-1"></a><span class="co">        },</span></span>
-<span id="cb13-28"><a href="#cb13-28" tabindex="-1"></a><span class="co">        "Charlie": {</span></span>
-<span id="cb13-29"><a href="#cb13-29" tabindex="-1"></a><span class="co">            "scores": np.array([7, 8, 9]),</span></span>
-<span id="cb13-30"><a href="#cb13-30" tabindex="-1"></a><span class="co">            "total_score": 24</span></span>
-<span id="cb13-31"><a href="#cb13-31" tabindex="-1"></a><span class="co">        },</span></span>
-<span id="cb13-32"><a href="#cb13-32" tabindex="-1"></a><span class="co">    }</span></span>
-<span id="cb13-33"><a href="#cb13-33" tabindex="-1"></a><span class="co">    """</span><span class="st">"</span></span>
-<span id="cb13-34"><a href="#cb13-34" tabindex="-1"></a><span class="er">    </span></span>
-<span id="cb13-35"><a href="#cb13-35" tabindex="-1"></a>    <span class="cf">for</span> player <span class="kw">in</span> participants:</span>
-<span id="cb13-36"><a href="#cb13-36" tabindex="-1"></a>        participants[player][<span class="st">"total_score"</span>] <span class="op">=</span> np.<span class="bu">sum</span>(participants[player][<span class="st">"scores"</span>])</span>
-<span id="cb13-37"><a href="#cb13-37" tabindex="-1"></a></span>
-<span id="cb13-38"><a href="#cb13-38" tabindex="-1"></a>    <span class="cf">return</span> participants</span></code></pre>
-</div>
-<p>Then write a test for this function by comparing dictionaries with
-numpy arrays.</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
-</button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
-<div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb14">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="im">from</span> stats <span class="im">import</span> calculate_player_total_scores</span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="kw">def</span> test_calculate_player_total_scores():</span>
-<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>    <span class="co">"""Test calculate_player_total_scores function"""</span></span>
-<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>    participants <span class="op">=</span> {</span>
-<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>        <span class="st">"Alice"</span>: {</span>
-<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a>            <span class="st">"scores"</span>: np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>        },</span>
-<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>        <span class="st">"Bob"</span>: {</span>
-<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a>            <span class="st">"scores"</span>: np.array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
-<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a>        },</span>
-<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a>        <span class="st">"Charlie"</span>: {</span>
-<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a>            <span class="st">"scores"</span>: np.array([<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>])</span>
-<span id="cb14-15"><a href="#cb14-15" tabindex="-1"></a>        },</span>
-<span id="cb14-16"><a href="#cb14-16" tabindex="-1"></a>    }</span>
-<span id="cb14-17"><a href="#cb14-17" tabindex="-1"></a>    expected_result <span class="op">=</span> {</span>
-<span id="cb14-18"><a href="#cb14-18" tabindex="-1"></a>        <span class="st">"Alice"</span>: {</span>
-<span id="cb14-19"><a href="#cb14-19" tabindex="-1"></a>            <span class="st">"scores"</span>: np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]),</span>
-<span id="cb14-20"><a href="#cb14-20" tabindex="-1"></a>            <span class="st">"total_score"</span>: <span class="dv">6</span></span>
-<span id="cb14-21"><a href="#cb14-21" tabindex="-1"></a>        },</span>
-<span id="cb14-22"><a href="#cb14-22" tabindex="-1"></a>        <span class="st">"Bob"</span>: {</span>
-<span id="cb14-23"><a href="#cb14-23" tabindex="-1"></a>            <span class="st">"scores"</span>: np.array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]),</span>
-<span id="cb14-24"><a href="#cb14-24" tabindex="-1"></a>            <span class="st">"total_score"</span>: <span class="dv">15</span></span>
-<span id="cb14-25"><a href="#cb14-25" tabindex="-1"></a>        },</span>
-<span id="cb14-26"><a href="#cb14-26" tabindex="-1"></a>        <span class="st">"Charlie"</span>: {</span>
-<span id="cb14-27"><a href="#cb14-27" tabindex="-1"></a>            <span class="st">"scores"</span>: np.array([<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]),</span>
-<span id="cb14-28"><a href="#cb14-28" tabindex="-1"></a>            <span class="st">"total_score"</span>: <span class="dv">24</span></span>
-<span id="cb14-29"><a href="#cb14-29" tabindex="-1"></a>        },</span>
-<span id="cb14-30"><a href="#cb14-30" tabindex="-1"></a>    }</span>
-<span id="cb14-31"><a href="#cb14-31" tabindex="-1"></a>    np.testing.assert_equal(calculate_player_total_scores(participants), expected_result)</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="checking-if-pandas-dataframes-are-equal" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="checking-if-pandas-dataframes-are-equal" class="callout-inner">
-<h3 class="callout-title">Checking if pandas DataFrames are equal</h3>
-<div class="callout-content">
-<p>In <code>statistics/stats.py</code> add this function to calculate
-the average score of each player in a pandas DataFrame:</p>
-<div class="codewrapper sourceCode" id="cb15">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="kw">def</span> calculate_player_average_scores(df: pd.DataFrame) <span class="op">-&gt;</span> pd.DataFrame:</span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>    <span class="co">"""Calculate the average score of each player in a pandas DataFrame.</span></span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="co">    Example input:</span></span>
-<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a><span class="co">    |   | player  | score_1 | score_2 |</span></span>
-<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a><span class="co">    |---|---------|---------|---------|</span></span>
-<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a><span class="co">    | 0 | Alice   | 1       | 2       |</span></span>
-<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a><span class="co">    | 1 | Bob     | 3       | 4       |</span></span>
-<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a></span>
-<span id="cb15-12"><a href="#cb15-12" tabindex="-1"></a><span class="co">    Example output:</span></span>
-<span id="cb15-13"><a href="#cb15-13" tabindex="-1"></a><span class="co">    |   | player  | score_1 | score_2 | average_score |</span></span>
-<span id="cb15-14"><a href="#cb15-14" tabindex="-1"></a><span class="co">    |---|---------|---------|---------|---------------|</span></span>
-<span id="cb15-15"><a href="#cb15-15" tabindex="-1"></a><span class="co">    | 0 | Alice   | 1       | 2       | 1.5           |</span></span>
-<span id="cb15-16"><a href="#cb15-16" tabindex="-1"></a><span class="co">    | 1 | Bob     | 3       | 4       | 3.5           |</span></span>
-<span id="cb15-17"><a href="#cb15-17" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb15-18"><a href="#cb15-18" tabindex="-1"></a></span>
-<span id="cb15-19"><a href="#cb15-19" tabindex="-1"></a>    df[<span class="st">"average_score"</span>] <span class="op">=</span> df[[<span class="st">"score_1"</span>, <span class="st">"score_2"</span>]].mean(axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb15-20"><a href="#cb15-20" tabindex="-1"></a></span>
-<span id="cb15-21"><a href="#cb15-21" tabindex="-1"></a>    <span class="cf">return</span> df</span></code></pre>
-</div>
-<p>Then write a test for this function by comparing pandas
-DataFrames.</p>
-<p>Hint: You can create a dataframe like this:</p>
-<div class="codewrapper sourceCode" id="cb16">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>    <span class="st">"player"</span>: [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>],</span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>    <span class="st">"score_1"</span>: [<span class="dv">1</span>, <span class="dv">3</span>],</span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>    <span class="st">"score_2"</span>: [<span class="dv">2</span>, <span class="dv">4</span>]</span>
-<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>})</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
-  <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
-</button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
-<div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb17">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="im">from</span> stats <span class="im">import</span> calculate_player_average_scores</span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="kw">def</span> test_calculate_player_average_scores():</span>
-<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>    <span class="co">"""Test calculate_player_average_scores function"""</span></span>
-<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>        <span class="st">"player"</span>: [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>],</span>
-<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>        <span class="st">"score_1"</span>: [<span class="dv">1</span>, <span class="dv">3</span>],</span>
-<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>        <span class="st">"score_2"</span>: [<span class="dv">2</span>, <span class="dv">4</span>]</span>
-<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a>    })</span>
-<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a>    expected_result <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a>        <span class="st">"player"</span>: [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>],</span>
-<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a>        <span class="st">"score_1"</span>: [<span class="dv">1</span>, <span class="dv">3</span>],</span>
-<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a>        <span class="st">"score_2"</span>: [<span class="dv">2</span>, <span class="dv">4</span>],</span>
-<span id="cb17-15"><a href="#cb17-15" tabindex="-1"></a>        <span class="st">"average_score"</span>: [<span class="fl">1.5</span>, <span class="fl">3.5</span>]</span>
-<span id="cb17-16"><a href="#cb17-16" tabindex="-1"></a>    })</span>
-<span id="cb17-17"><a href="#cb17-17" tabindex="-1"></a>    pd.testing.assert_frame_equal(calculate_player_average_scores(df), expected_result)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="im">from</span> stats <span class="im">import</span> calculate_cumulative_sum</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="kw">def</span> test_calculate_cumulative_sum():</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>    <span class="co">"""Test calculate_cumulative_sum function"""</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>    array <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>    expected_result <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">15</span>])</span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>    np.testing.assert_array_equal(calculate_cumulative_sum(array), expected_result)</span></code></pre>
 </div>
 </div>
 </div>
@@ -2735,16 +2513,11 @@ DataFrames.</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>You can test equality of lists and dictionaries using the
-<code>==</code> operator.</li>
+<li>When comparing floating point data, you should use relative/absolute
+tolerances instead of testing for equality.</li>
 <li>Numpy arrays cannot be compared using the <code>==</code> operator.
 Instead, use <code>numpy.testing.assert_array_equal</code> and
 <code>numpy.testing.assert_allclose</code>.</li>
-<li>Data structures that contain numpy arrays should be compared using
-<code>numpy.testing.assert_equal</code>.</li>
-<li>Pandas DataFrames and Series should be compared using
-<code>pandas.testing.assert_frame_equal</code> and
-<code>pandas.testing.assert_series_equal</code>.</li>
 </ul>
 </div>
 </div>
@@ -3138,7 +2911,7 @@ input data.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4089,7 +3862,7 @@ the indentation right!</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>You should see that a total of 6 jobs have run, and hopefully all
 will have passed!</p>
@@ -4208,7 +3981,7 @@ being tested.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The code on the new branch will be testing the old implementation,
 and should pass. However, following the merge, the test would fail. This
@@ -4270,13 +4043,9 @@ any links that you are not going to use.
       </div>
 <!--/div.row-->
       		<footer class="row footer mx-md-3"><hr>
-<div class="col-md-2">
-        <a href="https://docs.hpc.shef.ac.uk/en/latest/stanage/index.html" class="external-link">
-          <img alt="Stanage HPC" src="https://docs.hpc.shef.ac.uk/en/latest/_images/Stanage_Black.png" style="width: 100%;"></a>
-        <p><a href="https://sites.google.com/sheffield.ac.uk/research-training/research-training" class="external-link">Research Computing Training Home</a></p>
-			</div>
-			<div class="col-md-5">
-        <p>Lesson developed by <a href="https://rse.shef.ac.uk" class="external-link">RSE</a> &amp; <a href="https://www.sheffield.ac.uk/it-services/research" class="external-link">RIT</a></p>
+<div class="col-md-6">
+        <p>Lesson developed by the <a href="https://researchcodingclub.github.io" class="external-link">University of York Research Coding Club</a></p>
+        <p>Building on material from <a href="https://fair2-for-research-software.github.io" class="external-link">FAIR<sup>2</sup> for Research Software</a>, <a href="https://rse.shef.ac.uk" class="external-link">University of Sheffield RSE</a> &amp; <a href="https://www.sheffield.ac.uk/it-services/research" class="external-link">RIT</a></p>
         <p>
 
           <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/README.md" class="external-link">Edit on GitHub</a>
@@ -4288,7 +4057,7 @@ any links that you are not going to use.
         <a href="https://github.com/ResearchCodingClub/python-testing-for-research/blob/main/" class="external-link">Cite</a>
         | <a href="mailto:liam.pattinson@york.ac.uk">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 		</div>
-		<div class="col-md-5">
+		<div class="col-md-6">
 
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 

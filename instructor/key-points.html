@@ -320,7 +320,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="06-testing-data-structures.html">7. Testing Data Structures</a>
+        <a href="06-floating-point-data.html">7. Floating Point Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -498,19 +498,14 @@ starting with regression tests.</li>
 <ul>
 <li>Use <code>pytest.raises</code> to check that a function raises an
 exception.</li>
-</ul></section><section id="06-testing-data-structures"><h2 class="section-heading"><a href="06-testing-data-structures.html">Testing Data Structures</a></h2>
+</ul></section><section id="06-floating-point-data"><h2 class="section-heading"><a href="06-floating-point-data.html">Floating Point Data</a></h2>
 <hr class="half-width">
 <ul>
-<li>You can test equality of lists and dictionaries using the
-<code>==</code> operator.</li>
+<li>When comparing floating point data, you should use relative/absolute
+tolerances instead of testing for equality.</li>
 <li>Numpy arrays cannot be compared using the <code>==</code> operator.
 Instead, use <code>numpy.testing.assert_array_equal</code> and
 <code>numpy.testing.assert_allclose</code>.</li>
-<li>Data structures that contain numpy arrays should be compared using
-<code>numpy.testing.assert_equal</code>.</li>
-<li>Pandas DataFrames and Series should be compared using
-<code>pandas.testing.assert_frame_equal</code> and
-<code>pandas.testing.assert_series_equal</code>.</li>
 </ul></section><section id="07-fixtures"><h2 class="section-heading"><a href="07-fixtures.html">Fixtures</a></h2>
 <hr class="half-width">
 <ul>
@@ -562,13 +557,9 @@ new code into your <code>main</code> branch.</li>
       </div>
 <!--/div.row-->
       		<footer class="row footer mx-md-3"><hr>
-<div class="col-md-2">
-        <a href="https://docs.hpc.shef.ac.uk/en/latest/stanage/index.html" class="external-link">
-          <img alt="Stanage HPC" src="https://docs.hpc.shef.ac.uk/en/latest/_images/Stanage_Black.png" style="width: 100%;"></a>
-        <p><a href="https://sites.google.com/sheffield.ac.uk/research-training/research-training" class="external-link">Research Computing Training Home</a></p>
-			</div>
-			<div class="col-md-5">
-        <p>Lesson developed by <a href="https://rse.shef.ac.uk" class="external-link">RSE</a> &amp; <a href="https://www.sheffield.ac.uk/it-services/research" class="external-link">RIT</a></p>
+<div class="col-md-6">
+        <p>Lesson developed by the <a href="https://researchcodingclub.github.io" class="external-link">University of York Research Coding Club</a></p>
+        <p>Building on material from <a href="https://fair2-for-research-software.github.io" class="external-link">FAIR<sup>2</sup> for Research Software</a>, <a href="https://rse.shef.ac.uk" class="external-link">University of Sheffield RSE</a> &amp; <a href="https://www.sheffield.ac.uk/it-services/research" class="external-link">RIT</a></p>
         <p>
 
           <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/README.md" class="external-link">Edit on GitHub</a>
@@ -580,7 +571,7 @@ new code into your <code>main</code> branch.</li>
         <a href="https://github.com/ResearchCodingClub/python-testing-for-research/blob/main/" class="external-link">Cite</a>
         | <a href="mailto:liam.pattinson@york.ac.uk">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 		</div>
-		<div class="col-md-5">
+		<div class="col-md-6">
 
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
