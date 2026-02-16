@@ -22,7 +22,7 @@ exercises: 3
 
 ## Setup
 
-To use the packages in this module, you will need to install them via,
+To use the `snaptol` package in this module, you will need to install it via,
 
 ```bash
 pip install "git+https://github.com/PlasmaFAIR/snaptol"
