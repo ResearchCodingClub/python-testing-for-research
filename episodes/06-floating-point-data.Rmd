@@ -86,7 +86,7 @@ inefficiently!).
 
 - Write this function to a file `estimate_pi.py`:
 
-```
+```python
 import random
 
 def estimate_pi(iterations):
