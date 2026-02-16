@@ -152,7 +152,7 @@ if either of the conditions are satisfied.
 
 ```python
 import random
-from math import fabs
+import math
 
 from estimate_pi import estimate_pi
 
