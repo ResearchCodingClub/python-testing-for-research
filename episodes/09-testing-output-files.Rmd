@@ -33,7 +33,7 @@ pip install "git+https://github.com/PlasmaFAIR/snaptol"
 In short, a regression test asks "this test used to produce X, does it still produce X?". This can help us detect
 unexpected or unwanted changes in the output of a program.
 
-It is good practice to add these types of tests to all projects. They are particularly useful,
+They are particularly useful,
 
 - when beginning to add tests to an existing project,
 
