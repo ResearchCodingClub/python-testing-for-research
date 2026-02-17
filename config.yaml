@@ -65,7 +65,7 @@ episodes:
 - 03-interacting-with-tests.Rmd
 - 04-unit-tests-best-practices.Rmd
 - 05-testing-exceptions.Rmd
-- 06-floating-point-data.Rmd
+- 06-testing-data-structures.Rmd
 - 07-fixtures.Rmd
 - 08-parametrization.Rmd
 - 09-testing-output-files.Rmd

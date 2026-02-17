@@ -46,9 +46,9 @@ use [GitHub flow][github-flow] to manage changes:
 
 NB: The published copy of the lesson is usually in the `main` branch.
 
-[repo]: https://github.com/researchcodingclub/python-testing-for-research
-[repo-issues]: https://github.com/researchcodingclub/python-testing-for-research/issues
-[contact]: mailto:liam.pattinson@york.ac.uk
+[repo]: https://github.com/Romain-Thomas-Shef/FAIR_Management_plan
+[repo-issues]: https://github.com/Romain-Thomas-Shef/FAIR_Management_plan/issues
+[contact]: mailto:romain.thomas@sheffield.ac.uk
 [github]: https://github.com
 [github-flow]: https://guides.github.com/introduction/flow/
 [github-join]: https://github.com/join
