@@ -61,7 +61,7 @@ def test_calculate_area():
     p12 = Point(2, 0)
     p13 = Point(1, 1.7320)
     t1 = Triangle(p11, p12, p13)
-    assert t1.calculate_area() == 6
+    assert t1.calculate_area() == 1.7320
 
     # Right-angled triangle
     p21 = Point(0, 0)
@@ -100,7 +100,7 @@ import pytest
 @pytest.mark.parametrize(
     ("p1x, p1y, p2x, p2y, p3x, p3y, expected"),
     [
-        pytest.param(0, 0, 2, 0, 1, 1.7320, 6, id="Equilateral triangle"),
+        pytest.param(0, 0, 2, 0, 1, 1.7320, 1.7320, id="Equilateral triangle"),
         pytest.param(0, 0, 3, 0, 0, 4, 6, id="Right-angled triangle"),
         pytest.param(0, 0, 4, 0, 2, 8, 16, id="Isosceles triangle"),
         pytest.param(0, 0, 3, 0, 1, 4, 6, id="Scalene triangle"),
