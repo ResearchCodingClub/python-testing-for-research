@@ -296,14 +296,39 @@ always include both `push` and `pull_request` in your testing workflows.
 Can you engineer a situation where a CI job passes on `push` but
 fails on `pull_request`?
 
-- Write a new function, commit the changes, and push it to your `main`
-  branch.
+- Write a function to a new file, commit the changes, and push it to your `main`
+  branch. It can be something as simple as:
+
+```python
+# file: message.py
+
+def message():
+    return "foo"
+````
+
 - Switch to a new branch `my_branch` with `git switch -c my_branch`,
-  and write a test for that function.
+  and write a test for that function in a new file:
+
+```python
+# file: test_message.py
+from message import message
+
+def test_message():
+    assert message() == "foo"
+```
+
 - Check that the test passes, and commit it.
 - Push `my_branch` to GitHub with `git push -u origin my_branch`,
   but don't raise a pull request yet.
-- Return to your `main` branch, and modify the function being tested.
+- Return to your `main` branch, and modify the function being tested:
+
+```python
+# file: message.py
+
+def message():
+    return "bar"
+```
+
 - Push the changes to `main`.
 - Now raise a pull request from `my_branch` into `main`.
 
