@@ -494,9 +494,9 @@ make it more concise:</p>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="im">import</span> pytest</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="at">@pytest.mark.parametrize</span>(</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    (<span class="st">"p1x, p1y, p2x, p2y, p3x, p3y, expected"</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    <span class="st">"p1x, p1y, p2x, p2y, p3x, p3y, expected"</span>,</span>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    [</span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">1.7320</span>, <span class="fl">1.7320</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Equilateral triangle"</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">1.732</span>, <span class="fl">1.732</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Equilateral triangle"</span>),</span>
 <span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Right-angled triangle"</span>),</span>
 <span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">16</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Isosceles triangle"</span>),</span>
 <span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Scalene triangle"</span>),</span>
@@ -514,23 +514,24 @@ make it more concise:</p>
 <p>Similar to how fixtures are defined, the
 <code>@pytest.mark.parametrize</code> line is a decorator, letting
 pytest know that this is a parametrized test.</p>
-<ul><li><p>The first argument is a tuple, a list of the names of the
+<ul><li><p>The first argument is a string listing the names of the
 parameters you want to use in your test. For example
-<code>("p1x, p2y, p2x, p2y, p3x, p3y, expected")</code> means that we
-will use the parameters <code>p1x</code>, <code>p1y</code>,
-<code>p2x</code>, <code>p2y</code>, <code>p3x</code>, <code>p3y</code>
-and <code>expected</code> in our test.</p></li>
+<code>"p1x, p2y, p2x, p2y, p3x, p3y, expected"</code> means that we will
+use the parameters <code>p1x</code>, <code>p1y</code>, <code>p2x</code>,
+<code>p2y</code>, <code>p3x</code>, <code>p3y</code> and
+<code>expected</code> in our test.</p></li>
 <li><p>The second argument is a list of <code>pytest.param</code>
-objects. Each <code>pytest.param</code> object is a tuple of the values
-you want to test, with an optional <code>id</code> argument to give a
-name to the test. For example,
-<code>pytest.param(0, 0, 2, 0, 1, 1.7320, 6, id="Equilateral triangle")</code>
+objects. Each <code>pytest.param</code> object contains the values you
+want to test, with an optional <code>id</code> argument to give a name
+to the test.</p></li>
+</ul><p>For example,
+<code>pytest.param(0, 0, 2, 0, 1, 1.732, 1.732, id="Equilateral triangle")</code>
 means that we will test the function with the parameters
-<code>0, 0, 2, 0, 1, 1.7320, 6</code> and give it the name “Equilateral
-triangle”.</p></li>
-</ul><p>(note that if the test fails you will see the id in the output, so
+<code>0, 0, 2, 0, 1, 1.732, 1.732</code> and give it the name
+“Equilateral triangle”.</p>
+<p>Note that if the test fails you will see the id in the output, so
 it’s useful to give them meaningful names to help you understand what
-went wrong.)</p>
+went wrong.</p>
 <ul><li><p>The test function will be run once for each set of parameters in
 the list.</p></li>
 <li><p>Inside the test function, you can use the parameters as you would
@@ -539,13 +540,13 @@ any other variable.</p></li>
 need to be tested with lots of different inputs, especially when there
 is a lot of repetition in the setup for each of the different test
 cases.</p>
-<div id="challenge---practice-with-parametrization" class="callout challenge">
+<div id="practice-with-parametrization" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge---practice-with-parametrization" class="callout-inner">
-<h3 class="callout-title">Challenge - Practice with Parametrization</h3>
+<div id="practice-with-parametrization" class="callout-inner">
+<h3 class="callout-title">Practice with Parametrization</h3>
 <div class="callout-content">
 <p>Add the following function to
 <code>advanced/advanced_calculator.py</code> and write a parametrized
@@ -572,7 +573,7 @@ the function with a range of different inputs using parametrization.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -580,7 +581,7 @@ the function with a range of different inputs using parametrization.</p>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="im">import</span> pytest</span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="at">@pytest.mark.parametrize</span>(</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    (<span class="st">"n, expected"</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    <span class="st">"n, expected"</span>,</span>
 <span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    [</span>
 <span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"0 is not prime"</span>),</span>
 <span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>        pytest.param(<span class="dv">1</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"1 is not prime"</span>),</span>
