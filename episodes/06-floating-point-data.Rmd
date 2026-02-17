@@ -32,7 +32,6 @@ places. This can be affected by:
 
 - Choice of algorithm.
 - Precise order of operations.
-- Order in which parallel processes finish.
 - Inherent randomness in the calculation.
 
 We could therefore test our code using `assert result == 2.34958124890e-31`,
@@ -54,8 +53,8 @@ it is best to use a _relative_ tolerance:
 from math import fabs
 
 def test_float_rtol():
-    actual = my_function()
     expected = 7.31926e12  # Reference solution
+    actual = my_function()
     rtol = 1e-3
     # Use fabs to ensure a positive result!
     assert fabs((actual - expected) / expected) < rtol
@@ -69,8 +68,8 @@ tolerance:
 from math import fabs
 
 def test_float_atol():
-    actual = my_function()
     expected = 0.0  # Reference solution
+    actual = my_function()
     atol = 1e-5
     # Use fabs to ensure a positive result!
     assert fabs(actual - expected) < atol
@@ -90,6 +89,10 @@ inefficiently!).
 import random
 
 def estimate_pi(iterations):
+    """
+    Estimate pi by counting the number of random points
+    inside a quarter circle of radius 1
+    """
     num_inside = 0
     for _ in range(iterations):
         x = random.random()

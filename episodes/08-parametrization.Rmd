@@ -98,9 +98,9 @@ This test is quite long and repetitive. We can use parametrization to make it mo
 import pytest
 
 @pytest.mark.parametrize(
-    ("p1x, p1y, p2x, p2y, p3x, p3y, expected"),
+    "p1x, p1y, p2x, p2y, p3x, p3y, expected",
     [
-        pytest.param(0, 0, 2, 0, 1, 1.7320, 1.7320, id="Equilateral triangle"),
+        pytest.param(0, 0, 2, 0, 1, 1.732, 1.732, id="Equilateral triangle"),
         pytest.param(0, 0, 3, 0, 0, 4, 6, id="Right-angled triangle"),
         pytest.param(0, 0, 4, 0, 2, 8, 16, id="Isosceles triangle"),
         pytest.param(0, 0, 3, 0, 1, 4, 6, id="Scalene triangle"),
@@ -119,13 +119,14 @@ Let's have a look at how this works.
 
 Similar to how fixtures are defined, the `@pytest.mark.parametrize` line is a decorator, letting pytest know that this is a parametrized test.
 
-- The first argument is a tuple, a list of the names of the parameters you want to use in your test. For example
-`("p1x, p2y, p2x, p2y, p3x, p3y, expected")` means that we will use the parameters `p1x`, `p1y`, `p2x`, `p2y`, `p3x`, `p3y` and `expected` in our test.
+- The first argument is a string listing the names of the parameters you want to use in your test. For example
+`"p1x, p2y, p2x, p2y, p3x, p3y, expected"` means that we will use the parameters `p1x`, `p1y`, `p2x`, `p2y`, `p3x`, `p3y` and `expected` in our test.
 
-- The second argument is a list of `pytest.param` objects. Each `pytest.param` object is a tuple of the values you want to test, with an optional `id` argument to give a name to the test.
-For example, `pytest.param(0, 0, 2, 0, 1, 1.7320, 6, id="Equilateral triangle")` means that we will test the function with the parameters `0, 0, 2, 0, 1, 1.7320, 6` and give it the name "Equilateral triangle".
+- The second argument is a list of `pytest.param` objects. Each `pytest.param` object contains the values you want to test, with an optional `id` argument to give a name to the test.
 
-(note that if the test fails you will see the id in the output, so it's useful to give them meaningful names to help you understand what went wrong.)
+For example, `pytest.param(0, 0, 2, 0, 1, 1.732, 1.732, id="Equilateral triangle")` means that we will test the function with the parameters `0, 0, 2, 0, 1, 1.732, 1.732` and give it the name "Equilateral triangle".
+
+Note that if the test fails you will see the id in the output, so it's useful to give them meaningful names to help you understand what went wrong.
 
 - The test function will be run once for each set of parameters in the list.
 
@@ -135,7 +136,7 @@ This is a much more concise way to write tests for functions that need to be tes
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Challenge - Practice with Parametrization
+## Practice with Parametrization
 
 Add the following function to `advanced/advanced_calculator.py` and write a parametrized test for it in `tests/test_advanced_calculator.py` that tests the function with a range of different inputs
 using parametrization.
@@ -158,7 +159,7 @@ def is_prime(n: int) -> bool:
 import pytest
 
 @pytest.mark.parametrize(
-    ("n, expected"),
+    "n, expected",
     [
         pytest.param(0, False, id="0 is not prime"),
         pytest.param(1, False, id="1 is not prime"),
