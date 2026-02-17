@@ -4,7 +4,7 @@ teaching: 10
 exercises: 2
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+:::::::::::::::::::::::::::::::::::::: questions
 
 - How do I use pytest to run my tests?
 - What does the output of pytest look like and how do I interpret it?
@@ -84,17 +84,19 @@ Let's break down the successful output in more detail.
 ```
 - The first line tells us that pytest has started running tests.
 ```
-platform darwin -- Python 3.11.0, pytest-8.1.1, pluggy-1.4.0
+platform linux -- Python 3.12.3, pytest-9.0.2, pluggy-1.6.0
+
 ```
 - The next line just tells us the versions of several packages.
 ```
-rootdir: /Users/sylvi/Documents/GitKraken/python-testing-for-research/episodes/files/03-interacting-with-tests
+rootdir: /home/<userid>/.../python-testing-for-research/learners/files/03-interacting-with-tests
+
 ```
 - The next line tells us where the tests are being searched for. In this case, it is your project directory. So any file that starts or ends with `test` anywhere in this directory will be opened and searched for test functions.
 ```
-plugins: regtest-2.1.1
+plugins: snaptol-0.0.2
 ```
-- This tells us what plugins are being used. In my case, I have a plugin called `regtest` that is being used, but you may not. This is fine and you can ignore it.
+- This tells us what plugins are being used. In my case, I have a plugin called `snaptol` that is being used, but you may not. This is fine and you can ignore it.
 
 ```
 collected 3 items
@@ -102,7 +104,7 @@ collected 3 items
 - This simply tells us that 3 tests have been found and are ready to be run.
 
 ```
-advanced/test_advanced_calculator.py . 
+advanced/test_advanced_calculator.py .
 test_calculator.py ..    [100%]
 ```
 - These two lines tells us that the tests in `test_calculator.py` and `advanced/test_advanced_calculator.py` have passed. Each `.` means that a test has passed. There are two of them beside `test_calculator.py` because there are two tests in `test_calculator.py` If a test fails, it will show an `F` instead of a `.`.
@@ -115,15 +117,15 @@ test_calculator.py ..    [100%]
 - This tells us that the 3 tests have passed in 0.01 seconds.
 
 ### Case 2: Some or all tests fail
-Now let's look at the output when the tests fail. Edit a test in `test_calculator.py` to make it fail (for example switching the `+` in `add` to a `-`), then run `pytest` again.
+Now let's look at the output when the tests fail. Edit a test in `test_calculator.py` to make it fail (for example switching a positive number to a negative number), then run `pytest` again.
 
 The start is much the same as before:
 
 ```
 === test session starts ===
-platform darwin -- Python 3.11.0, pytest-8.1.1, pluggy-1.4.0
-rootdir: /Users/sylvi/Documents/GitKraken/python-testing-for-research/episodes/files/03-interacting-with-tests
-plugins: regtest-2.1.1
+platform linux -- Python 3.12.3, pytest-9.0.2, pluggy-1.6.0
+rootdir: /home/<userid>/.../python-testing-for-research/learners/files/03-interacting-with-tests
+plugins: snaptol-0.0.2
 collected 3 items
 ```
 
@@ -131,7 +133,7 @@ But now we see that the tests have failed:
 
 ```
 advanced/test_advanced_calculator.py .                                                                                                                                                                                                                                                                                                                                      [ 33%]
-test_calculator.py F. 
+test_calculator.py F.
 ```
 
 These `F` tells us that a test has failed. The output then tells us which test has failed:
@@ -142,26 +144,26 @@ These `F` tells us that a test has failed. The output then tells us which test h
 ___ test_add ___
     def test_add():
         """Test for the add function"""
->       assert add(1, 2) == 3
-E       assert -1 == 3
-E       +  where -1 = add(1, 2)
+>       assert add(1, 2) == -3
+E       assert 3 == -3
+E       +  where 3 = add(1, 2)
 
-test_calculator.py:21: AssertionError
+test_calculator.py:7: AssertionError
 ```
 
 This is where we get detailled information about what exactly broke in the test.
 
 - The `>` chevron points to the line that failed in the test. In this case, the assertion `assert add(1, 2) == 3` failed.
-- The following line tells us what the assertion tried to do. In this case, it tried to assert that the number -1 was equal to 3. Which of course it isn't.
-- The next line goes into more detail about why it tried to equate -1 to 3. It tells us that -1 is the result of calling `add(1, 2)`.
-- The final line tells us where the test failed. In this case, it was on line 21 of `test_calculator.py`.
+- The following line tells us what the assertion tried to do. In this case, it tried to assert that the number 3 was equal to -3. Which of course it isn't.
+- The next line goes into more detail about why it tried to equate 3 to -3. It tells us that 3 is the result of calling `add(1, 2)`.
+- The final line tells us where the test failed. In this case, it was on line 7 of `test_calculator.py`.
 
 Using this detailled output, we can quickly find the exact line that failed and know the inputs that caused the failure. From there, we can examine exactly what went wrong and fix it.
 
 Finally, pytest prints out a short summary of all the failed tests:
 ```
 === short test summary info ===
-FAILED test_calculator.py::test_add - assert -1 == 3
+FAILED test_calculator.py::test_add - assert 3 == -3
 === 1 failed, 2 passed in 0.01s ===
 ```
 
@@ -177,17 +179,14 @@ For example, if you remove the `:` from the end of the `def test_multiply():` fu
 
 ```
 === test session starts ===
-platform darwin -- Python 3.11.0, pytest-8.1.1, pluggy-1.4.0
-Matplotlib: 3.9.0
-Freetype: 2.6.1
-rootdir: /Users/sylvi/Documents/GitKraken/python-testing-for-research/episodes/files/03-interacting-with-tests.Rmd
-plugins: mpl-0.17.0, regtest-2.1.1
-collected 1 item / 1 error   
-
+platform linux -- Python 3.12.3, pytest-9.0.2, pluggy-1.6.0
+rootdir: /home/<userid>/.../python-testing-for-research/learners/files/03-interacting-with-tests
+plugins: snaptol-0.0.2
+collected 1 item / 1 error
 === ERRORS ===
 ___ ERROR collecting test_calculator.py ___
 ...
-E     File "/Users/sylvi/Documents/GitKraken/python-testing-for-research/episodes/files/03-interacting-with-tests.Rmd/test_calculator.py", line 14
+E     File "/home/<userid>/.../python-testing-for-research/learners/files/03-interacting-with-tests/test_calculator.py", line 14
 E       def test_multiply()
 E                          ^
 E   SyntaxError: expected ':'
@@ -221,6 +220,10 @@ Alternatively you can call a specific test using this notation: `pytest test_cal
 
 If you want to stop running tests after the first failure, you can use the `-x` flag. This will cause pytest to stop running tests after the first failure. This is useful when you have lots of tests that take a while to run.
 
+### Running tests that previously failed
+
+If you don't want to rerun your entire test suite after a single test failure, the `--lf` flag will run only the 'last failed' tests. Alternatively, `--ff` will run the tests that failed first.
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ## Challenge - Experiment with pytest options
@@ -243,12 +246,12 @@ Try running pytest with the above options, editing the code to make the tests fa
 
 :::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: keypoints 
+::::::::::::::::::::::::::::::::::::: keypoints
 
 - You can run multiple tests at once by running `pytest` in the terminal.
 - Pytest searches for tests in files that start or end with 'test' in the current directory and subdirectories.
 - The output of pytest tells you which tests have passed and which have failed and precisely why they failed.
-- Flags such as `-v`, `-q`, `-k`, and `-x` can be used to get more detailed output, less detailed output, run specific tests, and stop running tests after the first failure, respectively.
+- Pytest accepts many additional flags to change which tests are run, give more detailed output, etc.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

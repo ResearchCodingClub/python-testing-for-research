@@ -13,7 +13,8 @@ Attribution](https://creativecommons.org/licenses/by/4.0/) licence.
 [Changes have been
 made](https://github.com/RSE-Sheffield/fair4rs-lesson-setup) to adapt the
 template to the specific context of the University of Sheffield's FAIR
-for Research Software training programme.
+for Research Software training programme, and altered further by
+the University of York [Research Coding Club](https://researchcodingclub.github.io/).
 
 Unless otherwise noted, the instructional material in this lesson is
 made available under the [Creative Commons Attribution
@@ -35,7 +36,7 @@ Under the following terms:
 
 - **Attribution**---You must give appropriate credit (mentioning that
   your work is derived from work that is Copyright (c) The University
-  of Sheffield and, where practical, provide a [link to the
+  of York and, where practical, provide a [link to the
   license][cc-by-human], and indicate if changes were made. You may do
   so in any reasonable manner, but not in any way that suggests the
   licensor endorses you or your use.
@@ -59,7 +60,7 @@ Except where otherwise noted, the example programs and other software
 provided in this work are made available under the [OSI][osi]-approved
 [MIT license][mit-license].
 
-Copyright (c) The University of Sheffield
+Copyright (c) The University of York
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
