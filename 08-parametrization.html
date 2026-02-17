@@ -426,22 +426,22 @@ triangle’s area from its side lengths.</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">def</span> Point:</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>   <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x, y):</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>       <span class="va">self</span>.x <span class="op">=</span> x</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>       <span class="va">self</span>.y <span class="op">=</span> y</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">class</span> Point:</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x, y):</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> x</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>        <span class="va">self</span>.y <span class="op">=</span> y</span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="kw">class</span> Triangle:</span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>   <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, p1: Point, p2: Point, p3: Point):</span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>      <span class="va">self</span>.p1 <span class="op">=</span> p1</span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>      <span class="va">self</span>.p2 <span class="op">=</span> p2</span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>      <span class="va">self</span>.p3 <span class="op">=</span> p3</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, p1: Point, p2: Point, p3: Point):</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>        <span class="va">self</span>.p1 <span class="op">=</span> p1</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>        <span class="va">self</span>.p2 <span class="op">=</span> p2</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>        <span class="va">self</span>.p3 <span class="op">=</span> p3</span>
 <span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>   <span class="kw">def</span> calculate_area(<span class="va">self</span>):</span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>      a <span class="op">=</span> ((<span class="va">self</span>.p1.x <span class="op">*</span> (<span class="va">self</span>.p2.y <span class="op">-</span> <span class="va">self</span>.p3.y)) <span class="op">+</span></span>
-<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>           (<span class="va">self</span>.p2.x <span class="op">*</span> (<span class="va">self</span>.p3.y <span class="op">-</span> <span class="va">self</span>.p1.y)) <span class="op">+</span></span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>           (<span class="va">self</span>.p3.x <span class="op">*</span> (<span class="va">self</span>.p1.y <span class="op">-</span> <span class="va">self</span>.p2.y))) <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>      <span class="cf">return</span> <span class="bu">abs</span>(a)</span></code></pre>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>    <span class="kw">def</span> calculate_area(<span class="va">self</span>):</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>        a <span class="op">=</span> ((<span class="va">self</span>.p1.x <span class="op">*</span> (<span class="va">self</span>.p2.y <span class="op">-</span> <span class="va">self</span>.p3.y)) <span class="op">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>             (<span class="va">self</span>.p2.x <span class="op">*</span> (<span class="va">self</span>.p3.y <span class="op">-</span> <span class="va">self</span>.p1.y)) <span class="op">+</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>             (<span class="va">self</span>.p3.x <span class="op">*</span> (<span class="va">self</span>.p1.y <span class="op">-</span> <span class="va">self</span>.p2.y))) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">abs</span>(a)</span></code></pre>
 </div>
 <p>If we want to test this function with different combinations of
 sides, we could write a test like this:</p>
@@ -449,42 +449,42 @@ sides, we could write a test like this:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> test_calculate_area():</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>   <span class="co">"""Test the calculate_area function of the Triangle class"""</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    <span class="co">"""Test the calculate_area function of the Triangle class"""</span></span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>   <span class="co"># Equilateral triangle</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>   p11 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>   p12 <span class="op">=</span> Point(<span class="dv">2</span>, <span class="dv">0</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>   p13 <span class="op">=</span> Point(<span class="dv">1</span>, <span class="fl">1.7320</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>   t1 <span class="op">=</span> Triangle(p11, p12, p13)</span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>   <span class="cf">assert</span> t1.calculate_area() <span class="op">==</span> <span class="dv">6</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>    <span class="co"># Equilateral triangle</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    p11 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>    p12 <span class="op">=</span> Point(<span class="dv">2</span>, <span class="dv">0</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>    p13 <span class="op">=</span> Point(<span class="dv">1</span>, <span class="fl">1.7320</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>    t1 <span class="op">=</span> Triangle(p11, p12, p13)</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>    <span class="cf">assert</span> t1.calculate_area() <span class="op">==</span> <span class="dv">6</span></span>
 <span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>   <span class="co"># Right-angled triangle</span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>   p21 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>   p22 <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">0</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>   p23 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">4</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>   t2 <span class="op">=</span> Triangle(p21, p22, p23)</span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>   <span class="cf">assert</span> t2.calculate_area() <span class="op">==</span> <span class="dv">6</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>    <span class="co"># Right-angled triangle</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>    p21 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>    p22 <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">0</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>    p23 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">4</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>    t2 <span class="op">=</span> Triangle(p21, p22, p23)</span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>    <span class="cf">assert</span> t2.calculate_area() <span class="op">==</span> <span class="dv">6</span></span>
 <span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>   <span class="co"># Isosceles triangle</span></span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>   p31 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>   p32 <span class="op">=</span> Point(<span class="dv">4</span>, <span class="dv">0</span>)</span>
-<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>   p33 <span class="op">=</span> Point(<span class="dv">2</span>, <span class="dv">8</span>)</span>
-<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>   t3 <span class="op">=</span> Triangle(p31, p32, p33)</span>
-<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>   <span class="cf">assert</span> t3.calculate_area() <span class="op">==</span> <span class="dv">16</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>    <span class="co"># Isosceles triangle</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>    p31 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>    p32 <span class="op">=</span> Point(<span class="dv">4</span>, <span class="dv">0</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>    p33 <span class="op">=</span> Point(<span class="dv">2</span>, <span class="dv">8</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>    t3 <span class="op">=</span> Triangle(p31, p32, p33)</span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>    <span class="cf">assert</span> t3.calculate_area() <span class="op">==</span> <span class="dv">16</span></span>
 <span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>   <span class="co"># Scalene triangle</span></span>
-<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>   p41 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>   p42 <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">0</span>)</span>
-<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a>   p43 <span class="op">=</span> Point(<span class="dv">1</span>, <span class="dv">4</span>)</span>
-<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a>   t4 <span class="op">=</span> Triangle(p41, p42, p43)</span>
-<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a>   <span class="cf">assert</span> t4.calculate_area() <span class="op">==</span> <span class="dv">6</span></span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>    <span class="co"># Scalene triangle</span></span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>    p41 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>    p42 <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">0</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a>    p43 <span class="op">=</span> Point(<span class="dv">1</span>, <span class="dv">4</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a>    t4 <span class="op">=</span> Triangle(p41, p42, p43)</span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a>    <span class="cf">assert</span> t4.calculate_area() <span class="op">==</span> <span class="dv">6</span></span>
 <span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a>   <span class="co"># Negative values</span></span>
-<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a>   p51 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a>   p52 <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="dv">0</span>)</span>
-<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a>   p53 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="op">-</span><span class="dv">4</span>)</span>
-<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a>   t5 <span class="op">=</span> Triangle(p51, p52, p53)</span>
-<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a>   <span class="cf">assert</span> t5.calculate_area() <span class="op">==</span> <span class="dv">6</span></span></code></pre>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a>    <span class="co"># Negative values</span></span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a>    p51 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a>    p52 <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="dv">0</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a>    p53 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="op">-</span><span class="dv">4</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a>    t5 <span class="op">=</span> Triangle(p51, p52, p53)</span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a>    <span class="cf">assert</span> t5.calculate_area() <span class="op">==</span> <span class="dv">6</span></span></code></pre>
 </div>
 <p>This test is quite long and repetitive. We can use parametrization to
 make it more concise:</p>
@@ -494,21 +494,21 @@ make it more concise:</p>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="im">import</span> pytest</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="at">@pytest.mark.parametrize</span>(</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>   (<span class="st">"p1x, p1y, p2x, p2y, p3x, p3y, expected"</span>),</span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>   [</span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>      pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">1.7320</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Equilateral triangle"</span>),</span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>      pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Right-angled triangle"</span>),</span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>      pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">16</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Isosceles triangle"</span>),</span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>      pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Scalene triangle"</span>),</span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>      pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Negative values"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>   ]</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    (<span class="st">"p1x, p1y, p2x, p2y, p3x, p3y, expected"</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    [</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">1.7320</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Equilateral triangle"</span>),</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Right-angled triangle"</span>),</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">16</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Isosceles triangle"</span>),</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Scalene triangle"</span>),</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Negative values"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>    ]</span>
 <span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>)</span>
 <span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="kw">def</span> test_calculate_area(p1x, p1y, p2x, p2y, p3x, p3y, expected):</span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>   p1 <span class="op">=</span> Point(p1x, p1y)</span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>   p2 <span class="op">=</span> Point(p2x, p2y)</span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>   p3 <span class="op">=</span> Point(p3x, p3y)</span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>   t <span class="op">=</span> Triangle(p1, p2, p3)</span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>   <span class="cf">assert</span> t.calculate_area() <span class="op">==</span> expected</span></code></pre>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>    p1 <span class="op">=</span> Point(p1x, p1y)</span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>    p2 <span class="op">=</span> Point(p2x, p2y)</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>    p3 <span class="op">=</span> Point(p3x, p3y)</span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>    t <span class="op">=</span> Triangle(p1, p2, p3)</span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>    <span class="cf">assert</span> t.calculate_area() <span class="op">==</span> expected</span></code></pre>
 </div>
 <p>Let’s have a look at how this works.</p>
 <p>Similar to how fixtures are defined, the
@@ -572,7 +572,7 @@ the function with a range of different inputs using parametrization.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -580,37 +580,37 @@ the function with a range of different inputs using parametrization.</p>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="im">import</span> pytest</span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="at">@pytest.mark.parametrize</span>(</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>   (<span class="st">"n, expected"</span>),</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>   [</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>      pytest.param(<span class="dv">0</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"0 is not prime"</span>),</span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>      pytest.param(<span class="dv">1</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"1 is not prime"</span>),</span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>      pytest.param(<span class="dv">2</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"2 is prime"</span>),</span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>      pytest.param(<span class="dv">3</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"3 is prime"</span>),</span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>      pytest.param(<span class="dv">4</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"4 is not prime"</span>),</span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>      pytest.param(<span class="dv">5</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"5 is prime"</span>),</span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>      pytest.param(<span class="dv">6</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"6 is not prime"</span>),</span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>      pytest.param(<span class="dv">7</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"7 is prime"</span>),</span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>      pytest.param(<span class="dv">8</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"8 is not prime"</span>),</span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>      pytest.param(<span class="dv">9</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"9 is not prime"</span>),</span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>      pytest.param(<span class="dv">10</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"10 is not prime"</span>),</span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>      pytest.param(<span class="dv">11</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"11 is prime"</span>),</span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>      pytest.param(<span class="dv">12</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"12 is not prime"</span>),</span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a>      pytest.param(<span class="dv">13</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"13 is prime"</span>),</span>
-<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a>      pytest.param(<span class="dv">14</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"14 is not prime"</span>),</span>
-<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a>      pytest.param(<span class="dv">15</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"15 is not prime"</span>),</span>
-<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a>      pytest.param(<span class="dv">16</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"16 is not prime"</span>),</span>
-<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a>      pytest.param(<span class="dv">17</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"17 is prime"</span>),</span>
-<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a>      pytest.param(<span class="dv">18</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"18 is not prime"</span>),</span>
-<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a>      pytest.param(<span class="dv">19</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"19 is prime"</span>),</span>
-<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a>      pytest.param(<span class="dv">20</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"20 is not prime"</span>),</span>
-<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a>      pytest.param(<span class="dv">21</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"21 is not prime"</span>),</span>
-<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a>      pytest.param(<span class="dv">22</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"22 is not prime"</span>),</span>
-<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a>      pytest.param(<span class="dv">23</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"23 is prime"</span>),</span>
-<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a>      pytest.param(<span class="dv">24</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"24 is not prime"</span>),</span>
-<span id="cb5-31"><a href="#cb5-31" tabindex="-1"></a>   ]</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    (<span class="st">"n, expected"</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    [</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"0 is not prime"</span>),</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>        pytest.param(<span class="dv">1</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"1 is not prime"</span>),</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>        pytest.param(<span class="dv">2</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"2 is prime"</span>),</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>        pytest.param(<span class="dv">3</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"3 is prime"</span>),</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>        pytest.param(<span class="dv">4</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"4 is not prime"</span>),</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>        pytest.param(<span class="dv">5</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"5 is prime"</span>),</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>        pytest.param(<span class="dv">6</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"6 is not prime"</span>),</span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>        pytest.param(<span class="dv">7</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"7 is prime"</span>),</span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>        pytest.param(<span class="dv">8</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"8 is not prime"</span>),</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>        pytest.param(<span class="dv">9</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"9 is not prime"</span>),</span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>        pytest.param(<span class="dv">10</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"10 is not prime"</span>),</span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>        pytest.param(<span class="dv">11</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"11 is prime"</span>),</span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>        pytest.param(<span class="dv">12</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"12 is not prime"</span>),</span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a>        pytest.param(<span class="dv">13</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"13 is prime"</span>),</span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a>        pytest.param(<span class="dv">14</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"14 is not prime"</span>),</span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a>        pytest.param(<span class="dv">15</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"15 is not prime"</span>),</span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a>        pytest.param(<span class="dv">16</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"16 is not prime"</span>),</span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a>        pytest.param(<span class="dv">17</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"17 is prime"</span>),</span>
+<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a>        pytest.param(<span class="dv">18</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"18 is not prime"</span>),</span>
+<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a>        pytest.param(<span class="dv">19</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"19 is prime"</span>),</span>
+<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a>        pytest.param(<span class="dv">20</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"20 is not prime"</span>),</span>
+<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a>        pytest.param(<span class="dv">21</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"21 is not prime"</span>),</span>
+<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a>        pytest.param(<span class="dv">22</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"22 is not prime"</span>),</span>
+<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a>        pytest.param(<span class="dv">23</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"23 is prime"</span>),</span>
+<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a>        pytest.param(<span class="dv">24</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"24 is not prime"</span>),</span>
+<span id="cb5-31"><a href="#cb5-31" tabindex="-1"></a>    ]</span>
 <span id="cb5-32"><a href="#cb5-32" tabindex="-1"></a>)</span>
 <span id="cb5-33"><a href="#cb5-33" tabindex="-1"></a><span class="kw">def</span> test_is_prime(n, expected):</span>
-<span id="cb5-34"><a href="#cb5-34" tabindex="-1"></a>   <span class="cf">assert</span> is_prime(n) <span class="op">==</span> expected</span></code></pre>
+<span id="cb5-34"><a href="#cb5-34" tabindex="-1"></a>    <span class="cf">assert</span> is_prime(n) <span class="op">==</span> expected</span></code></pre>
 </div>
 </div>
 </div>

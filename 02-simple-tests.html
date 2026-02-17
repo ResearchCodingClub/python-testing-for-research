@@ -439,7 +439,7 @@ for those functions.</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b</span></code></pre>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span></code></pre>
 </div>
 <ul><li>And in <code>test_calculator.py</code>, write the test for the add
 function that we conceptualised in the previous lesson, but use the
@@ -452,14 +452,14 @@ functions:</li>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="im">from</span> calculator <span class="im">import</span> add</span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="kw">def</span> test_add():</span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>   <span class="co"># Check that it adds two positive integers</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>   <span class="cf">assert</span> add(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    <span class="co"># Check that it adds two positive integers</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>    <span class="cf">assert</span> add(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">3</span></span>
 <span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>   <span class="co"># Check that it adds zero</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>   <span class="cf">assert</span> add(<span class="dv">5</span>, <span class="dv">0</span>) <span class="op">==</span> <span class="dv">5</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>    <span class="co"># Check that it adds zero</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>    <span class="cf">assert</span> add(<span class="dv">5</span>, <span class="dv">0</span>) <span class="op">==</span> <span class="dv">5</span></span>
 <span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>   <span class="co"># Check that it adds two negative integers</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>   <span class="cf">assert</span> add(<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span></code></pre>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>    <span class="co"># Check that it adds two negative integers</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>    <span class="cf">assert</span> add(<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span></code></pre>
 </div>
 <p>The <code>assert</code> statement will crash the test by raising an
 <code>AssertionError</code> if the condition following it is false.
@@ -478,7 +478,7 @@ running this command)</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">❯</span> pytest ./</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">❯</span> pytest</span></code></pre>
 </div>
 <p>This command tells Pytest to run all the tests in the current
 directory.</p>
@@ -508,7 +508,7 @@ a real testing situation, we would know to investigate the
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> multiply(a, b):</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">*</span> b</span></code></pre>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span></code></pre>
 </div>
 <ul><li>Then write a test for this function in
 <code>test_calculator.py</code>. Remember to import the
@@ -536,14 +536,14 @@ this function could look like this:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> test_multiply():</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  <span class="co"># Check that positive numbers work</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  <span class="cf">assert</span> multiply(<span class="dv">5</span>, <span class="dv">5</span>) <span class="op">==</span> <span class="dv">25</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>  <span class="co"># Check that multiplying by 1 works</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>  <span class="cf">assert</span> multiply(<span class="dv">1</span>, <span class="dv">5</span>) <span class="op">==</span> <span class="dv">5</span></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>  <span class="co"># Check that multiplying by 0 works</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>  <span class="cf">assert</span> multiply(<span class="dv">0</span>, <span class="dv">3</span>) <span class="op">==</span> <span class="dv">0</span></span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>  <span class="co"># Check that negative numbers work</span></span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>  <span class="cf">assert</span> multiply(<span class="op">-</span><span class="dv">5</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">10</span></span></code></pre>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    <span class="co"># Check that positive numbers work</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>    <span class="cf">assert</span> multiply(<span class="dv">5</span>, <span class="dv">5</span>) <span class="op">==</span> <span class="dv">25</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    <span class="co"># Check that multiplying by 1 works</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    <span class="cf">assert</span> multiply(<span class="dv">1</span>, <span class="dv">5</span>) <span class="op">==</span> <span class="dv">5</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>    <span class="co"># Check that multiplying by 0 works</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    <span class="cf">assert</span> multiply(<span class="dv">0</span>, <span class="dv">3</span>) <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>    <span class="co"># Check that negative numbers work</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>    <span class="cf">assert</span> multiply(<span class="op">-</span><span class="dv">5</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">10</span></span></code></pre>
 </div>
 </div>
 </div>

@@ -547,7 +547,7 @@ working as expected?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li>Perhaps during a project your code kept breaking and taking up a lot
@@ -667,15 +667,15 @@ it <code>test_add</code>:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> test_add():</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>   <span class="co"># Check that it adds two positive integers</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>   <span class="cf">if</span> add(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">!=</span> <span class="dv">3</span>:</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>   <span class="co"># Check that it adds zero</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>   <span class="cf">if</span> add(<span class="dv">5</span>, <span class="dv">0</span>) <span class="op">!=</span> <span class="dv">5</span>:</span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>   <span class="co"># Check that it adds two negative integers</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>   <span class="cf">if</span> add(<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>) <span class="op">!=</span> <span class="op">-</span><span class="dv">3</span>:</span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span></code></pre>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    <span class="co"># Check that it adds two positive integers</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>    <span class="cf">if</span> add(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">!=</span> <span class="dv">3</span>:</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    <span class="co"># Check that it adds zero</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>    <span class="cf">if</span> add(<span class="dv">5</span>, <span class="dv">0</span>) <span class="op">!=</span> <span class="dv">5</span>:</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>    <span class="co"># Check that it adds two negative integers</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>    <span class="cf">if</span> add(<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>) <span class="op">!=</span> <span class="op">-</span><span class="dv">3</span>:</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span></code></pre>
 </div>
 <p>Here we check that the function works for a set of test cases. We
 ensure that it works for positive numbers, negative numbers, and
@@ -696,7 +696,7 @@ these functions:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">def</span> greet_user(name):</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>   <span class="cf">return</span> <span class="st">"Hello"</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">"!"</span></span></code></pre>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Hello"</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">"!"</span></span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -712,7 +712,7 @@ these functions:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The first function will incorrectly greet the user, as it is missing
 a space after “Hello”. It would print <code>HelloAlice!</code> instead
@@ -723,8 +723,8 @@ was not working as expected:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> test_greet_user():</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>   <span class="cf">if</span> greet_user(<span class="st">"Alice"</span>) <span class="op">!=</span> <span class="st">"Hello Alice!"</span>:</span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span></code></pre>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>    <span class="cf">if</span> greet_user(<span class="st">"Alice"</span>) <span class="op">!=</span> <span class="st">"Hello Alice!"</span>:</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span></code></pre>
 </div>
 <p>The second function will crash if <code>x2 - x1</code> is zero.</p>
 <p>If we wrote a test for this function, it may have helped us to catch
@@ -733,21 +733,21 @@ this unexpected behaviour:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">def</span> test_gradient():</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>   <span class="cf">if</span> gradient(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>) <span class="op">!=</span> <span class="dv">1</span>:</span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>   <span class="cf">if</span> gradient(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="op">!=</span> <span class="dv">2</span>:</span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>   <span class="cf">if</span> gradient(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>) <span class="op">!=</span> <span class="st">"Undefined"</span>:</span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span></code></pre>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>    <span class="cf">if</span> gradient(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>) <span class="op">!=</span> <span class="dv">1</span>:</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>    <span class="cf">if</span> gradient(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="op">!=</span> <span class="dv">2</span>:</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>    <span class="cf">if</span> gradient(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>) <span class="op">!=</span> <span class="st">"Undefined"</span>:</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Test failed!"</span>)</span></code></pre>
 </div>
 <p>And we could have amended the function:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> gradient(x1, y1, x2, y2):</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>   <span class="cf">if</span> x2 <span class="op">-</span> x1 <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>      <span class="cf">return</span> <span class="st">"Undefined"</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>   <span class="cf">return</span> (y2 <span class="op">-</span> y1) <span class="op">/</span> (x2 <span class="op">-</span> x1)</span></code></pre>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    <span class="cf">if</span> x2 <span class="op">-</span> x1 <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Undefined"</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    <span class="cf">return</span> (y2 <span class="op">-</span> y1) <span class="op">/</span> (x2 <span class="op">-</span> x1)</span></code></pre>
 </div>
 </div>
 </div>
@@ -763,13 +763,13 @@ For example, consider the following function:</p>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a></span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="kw">def</span> multiply(a, b):</span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>      <span class="cf">return</span> a <span class="op">*</span> a</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> a</span>
 <span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
 <span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="kw">def</span> divide(a, b):</span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>      <span class="cf">return</span> a <span class="op">/</span> b</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">/</span> b</span>
 <span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a></span>
 <span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="kw">def</span> triangle_area(base, height):</span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>      <span class="cf">return</span> divide(multiply(base, height), <span class="dv">2</span>)</span></code></pre>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>    <span class="cf">return</span> divide(multiply(base, height), <span class="dv">2</span>)</span></code></pre>
 </div>
 <p>There is a bug in this code too, but since we have several functions
 calling each other, it is not immediately obvious where the bug is.
@@ -819,7 +819,7 @@ use?</li>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">def</span> drive_car(speed, direction):</span>
 <span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>   ... <span class="co"># complex car driving code</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>    ...  <span class="co"># complex car driving code</span></span>
 <span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a></span>
 <span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>    <span class="cf">return</span> speed, direction, brake_status</span></code></pre>
 </div>
@@ -831,7 +831,7 @@ use?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ul>
 <li>We might want to check that the speed is within a safe range.</li>
@@ -937,7 +937,7 @@ for those functions.</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b</span></code></pre>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span></code></pre>
 </div>
 <ul>
 <li>And in <code>test_calculator.py</code>, write the test for the add
@@ -952,14 +952,14 @@ functions:</li>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="im">from</span> calculator <span class="im">import</span> add</span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="kw">def</span> test_add():</span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>   <span class="co"># Check that it adds two positive integers</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>   <span class="cf">assert</span> add(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    <span class="co"># Check that it adds two positive integers</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>    <span class="cf">assert</span> add(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="dv">3</span></span>
 <span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>   <span class="co"># Check that it adds zero</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>   <span class="cf">assert</span> add(<span class="dv">5</span>, <span class="dv">0</span>) <span class="op">==</span> <span class="dv">5</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>    <span class="co"># Check that it adds zero</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>    <span class="cf">assert</span> add(<span class="dv">5</span>, <span class="dv">0</span>) <span class="op">==</span> <span class="dv">5</span></span>
 <span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>   <span class="co"># Check that it adds two negative integers</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>   <span class="cf">assert</span> add(<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span></code></pre>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>    <span class="co"># Check that it adds two negative integers</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>    <span class="cf">assert</span> add(<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span></code></pre>
 </div>
 <p>The <code>assert</code> statement will crash the test by raising an
 <code>AssertionError</code> if the condition following it is false.
@@ -978,7 +978,7 @@ running this command)</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">❯</span> pytest ./</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">❯</span> pytest</span></code></pre>
 </div>
 <p>This command tells Pytest to run all the tests in the current
 directory.</p>
@@ -1010,7 +1010,7 @@ a real testing situation, we would know to investigate the
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> multiply(a, b):</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">*</span> b</span></code></pre>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span></code></pre>
 </div>
 <ul>
 <li>Then write a test for this function in
@@ -1040,14 +1040,14 @@ this function could look like this:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> test_multiply():</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  <span class="co"># Check that positive numbers work</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  <span class="cf">assert</span> multiply(<span class="dv">5</span>, <span class="dv">5</span>) <span class="op">==</span> <span class="dv">25</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>  <span class="co"># Check that multiplying by 1 works</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>  <span class="cf">assert</span> multiply(<span class="dv">1</span>, <span class="dv">5</span>) <span class="op">==</span> <span class="dv">5</span></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>  <span class="co"># Check that multiplying by 0 works</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>  <span class="cf">assert</span> multiply(<span class="dv">0</span>, <span class="dv">3</span>) <span class="op">==</span> <span class="dv">0</span></span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>  <span class="co"># Check that negative numbers work</span></span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>  <span class="cf">assert</span> multiply(<span class="op">-</span><span class="dv">5</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">10</span></span></code></pre>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    <span class="co"># Check that positive numbers work</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>    <span class="cf">assert</span> multiply(<span class="dv">5</span>, <span class="dv">5</span>) <span class="op">==</span> <span class="dv">25</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    <span class="co"># Check that multiplying by 1 works</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    <span class="cf">assert</span> multiply(<span class="dv">1</span>, <span class="dv">5</span>) <span class="op">==</span> <span class="dv">5</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>    <span class="co"># Check that multiplying by 0 works</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    <span class="cf">assert</span> multiply(<span class="dv">0</span>, <span class="dv">3</span>) <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>    <span class="co"># Check that negative numbers work</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>    <span class="cf">assert</span> multiply(<span class="op">-</span><span class="dv">5</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">10</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1776,11 +1776,11 @@ project directory</li>
 <span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>    min_height: <span class="bu">int</span>,</span>
 <span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>    max_height: <span class="bu">int</span></span>
 <span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>):</span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>    <span class="co">"""Participants is a list of tuples, containing the age and height of each participant</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>    <span class="co">"""Participants is a list of dicts, containing the age and height of each participant</span></span>
 <span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co">    participants = [</span></span>
-<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">                      {age: 25, height: 180},</span></span>
-<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">                      {age: 30, height: 170},</span></span>
-<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="co">                      {age: 35, height: 160},</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">        {age: 25, height: 180},</span></span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">        {age: 30, height: 170},</span></span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="co">        {age: 35, height: 160},</span></span>
 <span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="co">    ]</span></span>
 <span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="co">    """</span></span>
 <span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a></span>
@@ -2056,9 +2056,9 @@ that tries to compute the square root of a negative number.</p>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a></span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">def</span> square_root(x):</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>   <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>      <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Cannot compute square root of negative number yet!"</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>   <span class="cf">return</span> x <span class="op">**</span> <span class="fl">0.5</span></span></code></pre>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Cannot compute square root of negative number yet!"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">**</span> <span class="fl">0.5</span></span></code></pre>
 </div>
 <p>We can test that the function raises an exception using
 <code>pytest.raises</code> as follows:</p>
@@ -2121,7 +2121,7 @@ denominator is zero.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2571,106 +2571,105 @@ how we have to repeat the exact same setup code in each test.</p>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a></span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">class</span> Point:</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>   <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x, y):</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>      <span class="va">self</span>.x <span class="op">=</span> x</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>      <span class="va">self</span>.y <span class="op">=</span> y</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x, y):</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> x</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>        <span class="va">self</span>.y <span class="op">=</span> y</span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>   <span class="kw">def</span> distance_from_origin(<span class="va">self</span>):</span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>      <span class="cf">return</span> (<span class="va">self</span>.x <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> <span class="va">self</span>.y <span class="op">**</span> <span class="dv">2</span>) <span class="op">**</span> <span class="fl">0.5</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>    <span class="kw">def</span> distance_from_origin(<span class="va">self</span>):</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>        <span class="cf">return</span> (<span class="va">self</span>.x <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> <span class="va">self</span>.y <span class="op">**</span> <span class="dv">2</span>) <span class="op">**</span> <span class="fl">0.5</span></span>
 <span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>   <span class="kw">def</span> move(<span class="va">self</span>, dx, dy):</span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>      <span class="va">self</span>.x <span class="op">+=</span> dx</span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>      <span class="va">self</span>.y <span class="op">+=</span> dy</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>    <span class="kw">def</span> move(<span class="va">self</span>, dx, dy):</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">+=</span> dx</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>        <span class="va">self</span>.y <span class="op">+=</span> dy</span>
 <span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>   </span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>   <span class="kw">def</span> reflect_over_x(<span class="va">self</span>):</span>
-<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>      <span class="va">self</span>.y <span class="op">=</span> <span class="op">-</span><span class="va">self</span>.y</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>    <span class="kw">def</span> reflect_over_x(<span class="va">self</span>):</span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>        <span class="va">self</span>.y <span class="op">=</span> <span class="op">-</span><span class="va">self</span>.y</span>
 <span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>   <span class="kw">def</span> reflect_over_y(<span class="va">self</span>):</span>
-<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>      <span class="va">self</span>.x <span class="op">=</span> <span class="op">-</span><span class="va">self</span>.x</span></code></pre>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>    <span class="kw">def</span> reflect_over_y(<span class="va">self</span>):</span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> <span class="op">-</span><span class="va">self</span>.x</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a></span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">def</span> test_distance_from_origin():</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>   <span class="co"># Positive coordinates</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>   point_positive_coords <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>   <span class="co"># Negative coordinates</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>   point_negative_coords <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>   <span class="co"># Mix of positive and negative coordinates</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>   point_mixed_coords <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>    <span class="co"># Positive coordinates</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>    point_positive_coords <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    <span class="co"># Negative coordinates</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>    point_negative_coords <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>    <span class="co"># Mix of positive and negative coordinates</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>    point_mixed_coords <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>)</span>
 <span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>   <span class="cf">assert</span> point_positive_coords.distance_from_origin() <span class="op">==</span> <span class="fl">5.0</span></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>   <span class="cf">assert</span> point_negative_coords.distance_from_origin() <span class="op">==</span> <span class="fl">5.0</span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>   <span class="cf">assert</span> point_mixed_coords.distance_from_origin() <span class="op">==</span> <span class="fl">5.0</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>    <span class="cf">assert</span> point_positive_coords.distance_from_origin() <span class="op">==</span> <span class="fl">5.0</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>    <span class="cf">assert</span> point_negative_coords.distance_from_origin() <span class="op">==</span> <span class="fl">5.0</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>    <span class="cf">assert</span> point_mixed_coords.distance_from_origin() <span class="op">==</span> <span class="fl">5.0</span></span>
 <span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a></span>
 <span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="kw">def</span> test_move():</span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>   <span class="co"># Repeated setup again...</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>    <span class="co"># Repeated setup again...</span></span>
 <span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>   <span class="co"># Positive coordinates</span></span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>   point_positive_coords <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>   <span class="co"># Negative coordinates</span></span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>   point_negative_coords <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>)</span>
-<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>   <span class="co"># Mix of positive and negative coordinates</span></span>
-<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>   point_mixed_coords <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>    <span class="co"># Positive coordinates</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>    point_positive_coords <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>    <span class="co"># Negative coordinates</span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>    point_negative_coords <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>    <span class="co"># Mix of positive and negative coordinates</span></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>    point_mixed_coords <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>)</span>
 <span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>   <span class="co"># Test logic</span></span>
-<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>   point_positive_coords.move(<span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>   point_negative_coords.move(<span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a>   point_mixed_coords.move(<span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a>   <span class="cf">assert</span> point_positive_coords.x <span class="op">==</span> <span class="dv">5</span></span>
-<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a>   <span class="cf">assert</span> point_positive_coords.y <span class="op">==</span> <span class="dv">3</span></span>
-<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a>   <span class="cf">assert</span> point_negative_coords.x <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a>   <span class="cf">assert</span> point_negative_coords.y <span class="op">==</span> <span class="op">-</span><span class="dv">5</span></span>
-<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a>   <span class="cf">assert</span> point_mixed_coords.x <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a>   <span class="cf">assert</span> point_mixed_coords.y <span class="op">==</span> <span class="dv">3</span></span>
-<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a></span>
-<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a><span class="kw">def</span> test_reflect_over_x():</span>
-<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a>   <span class="co"># Yet another setup repetition</span></span>
-<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a></span>
-<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a>   <span class="co"># Positive coordinates</span></span>
-<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a>   point_positive_coordinates <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a>   <span class="co"># Negative coordinates</span></span>
-<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a>   point_negative_coordinates <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>)</span>
-<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a>   <span class="co"># Mix of positive and negative coordinates</span></span>
-<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a>   point_mixed_coordinates <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a></span>
-<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a>   <span class="co"># Test logic</span></span>
-<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a>   point_positive_coordinates.reflect_over_x()</span>
-<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a>   point_negative_coordinates.reflect_over_x()</span>
-<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a>   point_mixed_coordinates.reflect_over_x()</span>
-<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a></span>
-<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a>   <span class="cf">assert</span> point_positive_coordinates.x <span class="op">==</span> <span class="dv">3</span></span>
-<span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a>   <span class="cf">assert</span> point_positive_coordinates.y <span class="op">==</span> <span class="op">-</span><span class="dv">4</span></span>
-<span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a>   <span class="cf">assert</span> point_negative_coordinates.x <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span>
-<span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a>   <span class="cf">assert</span> point_negative_coordinates.y <span class="op">==</span> <span class="dv">4</span></span>
-<span id="cb2-56"><a href="#cb2-56" tabindex="-1"></a>   <span class="cf">assert</span> point_mixed_coordinates.x <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span>
-<span id="cb2-57"><a href="#cb2-57" tabindex="-1"></a>   <span class="cf">assert</span> point_mixed_coordinates.y <span class="op">==</span> <span class="op">-</span><span class="dv">4</span></span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a>    <span class="co"># Test logic</span></span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>    point_positive_coords.move(<span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>    point_negative_coords.move(<span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>    point_mixed_coords.move(<span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a>    <span class="cf">assert</span> point_positive_coords.x <span class="op">==</span> <span class="dv">5</span></span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a>    <span class="cf">assert</span> point_positive_coords.y <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a>    <span class="cf">assert</span> point_negative_coords.x <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a>    <span class="cf">assert</span> point_negative_coords.y <span class="op">==</span> <span class="op">-</span><span class="dv">5</span></span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a>    <span class="cf">assert</span> point_mixed_coords.x <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a>    <span class="cf">assert</span> point_mixed_coords.y <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a><span class="kw">def</span> test_reflect_over_x():</span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a>    <span class="co"># Yet another setup repetition</span></span>
+<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a>    <span class="co"># Positive coordinates</span></span>
+<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a>    point_positive_coordinates <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a>    <span class="co"># Negative coordinates</span></span>
+<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a>    point_negative_coordinates <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>)</span>
+<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a>    <span class="co"># Mix of positive and negative coordinates</span></span>
+<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a>    point_mixed_coordinates <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a>    <span class="co"># Test logic</span></span>
+<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a>    point_positive_coordinates.reflect_over_x()</span>
+<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a>    point_negative_coordinates.reflect_over_x()</span>
+<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a>    point_mixed_coordinates.reflect_over_x()</span>
+<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a>    <span class="cf">assert</span> point_positive_coordinates.x <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a>    <span class="cf">assert</span> point_positive_coordinates.y <span class="op">==</span> <span class="op">-</span><span class="dv">4</span></span>
+<span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a>    <span class="cf">assert</span> point_negative_coordinates.x <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span>
+<span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a>    <span class="cf">assert</span> point_negative_coordinates.y <span class="op">==</span> <span class="dv">4</span></span>
+<span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a>    <span class="cf">assert</span> point_mixed_coordinates.x <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span>
+<span id="cb2-56"><a href="#cb2-56" tabindex="-1"></a>    <span class="cf">assert</span> point_mixed_coordinates.y <span class="op">==</span> <span class="op">-</span><span class="dv">4</span></span>
+<span id="cb2-57"><a href="#cb2-57" tabindex="-1"></a></span>
 <span id="cb2-58"><a href="#cb2-58" tabindex="-1"></a></span>
-<span id="cb2-59"><a href="#cb2-59" tabindex="-1"></a></span>
-<span id="cb2-60"><a href="#cb2-60" tabindex="-1"></a><span class="kw">def</span> test_reflect_over_y():</span>
-<span id="cb2-61"><a href="#cb2-61" tabindex="-1"></a>   <span class="co"># One more time...</span></span>
-<span id="cb2-62"><a href="#cb2-62" tabindex="-1"></a></span>
-<span id="cb2-63"><a href="#cb2-63" tabindex="-1"></a>   <span class="co"># Positive coordinates</span></span>
-<span id="cb2-64"><a href="#cb2-64" tabindex="-1"></a>   point_positive_coordinates <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb2-65"><a href="#cb2-65" tabindex="-1"></a>   <span class="co"># Negative coordinates</span></span>
-<span id="cb2-66"><a href="#cb2-66" tabindex="-1"></a>   point_negative_coordinates <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>)</span>
-<span id="cb2-67"><a href="#cb2-67" tabindex="-1"></a>   <span class="co"># Mix of positive and negative coordinates</span></span>
-<span id="cb2-68"><a href="#cb2-68" tabindex="-1"></a>   point_mixed_coordinates <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb2-69"><a href="#cb2-69" tabindex="-1"></a></span>
-<span id="cb2-70"><a href="#cb2-70" tabindex="-1"></a>   <span class="co"># Test logic</span></span>
-<span id="cb2-71"><a href="#cb2-71" tabindex="-1"></a>   point_positive_coordinates.reflect_over_y()</span>
-<span id="cb2-72"><a href="#cb2-72" tabindex="-1"></a>   point_negative_coordinates.reflect_over_y()</span>
-<span id="cb2-73"><a href="#cb2-73" tabindex="-1"></a>   point_mixed_coordinates.reflect_over_y()</span>
-<span id="cb2-74"><a href="#cb2-74" tabindex="-1"></a></span>
-<span id="cb2-75"><a href="#cb2-75" tabindex="-1"></a>   <span class="cf">assert</span> point_positive_coordinates.x <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span>
-<span id="cb2-76"><a href="#cb2-76" tabindex="-1"></a>   <span class="cf">assert</span> point_positive_coordinates.y <span class="op">==</span> <span class="dv">4</span></span>
-<span id="cb2-77"><a href="#cb2-77" tabindex="-1"></a>   <span class="cf">assert</span> point_negative_coordinates.x <span class="op">==</span> <span class="dv">3</span></span>
-<span id="cb2-78"><a href="#cb2-78" tabindex="-1"></a>   <span class="cf">assert</span> point_negative_coordinates.y <span class="op">==</span> <span class="op">-</span><span class="dv">4</span></span>
-<span id="cb2-79"><a href="#cb2-79" tabindex="-1"></a>   <span class="cf">assert</span> point_mixed_coordinates.x <span class="op">==</span> <span class="dv">3</span></span>
-<span id="cb2-80"><a href="#cb2-80" tabindex="-1"></a>   <span class="cf">assert</span> point_mixed_coordinates.y <span class="op">==</span> <span class="dv">4</span></span></code></pre>
+<span id="cb2-59"><a href="#cb2-59" tabindex="-1"></a><span class="kw">def</span> test_reflect_over_y():</span>
+<span id="cb2-60"><a href="#cb2-60" tabindex="-1"></a>    <span class="co"># One more time...</span></span>
+<span id="cb2-61"><a href="#cb2-61" tabindex="-1"></a></span>
+<span id="cb2-62"><a href="#cb2-62" tabindex="-1"></a>    <span class="co"># Positive coordinates</span></span>
+<span id="cb2-63"><a href="#cb2-63" tabindex="-1"></a>    point_positive_coordinates <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb2-64"><a href="#cb2-64" tabindex="-1"></a>    <span class="co"># Negative coordinates</span></span>
+<span id="cb2-65"><a href="#cb2-65" tabindex="-1"></a>    point_negative_coordinates <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>)</span>
+<span id="cb2-66"><a href="#cb2-66" tabindex="-1"></a>    <span class="co"># Mix of positive and negative coordinates</span></span>
+<span id="cb2-67"><a href="#cb2-67" tabindex="-1"></a>    point_mixed_coordinates <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb2-68"><a href="#cb2-68" tabindex="-1"></a></span>
+<span id="cb2-69"><a href="#cb2-69" tabindex="-1"></a>    <span class="co"># Test logic</span></span>
+<span id="cb2-70"><a href="#cb2-70" tabindex="-1"></a>    point_positive_coordinates.reflect_over_y()</span>
+<span id="cb2-71"><a href="#cb2-71" tabindex="-1"></a>    point_negative_coordinates.reflect_over_y()</span>
+<span id="cb2-72"><a href="#cb2-72" tabindex="-1"></a>    point_mixed_coordinates.reflect_over_y()</span>
+<span id="cb2-73"><a href="#cb2-73" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" tabindex="-1"></a>    <span class="cf">assert</span> point_positive_coordinates.x <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span>
+<span id="cb2-75"><a href="#cb2-75" tabindex="-1"></a>    <span class="cf">assert</span> point_positive_coordinates.y <span class="op">==</span> <span class="dv">4</span></span>
+<span id="cb2-76"><a href="#cb2-76" tabindex="-1"></a>    <span class="cf">assert</span> point_negative_coordinates.x <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb2-77"><a href="#cb2-77" tabindex="-1"></a>    <span class="cf">assert</span> point_negative_coordinates.y <span class="op">==</span> <span class="op">-</span><span class="dv">4</span></span>
+<span id="cb2-78"><a href="#cb2-78" tabindex="-1"></a>    <span class="cf">assert</span> point_mixed_coordinates.x <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb2-79"><a href="#cb2-79" tabindex="-1"></a>    <span class="cf">assert</span> point_mixed_coordinates.y <span class="op">==</span> <span class="dv">4</span></span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="fixtures">Fixtures<a class="anchor" aria-label="anchor" href="#fixtures"></a>
 </h2>
@@ -2693,10 +2692,10 @@ to let pytest know that this function is a fixture.)</p>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="at">@pytest.fixture</span></span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="kw">def</span> my_fixture():</span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>   <span class="cf">return</span> <span class="st">"Hello, world!"</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Hello, world!"</span></span>
 <span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a></span>
 <span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="kw">def</span> test_my_fixture(my_fixture):</span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>   <span class="cf">assert</span> my_fixture <span class="op">==</span> <span class="st">"Hello, world!"</span></span></code></pre>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>    <span class="cf">assert</span> my_fixture <span class="op">==</span> <span class="st">"Hello, world!"</span></span></code></pre>
 </div>
 <p>Here, Pytest will notice that <code>my_fixture</code> is a fixture
 due to the <code>@pytest.fixture</code> decorator, and will run
@@ -2711,56 +2710,56 @@ class using fixtures:</p>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="at">@pytest.fixture</span></span>
 <span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">def</span> point_positive_3_4():</span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>   <span class="cf">return</span> Point(<span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    <span class="cf">return</span> Point(<span class="dv">3</span>, <span class="dv">4</span>)</span>
 <span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a></span>
 <span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="at">@pytest.fixture</span></span>
 <span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="kw">def</span> point_negative_3_4():</span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>   <span class="cf">return</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>    <span class="cf">return</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>)</span>
 <span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a></span>
 <span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="at">@pytest.fixture</span></span>
 <span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="kw">def</span> point_mixed_3_4():</span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>   <span class="cf">return</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>    <span class="cf">return</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>)</span>
 <span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a></span>
 <span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="kw">def</span> test_distance_from_origin(point_positive_3_4, point_negative_3_4, point_mixed_3_4):</span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a>   <span class="cf">assert</span> point_positive_3_4.distance_from_origin() <span class="op">==</span> <span class="fl">5.0</span></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a>   <span class="cf">assert</span> point_negative_3_4.distance_from_origin() <span class="op">==</span> <span class="fl">5.0</span></span>
-<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>   <span class="cf">assert</span> point_mixed_3_4.distance_from_origin() <span class="op">==</span> <span class="fl">5.0</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a>    <span class="cf">assert</span> point_positive_3_4.distance_from_origin() <span class="op">==</span> <span class="fl">5.0</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a>    <span class="cf">assert</span> point_negative_3_4.distance_from_origin() <span class="op">==</span> <span class="fl">5.0</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>    <span class="cf">assert</span> point_mixed_3_4.distance_from_origin() <span class="op">==</span> <span class="fl">5.0</span></span>
 <span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a></span>
 <span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="kw">def</span> test_move(point_positive_3_4, point_negative_3_4, point_mixed_3_4):</span>
-<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a>   point_positive_3_4.move(<span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a>   point_negative_3_4.move(<span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a>   point_mixed_3_4.move(<span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a>    point_positive_3_4.move(<span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a>    point_negative_3_4.move(<span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a>    point_mixed_3_4.move(<span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)</span>
 <span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a></span>
-<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a>   <span class="cf">assert</span> point_positive_3_4.x <span class="op">==</span> <span class="dv">5</span></span>
-<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a>   <span class="cf">assert</span> point_positive_3_4.y <span class="op">==</span> <span class="dv">3</span></span>
-<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a>   <span class="cf">assert</span> point_negative_3_4.x <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a>   <span class="cf">assert</span> point_negative_3_4.y <span class="op">==</span> <span class="op">-</span><span class="dv">5</span></span>
-<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a>   <span class="cf">assert</span> point_mixed_3_4.x <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a>   <span class="cf">assert</span> point_mixed_3_4.y <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a>    <span class="cf">assert</span> point_positive_3_4.x <span class="op">==</span> <span class="dv">5</span></span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a>    <span class="cf">assert</span> point_positive_3_4.y <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a>    <span class="cf">assert</span> point_negative_3_4.x <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a>    <span class="cf">assert</span> point_negative_3_4.y <span class="op">==</span> <span class="op">-</span><span class="dv">5</span></span>
+<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a>    <span class="cf">assert</span> point_mixed_3_4.x <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a>    <span class="cf">assert</span> point_mixed_3_4.y <span class="op">==</span> <span class="dv">3</span></span>
 <span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a></span>
 <span id="cb4-32"><a href="#cb4-32" tabindex="-1"></a><span class="kw">def</span> test_reflect_over_x(point_positive_3_4, point_negative_3_4, point_mixed_3_4):</span>
-<span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a>   point_positive_3_4.reflect_over_x()</span>
-<span id="cb4-34"><a href="#cb4-34" tabindex="-1"></a>   point_negative_3_4.reflect_over_x()</span>
-<span id="cb4-35"><a href="#cb4-35" tabindex="-1"></a>   point_mixed_3_4.reflect_over_x()</span>
+<span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a>    point_positive_3_4.reflect_over_x()</span>
+<span id="cb4-34"><a href="#cb4-34" tabindex="-1"></a>    point_negative_3_4.reflect_over_x()</span>
+<span id="cb4-35"><a href="#cb4-35" tabindex="-1"></a>    point_mixed_3_4.reflect_over_x()</span>
 <span id="cb4-36"><a href="#cb4-36" tabindex="-1"></a></span>
-<span id="cb4-37"><a href="#cb4-37" tabindex="-1"></a>   <span class="cf">assert</span> point_positive_3_4.x <span class="op">==</span> <span class="dv">3</span></span>
-<span id="cb4-38"><a href="#cb4-38" tabindex="-1"></a>   <span class="cf">assert</span> point_positive_3_4.y <span class="op">==</span> <span class="op">-</span><span class="dv">4</span></span>
-<span id="cb4-39"><a href="#cb4-39" tabindex="-1"></a>   <span class="cf">assert</span> point_negative_3_4.x <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span>
-<span id="cb4-40"><a href="#cb4-40" tabindex="-1"></a>   <span class="cf">assert</span> point_negative_3_4.y <span class="op">==</span> <span class="dv">4</span></span>
-<span id="cb4-41"><a href="#cb4-41" tabindex="-1"></a>   <span class="cf">assert</span> point_mixed_3_4.x <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span>
-<span id="cb4-42"><a href="#cb4-42" tabindex="-1"></a>   <span class="cf">assert</span> point_mixed_3_4.y <span class="op">==</span> <span class="op">-</span><span class="dv">4</span></span>
+<span id="cb4-37"><a href="#cb4-37" tabindex="-1"></a>    <span class="cf">assert</span> point_positive_3_4.x <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb4-38"><a href="#cb4-38" tabindex="-1"></a>    <span class="cf">assert</span> point_positive_3_4.y <span class="op">==</span> <span class="op">-</span><span class="dv">4</span></span>
+<span id="cb4-39"><a href="#cb4-39" tabindex="-1"></a>    <span class="cf">assert</span> point_negative_3_4.x <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span>
+<span id="cb4-40"><a href="#cb4-40" tabindex="-1"></a>    <span class="cf">assert</span> point_negative_3_4.y <span class="op">==</span> <span class="dv">4</span></span>
+<span id="cb4-41"><a href="#cb4-41" tabindex="-1"></a>    <span class="cf">assert</span> point_mixed_3_4.x <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span>
+<span id="cb4-42"><a href="#cb4-42" tabindex="-1"></a>    <span class="cf">assert</span> point_mixed_3_4.y <span class="op">==</span> <span class="op">-</span><span class="dv">4</span></span>
 <span id="cb4-43"><a href="#cb4-43" tabindex="-1"></a></span>
 <span id="cb4-44"><a href="#cb4-44" tabindex="-1"></a><span class="kw">def</span> test_reflect_over_y(point_positive_3_4, point_negative_3_4, point_mixed_3_4):</span>
-<span id="cb4-45"><a href="#cb4-45" tabindex="-1"></a>   point_positive_3_4.reflect_over_y()</span>
-<span id="cb4-46"><a href="#cb4-46" tabindex="-1"></a>   point_negative_3_4.reflect_over_y()</span>
-<span id="cb4-47"><a href="#cb4-47" tabindex="-1"></a>   point_mixed_3_4.reflect_over_y()</span>
+<span id="cb4-45"><a href="#cb4-45" tabindex="-1"></a>    point_positive_3_4.reflect_over_y()</span>
+<span id="cb4-46"><a href="#cb4-46" tabindex="-1"></a>    point_negative_3_4.reflect_over_y()</span>
+<span id="cb4-47"><a href="#cb4-47" tabindex="-1"></a>    point_mixed_3_4.reflect_over_y()</span>
 <span id="cb4-48"><a href="#cb4-48" tabindex="-1"></a></span>
-<span id="cb4-49"><a href="#cb4-49" tabindex="-1"></a>   <span class="cf">assert</span> point_positive_3_4.x <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span>
-<span id="cb4-50"><a href="#cb4-50" tabindex="-1"></a>   <span class="cf">assert</span> point_positive_3_4.y <span class="op">==</span> <span class="dv">4</span></span>
-<span id="cb4-51"><a href="#cb4-51" tabindex="-1"></a>   <span class="cf">assert</span> point_negative_3_4.x <span class="op">==</span> <span class="dv">3</span></span>
-<span id="cb4-52"><a href="#cb4-52" tabindex="-1"></a>   <span class="cf">assert</span> point_negative_3_4.y <span class="op">==</span> <span class="op">-</span><span class="dv">4</span></span>
-<span id="cb4-53"><a href="#cb4-53" tabindex="-1"></a>   <span class="cf">assert</span> point_mixed_3_4.x <span class="op">==</span> <span class="dv">3</span></span>
-<span id="cb4-54"><a href="#cb4-54" tabindex="-1"></a>   <span class="cf">assert</span> point_mixed_3_4.y <span class="op">==</span> <span class="dv">4</span></span></code></pre>
+<span id="cb4-49"><a href="#cb4-49" tabindex="-1"></a>    <span class="cf">assert</span> point_positive_3_4.x <span class="op">==</span> <span class="op">-</span><span class="dv">3</span></span>
+<span id="cb4-50"><a href="#cb4-50" tabindex="-1"></a>    <span class="cf">assert</span> point_positive_3_4.y <span class="op">==</span> <span class="dv">4</span></span>
+<span id="cb4-51"><a href="#cb4-51" tabindex="-1"></a>    <span class="cf">assert</span> point_negative_3_4.x <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb4-52"><a href="#cb4-52" tabindex="-1"></a>    <span class="cf">assert</span> point_negative_3_4.y <span class="op">==</span> <span class="op">-</span><span class="dv">4</span></span>
+<span id="cb4-53"><a href="#cb4-53" tabindex="-1"></a>    <span class="cf">assert</span> point_mixed_3_4.x <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb4-54"><a href="#cb4-54" tabindex="-1"></a>    <span class="cf">assert</span> point_mixed_3_4.y <span class="op">==</span> <span class="dv">4</span></span></code></pre>
 </div>
 <p>With the setup code defined in the fixtures, the tests are more
 concise and it won’t take as much effort to add more tests in the
@@ -2925,42 +2924,42 @@ input data.</li>
 <span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a>    ]</span>
 <span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a></span>
 <span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="kw">def</span> test_sample_participants(participants):</span>
-<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a>   <span class="co"># set random seed</span></span>
-<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a>   random.seed(<span class="dv">0</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a>    <span class="co"># set random seed</span></span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a>    random.seed(<span class="dv">0</span>)</span>
 <span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a>   sample_size <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a>   sampled_participants <span class="op">=</span> sample_participants(participants, sample_size)</span>
-<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a>   expected <span class="op">=</span> [{<span class="st">"age"</span>: <span class="dv">38</span>, <span class="st">"height"</span>: <span class="dv">165</span>}, {<span class="st">"age"</span>: <span class="dv">45</span>, <span class="st">"height"</span>: <span class="dv">200</span>}]</span>
-<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a>   <span class="cf">assert</span> sampled_participants <span class="op">==</span> expected</span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a>    sample_size <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a>    sampled_participants <span class="op">=</span> sample_participants(participants, sample_size)</span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a>    expected <span class="op">=</span> [{<span class="st">"age"</span>: <span class="dv">38</span>, <span class="st">"height"</span>: <span class="dv">165</span>}, {<span class="st">"age"</span>: <span class="dv">45</span>, <span class="st">"height"</span>: <span class="dv">200</span>}]</span>
+<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a>    <span class="cf">assert</span> sampled_participants <span class="op">==</span> expected</span>
 <span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a></span>
 <span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a><span class="kw">def</span> test_filter_participants_by_age(participants):</span>
-<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a>   min_age <span class="op">=</span> <span class="dv">30</span></span>
-<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a>   max_age <span class="op">=</span> <span class="dv">35</span></span>
-<span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a>   filtered_participants <span class="op">=</span> filter_participants_by_age(participants, min_age, max_age)</span>
-<span id="cb7-27"><a href="#cb7-27" tabindex="-1"></a>   expected <span class="op">=</span> [{<span class="st">"age"</span>: <span class="dv">30</span>, <span class="st">"height"</span>: <span class="dv">170</span>}, {<span class="st">"age"</span>: <span class="dv">35</span>, <span class="st">"height"</span>: <span class="dv">160</span>}]</span>
-<span id="cb7-28"><a href="#cb7-28" tabindex="-1"></a>   <span class="cf">assert</span> filtered_participants <span class="op">==</span> expected</span>
+<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a>    min_age <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a>    max_age <span class="op">=</span> <span class="dv">35</span></span>
+<span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a>    filtered_participants <span class="op">=</span> filter_participants_by_age(participants, min_age, max_age)</span>
+<span id="cb7-27"><a href="#cb7-27" tabindex="-1"></a>    expected <span class="op">=</span> [{<span class="st">"age"</span>: <span class="dv">30</span>, <span class="st">"height"</span>: <span class="dv">170</span>}, {<span class="st">"age"</span>: <span class="dv">35</span>, <span class="st">"height"</span>: <span class="dv">160</span>}]</span>
+<span id="cb7-28"><a href="#cb7-28" tabindex="-1"></a>    <span class="cf">assert</span> filtered_participants <span class="op">==</span> expected</span>
 <span id="cb7-29"><a href="#cb7-29" tabindex="-1"></a></span>
 <span id="cb7-30"><a href="#cb7-30" tabindex="-1"></a><span class="kw">def</span> test_filter_participants_by_height(participants):</span>
-<span id="cb7-31"><a href="#cb7-31" tabindex="-1"></a>   min_height <span class="op">=</span> <span class="dv">160</span></span>
-<span id="cb7-32"><a href="#cb7-32" tabindex="-1"></a>   max_height <span class="op">=</span> <span class="dv">170</span></span>
-<span id="cb7-33"><a href="#cb7-33" tabindex="-1"></a>   filtered_participants <span class="op">=</span> filter_participants_by_height(participants, min_height, max_height)</span>
-<span id="cb7-34"><a href="#cb7-34" tabindex="-1"></a>   expected <span class="op">=</span> [{<span class="st">"age"</span>: <span class="dv">30</span>, <span class="st">"height"</span>: <span class="dv">170</span>}, {<span class="st">"age"</span>: <span class="dv">35</span>, <span class="st">"height"</span>: <span class="dv">160</span>}, {<span class="st">"age"</span>: <span class="dv">38</span>, <span class="st">"height"</span>: <span class="dv">165</span>}]</span>
-<span id="cb7-35"><a href="#cb7-35" tabindex="-1"></a>   <span class="cf">assert</span> filtered_participants <span class="op">==</span> expected</span>
+<span id="cb7-31"><a href="#cb7-31" tabindex="-1"></a>    min_height <span class="op">=</span> <span class="dv">160</span></span>
+<span id="cb7-32"><a href="#cb7-32" tabindex="-1"></a>    max_height <span class="op">=</span> <span class="dv">170</span></span>
+<span id="cb7-33"><a href="#cb7-33" tabindex="-1"></a>    filtered_participants <span class="op">=</span> filter_participants_by_height(participants, min_height, max_height)</span>
+<span id="cb7-34"><a href="#cb7-34" tabindex="-1"></a>    expected <span class="op">=</span> [{<span class="st">"age"</span>: <span class="dv">30</span>, <span class="st">"height"</span>: <span class="dv">170</span>}, {<span class="st">"age"</span>: <span class="dv">35</span>, <span class="st">"height"</span>: <span class="dv">160</span>}, {<span class="st">"age"</span>: <span class="dv">38</span>, <span class="st">"height"</span>: <span class="dv">165</span>}]</span>
+<span id="cb7-35"><a href="#cb7-35" tabindex="-1"></a>    <span class="cf">assert</span> filtered_participants <span class="op">==</span> expected</span>
 <span id="cb7-36"><a href="#cb7-36" tabindex="-1"></a></span>
 <span id="cb7-37"><a href="#cb7-37" tabindex="-1"></a><span class="kw">def</span> test_randomly_sample_and_filter_participants(participants):</span>
-<span id="cb7-38"><a href="#cb7-38" tabindex="-1"></a>   <span class="co"># set random seed</span></span>
-<span id="cb7-39"><a href="#cb7-39" tabindex="-1"></a>   random.seed(<span class="dv">0</span>)</span>
+<span id="cb7-38"><a href="#cb7-38" tabindex="-1"></a>    <span class="co"># set random seed</span></span>
+<span id="cb7-39"><a href="#cb7-39" tabindex="-1"></a>    random.seed(<span class="dv">0</span>)</span>
 <span id="cb7-40"><a href="#cb7-40" tabindex="-1"></a></span>
-<span id="cb7-41"><a href="#cb7-41" tabindex="-1"></a>   sample_size <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb7-42"><a href="#cb7-42" tabindex="-1"></a>   min_age <span class="op">=</span> <span class="dv">28</span></span>
-<span id="cb7-43"><a href="#cb7-43" tabindex="-1"></a>   max_age <span class="op">=</span> <span class="dv">42</span></span>
-<span id="cb7-44"><a href="#cb7-44" tabindex="-1"></a>   min_height <span class="op">=</span> <span class="dv">159</span></span>
-<span id="cb7-45"><a href="#cb7-45" tabindex="-1"></a>   max_height <span class="op">=</span> <span class="dv">172</span></span>
-<span id="cb7-46"><a href="#cb7-46" tabindex="-1"></a>   filtered_participants <span class="op">=</span> randomly_sample_and_filter_participants(</span>
-<span id="cb7-47"><a href="#cb7-47" tabindex="-1"></a>       participants, sample_size, min_age, max_age, min_height, max_height</span>
-<span id="cb7-48"><a href="#cb7-48" tabindex="-1"></a>   )</span>
-<span id="cb7-49"><a href="#cb7-49" tabindex="-1"></a>   expected <span class="op">=</span> [{<span class="st">"age"</span>: <span class="dv">38</span>, <span class="st">"height"</span>: <span class="dv">165</span>}, {<span class="st">"age"</span>: <span class="dv">30</span>, <span class="st">"height"</span>: <span class="dv">170</span>}, {<span class="st">"age"</span>: <span class="dv">35</span>, <span class="st">"height"</span>: <span class="dv">160</span>}]</span>
-<span id="cb7-50"><a href="#cb7-50" tabindex="-1"></a>   <span class="cf">assert</span> filtered_participants <span class="op">==</span> expected</span></code></pre>
+<span id="cb7-41"><a href="#cb7-41" tabindex="-1"></a>    sample_size <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb7-42"><a href="#cb7-42" tabindex="-1"></a>    min_age <span class="op">=</span> <span class="dv">28</span></span>
+<span id="cb7-43"><a href="#cb7-43" tabindex="-1"></a>    max_age <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb7-44"><a href="#cb7-44" tabindex="-1"></a>    min_height <span class="op">=</span> <span class="dv">159</span></span>
+<span id="cb7-45"><a href="#cb7-45" tabindex="-1"></a>    max_height <span class="op">=</span> <span class="dv">172</span></span>
+<span id="cb7-46"><a href="#cb7-46" tabindex="-1"></a>    filtered_participants <span class="op">=</span> randomly_sample_and_filter_participants(</span>
+<span id="cb7-47"><a href="#cb7-47" tabindex="-1"></a>        participants, sample_size, min_age, max_age, min_height, max_height</span>
+<span id="cb7-48"><a href="#cb7-48" tabindex="-1"></a>    )</span>
+<span id="cb7-49"><a href="#cb7-49" tabindex="-1"></a>    expected <span class="op">=</span> [{<span class="st">"age"</span>: <span class="dv">38</span>, <span class="st">"height"</span>: <span class="dv">165</span>}, {<span class="st">"age"</span>: <span class="dv">30</span>, <span class="st">"height"</span>: <span class="dv">170</span>}, {<span class="st">"age"</span>: <span class="dv">35</span>, <span class="st">"height"</span>: <span class="dv">160</span>}]</span>
+<span id="cb7-50"><a href="#cb7-50" tabindex="-1"></a>    <span class="cf">assert</span> filtered_participants <span class="op">==</span> expected</span></code></pre>
 </div>
 </div>
 </div>
@@ -3067,22 +3066,22 @@ triangle’s area from its side lengths.</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">def</span> Point:</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>   <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x, y):</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>       <span class="va">self</span>.x <span class="op">=</span> x</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>       <span class="va">self</span>.y <span class="op">=</span> y</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">class</span> Point:</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x, y):</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> x</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>        <span class="va">self</span>.y <span class="op">=</span> y</span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="kw">class</span> Triangle:</span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>   <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, p1: Point, p2: Point, p3: Point):</span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>      <span class="va">self</span>.p1 <span class="op">=</span> p1</span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>      <span class="va">self</span>.p2 <span class="op">=</span> p2</span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>      <span class="va">self</span>.p3 <span class="op">=</span> p3</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, p1: Point, p2: Point, p3: Point):</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>        <span class="va">self</span>.p1 <span class="op">=</span> p1</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>        <span class="va">self</span>.p2 <span class="op">=</span> p2</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>        <span class="va">self</span>.p3 <span class="op">=</span> p3</span>
 <span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>   <span class="kw">def</span> calculate_area(<span class="va">self</span>):</span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>      a <span class="op">=</span> ((<span class="va">self</span>.p1.x <span class="op">*</span> (<span class="va">self</span>.p2.y <span class="op">-</span> <span class="va">self</span>.p3.y)) <span class="op">+</span></span>
-<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>           (<span class="va">self</span>.p2.x <span class="op">*</span> (<span class="va">self</span>.p3.y <span class="op">-</span> <span class="va">self</span>.p1.y)) <span class="op">+</span></span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>           (<span class="va">self</span>.p3.x <span class="op">*</span> (<span class="va">self</span>.p1.y <span class="op">-</span> <span class="va">self</span>.p2.y))) <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>      <span class="cf">return</span> <span class="bu">abs</span>(a)</span></code></pre>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>    <span class="kw">def</span> calculate_area(<span class="va">self</span>):</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>        a <span class="op">=</span> ((<span class="va">self</span>.p1.x <span class="op">*</span> (<span class="va">self</span>.p2.y <span class="op">-</span> <span class="va">self</span>.p3.y)) <span class="op">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>             (<span class="va">self</span>.p2.x <span class="op">*</span> (<span class="va">self</span>.p3.y <span class="op">-</span> <span class="va">self</span>.p1.y)) <span class="op">+</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>             (<span class="va">self</span>.p3.x <span class="op">*</span> (<span class="va">self</span>.p1.y <span class="op">-</span> <span class="va">self</span>.p2.y))) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">abs</span>(a)</span></code></pre>
 </div>
 <p>If we want to test this function with different combinations of
 sides, we could write a test like this:</p>
@@ -3090,42 +3089,42 @@ sides, we could write a test like this:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> test_calculate_area():</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>   <span class="co">"""Test the calculate_area function of the Triangle class"""</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    <span class="co">"""Test the calculate_area function of the Triangle class"""</span></span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>   <span class="co"># Equilateral triangle</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>   p11 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>   p12 <span class="op">=</span> Point(<span class="dv">2</span>, <span class="dv">0</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>   p13 <span class="op">=</span> Point(<span class="dv">1</span>, <span class="fl">1.7320</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>   t1 <span class="op">=</span> Triangle(p11, p12, p13)</span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>   <span class="cf">assert</span> t1.calculate_area() <span class="op">==</span> <span class="dv">6</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>    <span class="co"># Equilateral triangle</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    p11 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>    p12 <span class="op">=</span> Point(<span class="dv">2</span>, <span class="dv">0</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>    p13 <span class="op">=</span> Point(<span class="dv">1</span>, <span class="fl">1.7320</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>    t1 <span class="op">=</span> Triangle(p11, p12, p13)</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>    <span class="cf">assert</span> t1.calculate_area() <span class="op">==</span> <span class="dv">6</span></span>
 <span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>   <span class="co"># Right-angled triangle</span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>   p21 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>   p22 <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">0</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>   p23 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">4</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>   t2 <span class="op">=</span> Triangle(p21, p22, p23)</span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>   <span class="cf">assert</span> t2.calculate_area() <span class="op">==</span> <span class="dv">6</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>    <span class="co"># Right-angled triangle</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>    p21 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>    p22 <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">0</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>    p23 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">4</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>    t2 <span class="op">=</span> Triangle(p21, p22, p23)</span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>    <span class="cf">assert</span> t2.calculate_area() <span class="op">==</span> <span class="dv">6</span></span>
 <span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>   <span class="co"># Isosceles triangle</span></span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>   p31 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>   p32 <span class="op">=</span> Point(<span class="dv">4</span>, <span class="dv">0</span>)</span>
-<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>   p33 <span class="op">=</span> Point(<span class="dv">2</span>, <span class="dv">8</span>)</span>
-<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>   t3 <span class="op">=</span> Triangle(p31, p32, p33)</span>
-<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>   <span class="cf">assert</span> t3.calculate_area() <span class="op">==</span> <span class="dv">16</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>    <span class="co"># Isosceles triangle</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>    p31 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>    p32 <span class="op">=</span> Point(<span class="dv">4</span>, <span class="dv">0</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>    p33 <span class="op">=</span> Point(<span class="dv">2</span>, <span class="dv">8</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>    t3 <span class="op">=</span> Triangle(p31, p32, p33)</span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>    <span class="cf">assert</span> t3.calculate_area() <span class="op">==</span> <span class="dv">16</span></span>
 <span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>   <span class="co"># Scalene triangle</span></span>
-<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>   p41 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>   p42 <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">0</span>)</span>
-<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a>   p43 <span class="op">=</span> Point(<span class="dv">1</span>, <span class="dv">4</span>)</span>
-<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a>   t4 <span class="op">=</span> Triangle(p41, p42, p43)</span>
-<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a>   <span class="cf">assert</span> t4.calculate_area() <span class="op">==</span> <span class="dv">6</span></span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>    <span class="co"># Scalene triangle</span></span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>    p41 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>    p42 <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">0</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a>    p43 <span class="op">=</span> Point(<span class="dv">1</span>, <span class="dv">4</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a>    t4 <span class="op">=</span> Triangle(p41, p42, p43)</span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a>    <span class="cf">assert</span> t4.calculate_area() <span class="op">==</span> <span class="dv">6</span></span>
 <span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a>   <span class="co"># Negative values</span></span>
-<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a>   p51 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a>   p52 <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="dv">0</span>)</span>
-<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a>   p53 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="op">-</span><span class="dv">4</span>)</span>
-<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a>   t5 <span class="op">=</span> Triangle(p51, p52, p53)</span>
-<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a>   <span class="cf">assert</span> t5.calculate_area() <span class="op">==</span> <span class="dv">6</span></span></code></pre>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a>    <span class="co"># Negative values</span></span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a>    p51 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a>    p52 <span class="op">=</span> Point(<span class="op">-</span><span class="dv">3</span>, <span class="dv">0</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a>    p53 <span class="op">=</span> Point(<span class="dv">0</span>, <span class="op">-</span><span class="dv">4</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a>    t5 <span class="op">=</span> Triangle(p51, p52, p53)</span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a>    <span class="cf">assert</span> t5.calculate_area() <span class="op">==</span> <span class="dv">6</span></span></code></pre>
 </div>
 <p>This test is quite long and repetitive. We can use parametrization to
 make it more concise:</p>
@@ -3135,21 +3134,21 @@ make it more concise:</p>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="im">import</span> pytest</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="at">@pytest.mark.parametrize</span>(</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>   (<span class="st">"p1x, p1y, p2x, p2y, p3x, p3y, expected"</span>),</span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>   [</span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>      pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">1.7320</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Equilateral triangle"</span>),</span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>      pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Right-angled triangle"</span>),</span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>      pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">16</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Isosceles triangle"</span>),</span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>      pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Scalene triangle"</span>),</span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>      pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Negative values"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>   ]</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    (<span class="st">"p1x, p1y, p2x, p2y, p3x, p3y, expected"</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    [</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">1.7320</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Equilateral triangle"</span>),</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Right-angled triangle"</span>),</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">16</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Isosceles triangle"</span>),</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Scalene triangle"</span>),</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">6</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"Negative values"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>    ]</span>
 <span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>)</span>
 <span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="kw">def</span> test_calculate_area(p1x, p1y, p2x, p2y, p3x, p3y, expected):</span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>   p1 <span class="op">=</span> Point(p1x, p1y)</span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>   p2 <span class="op">=</span> Point(p2x, p2y)</span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>   p3 <span class="op">=</span> Point(p3x, p3y)</span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>   t <span class="op">=</span> Triangle(p1, p2, p3)</span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>   <span class="cf">assert</span> t.calculate_area() <span class="op">==</span> expected</span></code></pre>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>    p1 <span class="op">=</span> Point(p1x, p1y)</span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>    p2 <span class="op">=</span> Point(p2x, p2y)</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>    p3 <span class="op">=</span> Point(p3x, p3y)</span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>    t <span class="op">=</span> Triangle(p1, p2, p3)</span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>    <span class="cf">assert</span> t.calculate_area() <span class="op">==</span> expected</span></code></pre>
 </div>
 <p>Let’s have a look at how this works.</p>
 <p>Similar to how fixtures are defined, the
@@ -3217,7 +3216,7 @@ the function with a range of different inputs using parametrization.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3225,37 +3224,37 @@ the function with a range of different inputs using parametrization.</p>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="im">import</span> pytest</span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="at">@pytest.mark.parametrize</span>(</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>   (<span class="st">"n, expected"</span>),</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>   [</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>      pytest.param(<span class="dv">0</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"0 is not prime"</span>),</span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>      pytest.param(<span class="dv">1</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"1 is not prime"</span>),</span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>      pytest.param(<span class="dv">2</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"2 is prime"</span>),</span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>      pytest.param(<span class="dv">3</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"3 is prime"</span>),</span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>      pytest.param(<span class="dv">4</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"4 is not prime"</span>),</span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>      pytest.param(<span class="dv">5</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"5 is prime"</span>),</span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>      pytest.param(<span class="dv">6</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"6 is not prime"</span>),</span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>      pytest.param(<span class="dv">7</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"7 is prime"</span>),</span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>      pytest.param(<span class="dv">8</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"8 is not prime"</span>),</span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>      pytest.param(<span class="dv">9</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"9 is not prime"</span>),</span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>      pytest.param(<span class="dv">10</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"10 is not prime"</span>),</span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>      pytest.param(<span class="dv">11</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"11 is prime"</span>),</span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>      pytest.param(<span class="dv">12</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"12 is not prime"</span>),</span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a>      pytest.param(<span class="dv">13</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"13 is prime"</span>),</span>
-<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a>      pytest.param(<span class="dv">14</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"14 is not prime"</span>),</span>
-<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a>      pytest.param(<span class="dv">15</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"15 is not prime"</span>),</span>
-<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a>      pytest.param(<span class="dv">16</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"16 is not prime"</span>),</span>
-<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a>      pytest.param(<span class="dv">17</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"17 is prime"</span>),</span>
-<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a>      pytest.param(<span class="dv">18</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"18 is not prime"</span>),</span>
-<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a>      pytest.param(<span class="dv">19</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"19 is prime"</span>),</span>
-<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a>      pytest.param(<span class="dv">20</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"20 is not prime"</span>),</span>
-<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a>      pytest.param(<span class="dv">21</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"21 is not prime"</span>),</span>
-<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a>      pytest.param(<span class="dv">22</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"22 is not prime"</span>),</span>
-<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a>      pytest.param(<span class="dv">23</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"23 is prime"</span>),</span>
-<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a>      pytest.param(<span class="dv">24</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"24 is not prime"</span>),</span>
-<span id="cb5-31"><a href="#cb5-31" tabindex="-1"></a>   ]</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    (<span class="st">"n, expected"</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    [</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>        pytest.param(<span class="dv">0</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"0 is not prime"</span>),</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>        pytest.param(<span class="dv">1</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"1 is not prime"</span>),</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>        pytest.param(<span class="dv">2</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"2 is prime"</span>),</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>        pytest.param(<span class="dv">3</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"3 is prime"</span>),</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>        pytest.param(<span class="dv">4</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"4 is not prime"</span>),</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>        pytest.param(<span class="dv">5</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"5 is prime"</span>),</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>        pytest.param(<span class="dv">6</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"6 is not prime"</span>),</span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>        pytest.param(<span class="dv">7</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"7 is prime"</span>),</span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>        pytest.param(<span class="dv">8</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"8 is not prime"</span>),</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>        pytest.param(<span class="dv">9</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"9 is not prime"</span>),</span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>        pytest.param(<span class="dv">10</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"10 is not prime"</span>),</span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>        pytest.param(<span class="dv">11</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"11 is prime"</span>),</span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>        pytest.param(<span class="dv">12</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"12 is not prime"</span>),</span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a>        pytest.param(<span class="dv">13</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"13 is prime"</span>),</span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a>        pytest.param(<span class="dv">14</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"14 is not prime"</span>),</span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a>        pytest.param(<span class="dv">15</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"15 is not prime"</span>),</span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a>        pytest.param(<span class="dv">16</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"16 is not prime"</span>),</span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a>        pytest.param(<span class="dv">17</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"17 is prime"</span>),</span>
+<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a>        pytest.param(<span class="dv">18</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"18 is not prime"</span>),</span>
+<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a>        pytest.param(<span class="dv">19</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"19 is prime"</span>),</span>
+<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a>        pytest.param(<span class="dv">20</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"20 is not prime"</span>),</span>
+<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a>        pytest.param(<span class="dv">21</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"21 is not prime"</span>),</span>
+<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a>        pytest.param(<span class="dv">22</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"22 is not prime"</span>),</span>
+<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a>        pytest.param(<span class="dv">23</span>, <span class="va">True</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"23 is prime"</span>),</span>
+<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a>        pytest.param(<span class="dv">24</span>, <span class="va">False</span>, <span class="bu">id</span><span class="op">=</span><span class="st">"24 is not prime"</span>),</span>
+<span id="cb5-31"><a href="#cb5-31" tabindex="-1"></a>    ]</span>
 <span id="cb5-32"><a href="#cb5-32" tabindex="-1"></a>)</span>
 <span id="cb5-33"><a href="#cb5-33" tabindex="-1"></a><span class="kw">def</span> test_is_prime(n, expected):</span>
-<span id="cb5-34"><a href="#cb5-34" tabindex="-1"></a>   <span class="cf">assert</span> is_prime(n) <span class="op">==</span> expected</span></code></pre>
+<span id="cb5-34"><a href="#cb5-34" tabindex="-1"></a>    <span class="cf">assert</span> is_prime(n) <span class="op">==</span> expected</span></code></pre>
 </div>
 </div>
 </div>
@@ -3854,7 +3853,7 @@ the indentation right!</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>You should see that a total of 6 jobs have run, and hopefully all
 will have passed!</p>
@@ -3973,7 +3972,7 @@ being tested.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The code on the new branch will be testing the old implementation,
 and should pass. However, following the merge, the test would fail. This
