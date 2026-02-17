@@ -31,22 +31,22 @@ We have a Triangle class that has a function to calculate the triangle's area fr
 
 ```python
 
-class Point:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+def Point:
+   def __init__(self, x, y):
+       self.x = x
+       self.y = y
 
 class Triangle:
-    def __init__(self, p1: Point, p2: Point, p3: Point):
-        self.p1 = p1
-        self.p2 = p2
-        self.p3 = p3
+   def __init__(self, p1: Point, p2: Point, p3: Point):
+      self.p1 = p1
+      self.p2 = p2
+      self.p3 = p3
 
-    def calculate_area(self):
-        a = ((self.p1.x * (self.p2.y - self.p3.y)) +
-             (self.p2.x * (self.p3.y - self.p1.y)) +
-             (self.p3.x * (self.p1.y - self.p2.y))) / 2
-        return abs(a)
+   def calculate_area(self):
+      a = ((self.p1.x * (self.p2.y - self.p3.y)) +
+           (self.p2.x * (self.p3.y - self.p1.y)) +
+           (self.p3.x * (self.p1.y - self.p2.y))) / 2
+      return abs(a)
 
 ```
 
@@ -54,42 +54,42 @@ If we want to test this function with different combinations of sides, we could 
 
 ```python
 def test_calculate_area():
-    """Test the calculate_area function of the Triangle class"""
+   """Test the calculate_area function of the Triangle class"""
 
-    # Equilateral triangle
-    p11 = Point(0, 0)
-    p12 = Point(2, 0)
-    p13 = Point(1, 1.7320)
-    t1 = Triangle(p11, p12, p13)
-    assert t1.calculate_area() == 6
+   # Equilateral triangle
+   p11 = Point(0, 0)
+   p12 = Point(2, 0)
+   p13 = Point(1, 1.7320)
+   t1 = Triangle(p11, p12, p13)
+   assert t1.calculate_area() == 6
 
-    # Right-angled triangle
-    p21 = Point(0, 0)
-    p22 = Point(3, 0)
-    p23 = Point(0, 4)
-    t2 = Triangle(p21, p22, p23)
-    assert t2.calculate_area() == 6
+   # Right-angled triangle
+   p21 = Point(0, 0)
+   p22 = Point(3, 0)
+   p23 = Point(0, 4)
+   t2 = Triangle(p21, p22, p23)
+   assert t2.calculate_area() == 6
 
-    # Isosceles triangle
-    p31 = Point(0, 0)
-    p32 = Point(4, 0)
-    p33 = Point(2, 8)
-    t3 = Triangle(p31, p32, p33)
-    assert t3.calculate_area() == 16
+   # Isosceles triangle
+   p31 = Point(0, 0)
+   p32 = Point(4, 0)
+   p33 = Point(2, 8)
+   t3 = Triangle(p31, p32, p33)
+   assert t3.calculate_area() == 16
 
-    # Scalene triangle
-    p41 = Point(0, 0)
-    p42 = Point(3, 0)
-    p43 = Point(1, 4)
-    t4 = Triangle(p41, p42, p43)
-    assert t4.calculate_area() == 6
+   # Scalene triangle
+   p41 = Point(0, 0)
+   p42 = Point(3, 0)
+   p43 = Point(1, 4)
+   t4 = Triangle(p41, p42, p43)
+   assert t4.calculate_area() == 6
 
-    # Negative values
-    p51 = Point(0, 0)
-    p52 = Point(-3, 0)
-    p53 = Point(0, -4)
-    t5 = Triangle(p51, p52, p53)
-    assert t5.calculate_area() == 6
+   # Negative values
+   p51 = Point(0, 0)
+   p52 = Point(-3, 0)
+   p53 = Point(0, -4)
+   t5 = Triangle(p51, p52, p53)
+   assert t5.calculate_area() == 6
 ```
 
 This test is quite long and repetitive. We can use parametrization to make it more concise:
@@ -98,21 +98,21 @@ This test is quite long and repetitive. We can use parametrization to make it mo
 import pytest
 
 @pytest.mark.parametrize(
-    ("p1x, p1y, p2x, p2y, p3x, p3y, expected"),
-    [
-        pytest.param(0, 0, 2, 0, 1, 1.7320, 6, id="Equilateral triangle"),
-        pytest.param(0, 0, 3, 0, 0, 4, 6, id="Right-angled triangle"),
-        pytest.param(0, 0, 4, 0, 2, 8, 16, id="Isosceles triangle"),
-        pytest.param(0, 0, 3, 0, 1, 4, 6, id="Scalene triangle"),
-        pytest.param(0, 0, -3, 0, 0, -4, 6, id="Negative values")
-    ]
+   ("p1x, p1y, p2x, p2y, p3x, p3y, expected"),
+   [
+      pytest.param(0, 0, 2, 0, 1, 1.7320, 6, id="Equilateral triangle"),
+      pytest.param(0, 0, 3, 0, 0, 4, 6, id="Right-angled triangle"),
+      pytest.param(0, 0, 4, 0, 2, 8, 16, id="Isosceles triangle"),
+      pytest.param(0, 0, 3, 0, 1, 4, 6, id="Scalene triangle"),
+      pytest.param(0, 0, -3, 0, 0, -4, 6, id="Negative values")
+   ]
 )
 def test_calculate_area(p1x, p1y, p2x, p2y, p3x, p3y, expected):
-    p1 = Point(p1x, p1y)
-    p2 = Point(p2x, p2y)
-    p3 = Point(p3x, p3y)
-    t = Triangle(p1, p2, p3)
-    assert t.calculate_area() == expected
+   p1 = Point(p1x, p1y)
+   p2 = Point(p2x, p2y)
+   p3 = Point(p3x, p3y)
+   t = Triangle(p1, p2, p3)
+   assert t.calculate_area() == expected
 ```
 
 Let's have a look at how this works.
@@ -150,6 +150,7 @@ def is_prime(n: int) -> bool:
         if n % i == 0:
             return False
     return True
+
 ```
 
 :::::::::::::::::::::::: solution 
@@ -158,37 +159,37 @@ def is_prime(n: int) -> bool:
 import pytest
 
 @pytest.mark.parametrize(
-    ("n, expected"),
-    [
-        pytest.param(0, False, id="0 is not prime"),
-        pytest.param(1, False, id="1 is not prime"),
-        pytest.param(2, True, id="2 is prime"),
-        pytest.param(3, True, id="3 is prime"),
-        pytest.param(4, False, id="4 is not prime"),
-        pytest.param(5, True, id="5 is prime"),
-        pytest.param(6, False, id="6 is not prime"),
-        pytest.param(7, True, id="7 is prime"),
-        pytest.param(8, False, id="8 is not prime"),
-        pytest.param(9, False, id="9 is not prime"),
-        pytest.param(10, False, id="10 is not prime"),
-        pytest.param(11, True, id="11 is prime"),
-        pytest.param(12, False, id="12 is not prime"),
-        pytest.param(13, True, id="13 is prime"),
-        pytest.param(14, False, id="14 is not prime"),
-        pytest.param(15, False, id="15 is not prime"),
-        pytest.param(16, False, id="16 is not prime"),
-        pytest.param(17, True, id="17 is prime"),
-        pytest.param(18, False, id="18 is not prime"),
-        pytest.param(19, True, id="19 is prime"),
-        pytest.param(20, False, id="20 is not prime"),
-        pytest.param(21, False, id="21 is not prime"),
-        pytest.param(22, False, id="22 is not prime"),
-        pytest.param(23, True, id="23 is prime"),
-        pytest.param(24, False, id="24 is not prime"),
-    ]
+   ("n, expected"),
+   [
+      pytest.param(0, False, id="0 is not prime"),
+      pytest.param(1, False, id="1 is not prime"),
+      pytest.param(2, True, id="2 is prime"),
+      pytest.param(3, True, id="3 is prime"),
+      pytest.param(4, False, id="4 is not prime"),
+      pytest.param(5, True, id="5 is prime"),
+      pytest.param(6, False, id="6 is not prime"),
+      pytest.param(7, True, id="7 is prime"),
+      pytest.param(8, False, id="8 is not prime"),
+      pytest.param(9, False, id="9 is not prime"),
+      pytest.param(10, False, id="10 is not prime"),
+      pytest.param(11, True, id="11 is prime"),
+      pytest.param(12, False, id="12 is not prime"),
+      pytest.param(13, True, id="13 is prime"),
+      pytest.param(14, False, id="14 is not prime"),
+      pytest.param(15, False, id="15 is not prime"),
+      pytest.param(16, False, id="16 is not prime"),
+      pytest.param(17, True, id="17 is prime"),
+      pytest.param(18, False, id="18 is not prime"),
+      pytest.param(19, True, id="19 is prime"),
+      pytest.param(20, False, id="20 is not prime"),
+      pytest.param(21, False, id="21 is not prime"),
+      pytest.param(22, False, id="22 is not prime"),
+      pytest.param(23, True, id="23 is prime"),
+      pytest.param(24, False, id="24 is not prime"),
+   ]
 )
 def test_is_prime(n, expected):
-    assert is_prime(n) == expected
+   assert is_prime(n) == expected
 ```
 
 :::::::::::::::::::::::::::::::::

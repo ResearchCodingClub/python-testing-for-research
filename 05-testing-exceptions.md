@@ -25,9 +25,10 @@ Take this example of the `square_root` function. We don't have time to implement
 ```python
 
 def square_root(x):
-    if x < 0:
-        raise ValueError("Cannot compute square root of negative number yet!")
-    return x ** 0.5
+   if x < 0:
+      raise ValueError("Cannot compute square root of negative number yet!")
+   return x ** 0.5
+
 ```
 
 We can test that the function raises an exception using `pytest.raises` as follows:
@@ -51,6 +52,7 @@ def test_square_root():
     with pytest.raises(ValueError) as e:
         square_root(-1)
     assert str(e.value) == "Cannot compute square root of negative number yet!"
+
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge 
