@@ -356,7 +356,7 @@
 <div class="accordion accordion-flush" id="accordionFlush11">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading11">
-        <a href="09-testing-output-files.html">10. Regression Testing and Plots</a>
+        <a href="09-testing-output-files.html">10. Regression Tests</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -718,7 +718,7 @@ these functions:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The first function will incorrectly greet the user, as it is missing
 a space after “Hello”. It would print <code>HelloAlice!</code> instead
@@ -837,7 +837,7 @@ use?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ul>
 <li>We might want to check that the speed is within a safe range.</li>
@@ -1038,7 +1038,7 @@ top of the file like this:</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>There are many different test cases that you could include, but it’s
 important to check that different types of cases are covered. A test for
@@ -2917,7 +2917,7 @@ input data.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3229,7 +3229,7 @@ the function with a range of different inputs using parametrization.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3295,12 +3295,12 @@ parametrized test.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-09-testing-output-files"><p>Content from <a href="09-testing-output-files.html">Regression Testing and Plots</a></p>
+</section></section><section id="aio-09-testing-output-files"><p>Content from <a href="09-testing-output-files.html">Regression Tests</a></p>
 <hr>
 <p>Last updated on 2026-02-17 |
 
         <a href="https://github.com/ResearchCodingClub/python-testing-for-research/edit/main/episodes/09-testing-output-files.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 13 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -3312,8 +3312,8 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How to test for changes in program outputs?</li>
-<li>How to test for changes in plots?</li>
+<li>How can we detect changes in program outputs?</li>
+<li>How can snapshots make this easier?</li>
 </ul>
 </div>
 </div>
@@ -3323,34 +3323,214 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Learn how to test for changes in images &amp; plots</li>
+<li>Explain what regression tests are and when they’re useful</li>
+<li>Write a manual regression test (save output and compare later)</li>
+<li>Use Snaptol snapshots to simplify output/array regression
+testing</li>
+<li>Use tolerances (rtol/atol) to handle numerical outputs safely</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="regression-testing">Regression testing<a class="anchor" aria-label="anchor" href="#regression-testing"></a>
+<section><h2 class="section-heading" id="introduction">1) Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
-<p>When you have a large processing pipeline or you are just starting
-out adding tests to an existing project, you might not have the time to
-carefully define exactly what each function should do, or your code may
-be so complex that it’s hard to write unit tests for it all.</p>
-<p>In these cases, you can use regression testing. This is where you
-just test that the output of a function matches the output of a previous
-version of the function.</p>
-<p>The library <code>pytest-regtest</code> provides a simple way to do
-this. When writing a test, we pass the argument <code>regtest</code> to
-the test function and use <code>regtest.write()</code> to log the output
-of the function. This tells pytest-regtest to compare the output of the
-test to the output of the previous test run.</p>
-<p>To install <code>pytest-regtest</code>:</p>
+<p>In short, a regression test asks “this test used to produce X, does
+it still produce X?”. This can help us detect unexpected or unwanted
+changes in the output of a program.</p>
+<p>They are particularly useful,</p>
+<ul>
+<li><p>when beginning to add tests to an existing project,</p></li>
+<li><p>when adding unit tests to all parts of a project is not
+feasible,</p></li>
+<li><p>to quickly give a good test coverage,</p></li>
+<li><p>when it does not matter if the output is correct or not.</p></li>
+</ul>
+<p>These types of tests are not a substitute for unit tests, but rather
+are complimentary.</p>
+</section><section><h2 class="section-heading" id="manual-example">2) Manual example<a class="anchor" aria-label="anchor" href="#manual-example"></a>
+</h2>
+<hr class="half-width">
+<p>Let’s make a regression test in a <code>test.py</code> file. It is
+going to utilise a “very complex” processing function to simulate the
+processing of data,</p>
 <div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">pip</span> install pytest-regtest</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># test.py</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">def</span> very_complex_processing(data: <span class="bu">list</span>):</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="cf">return</span> [x <span class="op">**</span> <span class="dv">2</span> <span class="op">-</span> <span class="dv">10</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">42</span> <span class="cf">for</span> x <span class="kw">in</span> data]</span></code></pre>
 </div>
+<p>Let’s write the basic structure for a test with example input data,
+but for now we will simply print the output,</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># test.py continued</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="kw">def</span> test_something():</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>    input_data <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8</span>)]</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>    processed_data <span class="op">=</span> very_complex_processing(input_data)</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>    <span class="bu">print</span>(processed_data)</span></code></pre>
+</div>
+<p>Let’s run <code>pytest</code> with reduced verbosity <code>-q</code>
+and print the statement from the test <code>-s</code>,</p>
+<pre class="console"><code>$ pytest -qs test.py
+[42, 33, 26, 21, 18, 17, 18, 21]
+.
+1 passed in 0.00s</code></pre>
+<p>We get a list of output numbers that simulate the result of a complex
+function in our project. Let’s save this data at the top of our
+<code>test.py</code> file so that we can <code>assert</code> that it is
+always equal to the output of the processing function,</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># test.py</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>SNAPSHOT_DATA <span class="op">=</span> [<span class="dv">42</span>, <span class="dv">33</span>, <span class="dv">26</span>, <span class="dv">21</span>, <span class="dv">18</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">21</span>]</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="kw">def</span> very_complex_processing(data: <span class="bu">list</span>):</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>    <span class="cf">return</span> [x <span class="op">**</span> <span class="dv">2</span> <span class="op">-</span> <span class="dv">10</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">42</span> <span class="cf">for</span> x <span class="kw">in</span> data]</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="kw">def</span> test_something():</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>    input_data <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8</span>)]</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>    processed_data <span class="op">=</span> very_complex_processing(input_data)</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>    <span class="cf">assert</span> SNAPSHOT_DATA <span class="op">==</span> processed_data</span></code></pre>
+</div>
+<p>We call the saved version of the data a “snapshot”.</p>
+<p>We can now be assured that any development of the code that
+erroneously alters the output of the function will cause the test to
+fail. For example, suppose we slightly altered the
+<code>very_complex_processing</code> function,</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> very_complex_processing(data: <span class="bu">list</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>    <span class="cf">return</span> [<span class="dv">3</span> <span class="op">*</span> x <span class="op">**</span> <span class="dv">2</span> <span class="op">-</span> <span class="dv">10</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">42</span> <span class="cf">for</span> x <span class="kw">in</span> data]</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#           ^^^^ small change</span></span></code></pre>
+</div>
+<p>Then, running the test causes it to fail,</p>
+<pre class="console"><code>$ pytest -q test.py
+F
+__________________________________ FAILURES _________________________________
+_______________________________ test_something ______________________________
+
+    def test_something():
+        input_data = [i for i in range(8)]
+
+        processed_data = very_complex_processing(input_data)
+
+&gt;       assert SNAPSHOT_DATA == processed_data
+E       assert [42, 33, 26, 21, 18, 17, ...] == [42, 35, 34, 39, 50, 67, ...]
+E         At index 1 diff: 33 != 35
+
+test.py:12: AssertionError
+1 failed in 0.03s</code></pre>
+<p>If the change was intentional, then we could print the output again
+and update <code>SNAPSHOT_DATA</code>. Otherwise, we would want to
+investigate the cause of the change and fix it.</p>
+</section><section><h2 class="section-heading" id="snaptol">3) Snaptol<a class="anchor" aria-label="anchor" href="#snaptol"></a>
+</h2>
+<hr class="half-width">
+<p>So far, performing a regression test manually has been a bit tedious.
+Storing the output data at the top of our test file,</p>
+<ul>
+<li><p>adds clutter,</p></li>
+<li><p>is laborious,</p></li>
+<li><p>is prone to errors.</p></li>
+</ul>
+<p>We could move the data to a separate file, but once again we would
+have to handle its contents manually.</p>
+<p>There are tools out there that can handle this for us, one widely
+known is Syrupy. A new tool has also been developed called Snaptol, that
+we will use here.</p>
+<p>Let’s use the original <code>very_complex_processing</code> function,
+and introduce the <code>snaptolshot</code> fixture,</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># test.py</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="kw">def</span> very_complex_processing(data: <span class="bu">list</span>):</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    <span class="cf">return</span> [x <span class="op">**</span> <span class="dv">2</span> <span class="op">-</span> <span class="dv">10</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">42</span> <span class="cf">for</span> x <span class="kw">in</span> data]</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="kw">def</span> test_something(snaptolshot):</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    input_data <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8</span>)]</span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>    processed_data <span class="op">=</span> very_complex_processing(input_data)</span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a>    <span class="cf">assert</span> snaptolshot <span class="op">==</span> processed_data</span></code></pre>
+</div>
+<p>Notice that we have replaced the <code>SNAPSHOT_DATA</code> variable
+with <code>snaptolshot</code>, which is an object provided by Snaptol
+that can handle the snapshot file management, amongst other smart
+features, for us.</p>
+<p>When we run the test for the first time, we will be met with a
+<code>FileNotFoundError</code>,</p>
+<pre class="console"><code>$ pytest -q test.py
+F
+================================== FAILURES =================================
+_______________________________ test_something ______________________________
+
+    def test_something(snaptolshot):
+        input_data = [i for i in range(8)]
+
+        processed_data = very_complex_processing(input_data)
+
+&gt;       assert snaptolshot == processed_data
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test.py:10:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.../snapshot.py:167: FileNotFoundError
+========================== short test summary info ==========================
+FAILED test.py::test_something - FileNotFoundError: Snapshot file not found.
+1 failed in 0.03s</code></pre>
+<p>This is because we have not yet created the snapshot file. Let’s run
+<code>snaptol</code> in update mode so that it knows to create the
+snapshot file for us. This is similar to the print, copy and paste step
+in the manual approach above,</p>
+<pre class="console"><code>$ pytest -q test.py --snaptol-update
+.
+1 passed in 0.00s</code></pre>
+<p>This tells us that the test performed successfully, and, because we
+were in update mode, an associated snapshot file was created with the
+name format <code>&lt;test_file&gt;.&lt;test_name&gt;.json</code> in a
+dedicated directory,</p>
+<pre class="console"><code>$ tree
+.
+├── __snapshots__
+│   └── test.test_something.json
+└── test.py</code></pre>
+<p>The contents of the JSON file are the same as in the manual
+example,</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ot">[</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>  <span class="dv">42</span><span class="ot">,</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>  <span class="dv">33</span><span class="ot">,</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>  <span class="dv">26</span><span class="ot">,</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>  <span class="dv">21</span><span class="ot">,</span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>  <span class="dv">18</span><span class="ot">,</span></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>  <span class="dv">17</span><span class="ot">,</span></span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>  <span class="dv">18</span><span class="ot">,</span></span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a>  <span class="dv">21</span></span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a><span class="ot">]</span></span></code></pre>
+</div>
+<p>As the data is saved in JSON format, almost any Python object can be
+used in a snapshot test – not just integers and lists.</p>
+<p>Just as previously, if we alter the function then the test will fail.
+We can similarly update the snapshot file with the new output with the
+<code>--snaptol-update</code> flag as above.</p>
 <div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -3358,225 +3538,271 @@ test to the output of the previous test run.</p>
 <span class="callout-header">Callout</span>
 <div class="callout-inner">
 <div class="callout-content">
-<p>This <code>regtest</code> argument is actually a fixture that is
-provided by the <code>pytest-regtest</code> package. It captures the
-output of the test function and compares it to the output of the
-previous test run. If the output is different, the test will fail.</p>
+<p><strong>Note:</strong> <code>--snaptol-update</code> will only update
+snapshot files for tests that failed in the previous run of
+<code>pytest</code>. This is because the expected workflow is 1) run
+<code>pytest</code>, 2) observe a test failure, 3) if happy with the
+change then run the update, <code>--snaptol-update</code>. This stops
+the unnecessary rewrite of snapshot files in tests that pass – which is
+particularly important when we allow for tolerance as explained in the
+next section.</p>
 </div>
 </div>
 </div>
-<p>Let’s make a regression test:</p>
-<ul>
-<li>Create a new function in <code>statistics/stats.py</code> called
-<code>very_complex_processing()</code>:</li>
-</ul>
-<div class="codewrapper sourceCode" id="cb2">
+<div class="section level3">
+<h3 id="floating-point-numbers">Floating point numbers<a class="anchor" aria-label="anchor" href="#floating-point-numbers"></a>
+</h3>
+<p>Consider a simulation code that uses algorithms that depend on
+convergence – perhaps a complicated equation that does not have an exact
+answer but can be approximated numerically within a given tolerance.
+This, along with the common use of controlled randomised initial
+conditions, can lead to results that differ slightly between runs.</p>
+<p>In the example below, we use the <code>estimate_pi</code> function
+from the “Floating Point Data” module. It relies on the use of
+randomised input and as a result the determined value will vary slightly
+between runs.</p>
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">def</span> very_complex_processing(data: <span class="bu">list</span>):</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>    <span class="co"># Do some very complex processing</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    processed_data <span class="op">=</span> [x <span class="op">*</span> <span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> data]</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>    <span class="cf">return</span> processed_data</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># test_tol.py</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="kw">def</span> estimate_pi(iterations):</span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>    num_inside <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(iterations):</span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>        x <span class="op">=</span> random.random()</span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a>        y <span class="op">=</span> random.random()</span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a>        <span class="cf">if</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span> <span class="op">&lt;</span> <span class="dv">1</span>:</span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a>            num_inside <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">4</span> <span class="op">*</span> num_inside <span class="op">/</span> iterations</span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a><span class="kw">def</span> test_something(snaptolshot):</span>
+<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a>    result <span class="op">=</span> estimate_pi(<span class="dv">10000000</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" tabindex="-1"></a>    <span class="bu">print</span>(result)</span>
+<span id="cb12-17"><a href="#cb12-17" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" tabindex="-1"></a>    snaptolshot.assert_allclose(result, rtol<span class="op">=</span><span class="fl">1e-03</span>, atol<span class="op">=</span><span class="fl">0.0</span>)</span></code></pre>
 </div>
+<p>Notice that here we use a method of the <code>snaptolshot</code>
+object called <code>assert_allclose</code>. This is a wrapper around the
+<code>numpy.testing.assert_allclose</code> function, as discussed in the
+“Floating Point Data” module, and allows us to specify tolerances for
+the comparison rather than asserting an exact equality.</p>
+<p>Let’s run the test initially like before but create the snapshot file
+straight away by running in update mode,</p>
+<pre class="console"><code>$ pytest -qs test_tol.py --snaptol-update-all
+3.1423884
+.
+1 passed in 0.30s</code></pre>
+<p>Even with ten million data points, the approximation of pi,
+3.1423884, isn’t great!</p>
+<div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p><strong>Note:</strong> remember that the result of a regression test
+is not the important part, but rather on how that result changes in
+future runs. We want to focus on whether our code reproduces the result
+in future runs – in this case within a given tolerance to account for
+the randomness.</p>
+</div>
+</div>
+</div>
+<p>In the test above, we supplied <code>rtol</code> and
+<code>atol</code> arguments to the function in the assertion. These are
+used to control the tolerance of the comparison between the snapshot and
+the actual output. This means on future runs of the test, the computed
+value will not be required to exactly match the snapshot, but rather
+within the given tolerance. Remember,</p>
 <ul>
-<li>Then in <code>test_stats.py</code>, we can add a regression test for
-this function using the <code>regtest</code> argument.</li>
+<li>
+<code>rtol</code> is the relative tolerance, useful for handling
+large numbers (e.g magnitude much greater than 1),</li>
+<li>
+<code>atol</code> is the absolute tolerance, useful for numbers
+“near zero” (e.g magnitude much less than 1).</li>
 </ul>
-<div class="codewrapper sourceCode" id="cb3">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="im">import</span> pytest</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="im">from</span> stats <span class="im">import</span> very_complex_processing</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="kw">def</span> test_very_complex_processing(regtest):</span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>    data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>    processed_data <span class="op">=</span> very_complex_processing(data)</span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>    regtest.write(<span class="bu">str</span>(processed_data))</span></code></pre>
+<p>If we run the test again, we see the printed output is different to
+that saved to file, but the test still passes,</p>
+<pre class="console"><code>$ pytest -qs test_tol.py
+3.1408724
+.
+1 passed in 0.24s</code></pre>
 </div>
-<ul>
-<li>Now because we haven’t run the test yet, there is no reference
-output to compare against, so we need to generate it using the
-<code>--regtest-generate</code> flag:</li>
-</ul>
-<div class="codewrapper sourceCode" id="cb4">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">pytest</span> <span class="at">--regtest-generate</span></span></code></pre>
-</div>
-<p>This tells pytest to run the test but instead of comparing the
-result, it will save the result for use in future tests.</p>
-<ul>
-<li><p>Try running pytest and since we haven’t changed how the function
-works, the test should pass.</p></li>
-<li><p>Then change the function to break the test and re-run pytest. The
-test will fail and show you the difference between the expected and
-actual output.</p></li>
-</ul>
-<div class="codewrapper sourceCode" id="cb5">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="ex">===</span> FAILURES ===</span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="ex">___</span> test_very_complex_processing ___</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="ex">regression</span> test output differences for statistics/test_stats.py::test_very_complex_processing:</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="kw">(</span><span class="ex">recorded</span> output from statistics/_regtest_outputs/test_stats.test_very_complex_processing.out<span class="kw">)</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="op">&gt;</span>   --- <span class="ex">current</span></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="op">&gt;</span>   +++ <span class="ex">expected</span></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="op">&gt;</span>   @@ <span class="ex">-1</span> +1 @@</span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="op">&gt;</span>   -[3, <span class="ex">6,</span> 9]</span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="op">&gt;</span>   +[2, <span class="ex">4,</span> 6]</span></code></pre>
-</div>
-<p>Here we can see that it has picked up on the difference between the
-expected and actual output, and displayed it for us to see.</p>
-<p>Regression tests, while not as powerful as unit tests, are a great
-way to quickly add tests to a project and ensure that changes to the
-code don’t break existing functionality. It is also a good idea to add
-regression tests to your main processing pipelines just in case your
-unit tests don’t cover all the edge cases, this will ensure that the
-output of your program remains consistent between versions.</p>
-</section><section><h2 class="section-heading" id="testing-plots">Testing plots<a class="anchor" aria-label="anchor" href="#testing-plots"></a>
+</section><section><h2 class="section-heading" id="exercises">Exercises<a class="anchor" aria-label="anchor" href="#exercises"></a>
 </h2>
 <hr class="half-width">
-<p>When you are working with plots, you may want to test that the output
-is as expected. This can be done by comparing the output to a reference
-image or plot. The <code>pytest-mpl</code> package provides a simple way
-to do this, automating the comparison of the output of a test function
-to a reference image.</p>
-<p>To install <code>pytest-mpl</code>:</p>
-<div class="codewrapper sourceCode" id="cb6">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">pip</span> install pytest-mpl</span></code></pre>
+<div id="create-your-own-regression-test" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Challenge</span>
+<div id="create-your-own-regression-test" class="callout-inner">
+<h3 class="callout-title">Create your own regression test</h3>
+<div class="callout-content">
 <ul>
-<li>Create a new folder called <code>plotting</code> and add a file
-<code>plotting.py</code> with the following function:</li>
+<li><p>Add the below code to a new file and add your own code to the
+<code>...</code> sections.</p></li>
+<li><p>On the first run, capture the output of your implemented
+<code>very_complex_processing</code> function and store it
+appropriately.</p></li>
+<li><p>After, ensure the test compares the stored data to the result,
+and passes successfully. Avoid using <code>float</code>s for
+now.</p></li>
 </ul>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="kw">def</span> plot_data(data: <span class="bu">list</span>):</span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    ax.plot(data)</span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>    <span class="cf">return</span> fig</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="kw">def</span> very_complex_processing(data):</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>    <span class="cf">return</span> ...</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="kw">def</span> test_something():</span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>    input_data <span class="op">=</span> ...</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>    processed_data <span class="op">=</span> very_complex_processing(input_data)</span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>    <span class="cf">assert</span> ...</span></code></pre>
 </div>
-<p>This function takes a list of points to plot, plots them and returns
-the figure produced.</p>
-<p>In order to test that this funciton produces the correct plots, we
-will need to store the correct plots to compare against. - Create a new
-folder called <code>test_plots</code> inside the <code>plotting</code>
-folder. This is where we will store the reference images.</p>
-<p><code>pytest-mpl</code> adds the
-<code>@pytest.mark.mpl_image_compare</code> decorator that is used to
-compare the output of a test function to a reference image. It takes a
-<code>baseline_dir</code> argument that specifies the directory where
-the reference images are stored.</p>
-<ul>
-<li>Create a new file called <code>test_plotting.py</code> in the
-<code>plotting</code> folder with the following content:</li>
-</ul>
-<div class="codewrapper sourceCode" id="cb8">
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="im">import</span> pytest</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="im">from</span> plotting <span class="im">import</span> plot_data</span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="at">@pytest.mark.mpl_image_compare</span>(baseline_dir<span class="op">=</span><span class="st">"test_plots/"</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="kw">def</span> test_plot_data():</span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>    data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>]</span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>    fig <span class="op">=</span> plot_data(data)</span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>    <span class="cf">return</span> fig</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>SNAPSHOT_DATA <span class="op">=</span> [<span class="dv">42</span>, <span class="dv">33</span>, <span class="dv">26</span>, <span class="dv">21</span>, <span class="dv">18</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">21</span>]</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="kw">def</span> very_complex_processing(data: <span class="bu">list</span>):</span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>    <span class="cf">return</span> [x <span class="op">**</span> <span class="dv">2</span> <span class="op">-</span> <span class="dv">10</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">42</span> <span class="cf">for</span> x <span class="kw">in</span> data]</span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a><span class="kw">def</span> test_something():</span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>    input_data <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8</span>)]</span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a>    processed_data <span class="op">=</span> very_complex_processing(input_data)</span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a>    <span class="cf">assert</span> SNAPSHOT_DATA <span class="op">==</span> processed_data</span></code></pre>
 </div>
-<p>Here we have told pytest that we want it to compare the output of the
-<code>test_plot_data</code> function to the images in the
-<code>test_plots</code> directory.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="implement-a-regression-test-with-snaptol" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="implement-a-regression-test-with-snaptol" class="callout-inner">
+<h3 class="callout-title">Implement a regression test with Snaptol</h3>
+<div class="callout-content">
 <ul>
-<li>Run the following command to generate the reference image: (make
-sure you are in the base directory in your project and not in the
-plotting folder)</li>
+<li><p>Using the <code>estimate_pi</code> function above, implement a
+regression test using the <code>snaptolshot</code> object.</p></li>
+<li><p>Ensure to use the <code>assert_allclose</code> method to compare
+the result to the snapshot carefully.</p></li>
+<li><p>On the first pass, ensure that it fails due to a
+<code>FileNotFoundError</code>.</p></li>
+<li><p>Run it in update mode to save the snapshot, and ensure it passes
+successfuly on future runs.</p></li>
 </ul>
-<div class="codewrapper sourceCode" id="cb9">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">pytest</span> <span class="at">--mpl-generate-path</span><span class="op">=</span>plotting/test_plots</span></code></pre>
 </div>
-<p>This tells pytest to run the test but instead of comparing the
-result, it will save the result into the <code>test_plots</code>
-directory for use in future tests.</p>
-<p>Now we have the reference image, we can run the test to ensure that
-the output of <code>plot_data</code> matches the reference image. Pytest
-doesn’t check the images by default, so we need to pass it the
-<code>--mpl</code> flag to tell it to check the images.</p>
-<div class="codewrapper sourceCode" id="cb10">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">pytest</span> <span class="at">--mpl</span></span></code></pre>
 </div>
-<p>Since we just generated the reference image, the test should
-pass.</p>
-<p>Now let’s edit the <code>plot_data</code> function to plot a
-different set of points by adding a 4 to the data:</p>
-<div class="codewrapper sourceCode" id="cb11">
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="kw">def</span> plot_data(data: <span class="bu">list</span>):</span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>    <span class="co"># Add 4 to the data</span></span>
-<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>    data.append(<span class="dv">4</span>)</span>
-<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>    ax.plot(data)</span>
-<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>    <span class="cf">return</span> fig</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="kw">def</span> estimate_pi(iterations):</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>    num_inside <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(iterations):</span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>        x <span class="op">=</span> random.random()</span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>        y <span class="op">=</span> random.random()</span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>        <span class="cf">if</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span> <span class="op">&lt;</span> <span class="dv">1</span>:</span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>            num_inside <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">4</span> <span class="op">*</span> num_inside <span class="op">/</span> iterations</span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a><span class="kw">def</span> test_something(snaptolshot):</span>
+<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a>    result <span class="op">=</span> estimate_pi(<span class="dv">10000000</span>)</span>
+<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" tabindex="-1"></a>    snaptolshot.assert_allclose(result, rtol<span class="op">=</span><span class="fl">1e-03</span>, atol<span class="op">=</span><span class="fl">0.0</span>)</span></code></pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div id="more-complex-regression-tests" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="more-complex-regression-tests" class="callout-inner">
+<h3 class="callout-title">More complex regression tests</h3>
+<div class="callout-content">
 <ul>
-<li>Now re-run the test. You should see that it fails.</li>
+<li><p>Create two separate tests that both utilise the
+<code>estimate_pi</code> function as a fixture.</p></li>
+<li><p>Using different tolerances for each test, assert that the first
+passes successfully, and assert that the second raises an
+<code>AssertionError</code>. Hints: 1) remember to look back at the
+“Testing for Exceptions” and “Fixtures” modules, 2) the error in the pi
+calculation algorithm is <span class="math inline">\(\frac{1}{\sqrt{N}}\)</span> where <span class="math inline">\(N\)</span> is the number of points used.</p></li>
 </ul>
-<div class="codewrapper sourceCode" id="cb12">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">===</span> FAILURES ===</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="ex">___</span> test_plot_data ___</span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="ex">Error:</span> Image files did not match.</span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>  <span class="ex">RMS</span> Value: 15.740441786649093</span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>  <span class="ex">Expected:</span>  </span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>    <span class="ex">/var/folders/sr/wjtfqr9s6x3bw1s647t649x80000gn/T/tmp6d0p4yvm/test_plotting.test_plot_data/baseline.png</span></span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>  <span class="ex">Actual:</span>    </span>
-<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a>    <span class="ex">/var/folders/sr/wjtfqr9s6x3bw1s647t649x80000gn/T/tmp6d0p4yvm/test_plotting.test_plot_data/result.png</span></span>
-<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a>  <span class="ex">Difference:</span></span>
-<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a>    <span class="ex">/var/folders/sr/wjtfqr9s6x3bw1s647t649x80000gn/T/tmp6d0p4yvm/test_plotting.test_plot_data/result-failed-diff.png</span></span>
-<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a>  <span class="ex">Tolerance:</span> </span>
-<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a>    <span class="ex">2</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="im">import</span> pytest</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="at">@pytest.fixture</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a><span class="kw">def</span> estimate_pi():</span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>    iterations <span class="op">=</span> <span class="dv">10000000</span></span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a>    num_inside <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(iterations):</span>
+<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a>        x <span class="op">=</span> random.random()</span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a>        y <span class="op">=</span> random.random()</span>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a>        <span class="cf">if</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span> <span class="op">&lt;</span> <span class="dv">1</span>:</span>
+<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a>            num_inside <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">4</span> <span class="op">*</span> num_inside <span class="op">/</span> iterations</span>
+<span id="cb18-14"><a href="#cb18-14" tabindex="-1"></a></span>
+<span id="cb18-15"><a href="#cb18-15" tabindex="-1"></a><span class="kw">def</span> test_pi_passes(snaptolshot, estimate_pi):</span>
+<span id="cb18-16"><a href="#cb18-16" tabindex="-1"></a>    <span class="co"># Passes due to loose tolerance.</span></span>
+<span id="cb18-17"><a href="#cb18-17" tabindex="-1"></a>    snaptolshot.assert_allclose(estimate_pi, rtol<span class="op">=</span><span class="fl">1e-03</span>, atol<span class="op">=</span><span class="fl">0.0</span>)</span>
+<span id="cb18-18"><a href="#cb18-18" tabindex="-1"></a></span>
+<span id="cb18-19"><a href="#cb18-19" tabindex="-1"></a><span class="kw">def</span> test_pi_fails(snaptolshot, estimate_pi):</span>
+<span id="cb18-20"><a href="#cb18-20" tabindex="-1"></a>    <span class="co"># Fails due to tight tolerance.</span></span>
+<span id="cb18-21"><a href="#cb18-21" tabindex="-1"></a>    <span class="cf">with</span> pytest.raises(<span class="pp">AssertionError</span>):</span>
+<span id="cb18-22"><a href="#cb18-22" tabindex="-1"></a>        snaptolshot.assert_allclose(estimate_pi, rtol<span class="op">=</span><span class="fl">1e-04</span>, atol<span class="op">=</span><span class="fl">0.0</span>)</span></code></pre>
 </div>
-<p>Notice that the test shows you three image files. (All of these files
-are stored in a temporary directory that pytest creates when running the
-test. Depending on your system, you may be able to click on the paths to
-view the images. Try holding down CTRL or Command and clicking on the
-path.)</p>
-<ul>
-<li>The first, “Expected” is the reference image that the test is
-comparing against.</li>
-<li>The second, “Actual” is the image that was produced by the
-test.</li>
-<li>And the third is a difference image that shows the differences
-between the two images. This is very useful as it enables us to cleraly
-see what went wrong with the plotting, allowing us to fix the issue more
-easily. In this example, we can clearly see that the axes ticks are
-different, and the line plot is a completely different shape.</li>
-</ul>
-<p>This doesn’t just work with line plots, but with any type of plot
-that matplotlib can produce.</p>
-<p>Testing your plots can be very useful especially if your project
-allows users to define their own plots.</p>
+</div>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -3586,14 +3812,10 @@ allows users to define their own plots.</p>
 <div class="callout-content">
 <ul>
 <li>Regression testing ensures that the output of a function remains
-consistent between changes and are a great first step in adding tests to
-an existing project.</li>
-<li>
-<code>pytest-regtest</code> provides a simple way to do regression
-testing.</li>
-<li>
-<code>pytest-mpl</code> provides a simple way to test plots by
-comparing the output of a test function to a reference image.</li>
+consistent between test runs.</li>
+<li>The <code>pytest</code> plugin, <code>snaptol</code>, can be used to
+simplify this process and cater for floating point numbers that may need
+tolerances on assertion checks.</li>
 </ul>
 </div>
 </div>

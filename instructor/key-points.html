@@ -356,7 +356,7 @@
 <div class="accordion accordion-flush" id="accordionFlush11">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading11">
-        <a href="09-testing-output-files.html">10. Regression Testing and Plots</a>
+        <a href="09-testing-output-files.html">10. Regression Tests</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -524,18 +524,14 @@ a lot of repetition in the setup for each of the different test
 cases.</li>
 <li>Use the <code>@pytest.mark.parametrize</code> decorator to define a
 parametrized test.</li>
-</ul></section><section id="09-testing-output-files"><h2 class="section-heading"><a href="09-testing-output-files.html">Regression Testing and Plots</a></h2>
+</ul></section><section id="09-testing-output-files"><h2 class="section-heading"><a href="09-testing-output-files.html">Regression Tests</a></h2>
 <hr class="half-width">
 <ul>
 <li>Regression testing ensures that the output of a function remains
-consistent between changes and are a great first step in adding tests to
-an existing project.</li>
-<li>
-<code>pytest-regtest</code> provides a simple way to do regression
-testing.</li>
-<li>
-<code>pytest-mpl</code> provides a simple way to test plots by
-comparing the output of a test function to a reference image.</li>
+consistent between test runs.</li>
+<li>The <code>pytest</code> plugin, <code>snaptol</code>, can be used to
+simplify this process and cater for floating point numbers that may need
+tolerances on assertion checks.</li>
 </ul></section><section id="10-CI"><h2 class="section-heading"><a href="10-CI.html">Continuous Integration with GitHub Actions</a></h2>
 <hr class="half-width">
 <ul>
