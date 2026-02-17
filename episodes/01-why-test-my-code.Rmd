@@ -71,15 +71,15 @@ for the `add` function and call it `test_add`:
 
 ```python
 def test_add():
-   # Check that it adds two positive integers
-   if add(1, 2) != 3:
-      print("Test failed!")
-   # Check that it adds zero
-   if add(5, 0) != 5:
-      print("Test failed!")
-   # Check that it adds two negative integers
-   if add(-1, -2) != -3:
-      print("Test failed!")
+    # Check that it adds two positive integers
+    if add(1, 2) != 3:
+        print("Test failed!")
+    # Check that it adds zero
+    if add(5, 0) != 5:
+        print("Test failed!")
+    # Check that it adds two negative integers
+    if add(-1, -2) != -3:
+        print("Test failed!")
 ```
 
 Here we check that the function works for a set of test cases. We ensure that
@@ -98,7 +98,7 @@ functions:
 
 ```python
 def greet_user(name):
-   return "Hello" + name + "!"
+    return "Hello" + name + "!"
 ```
 
 ```python
@@ -116,8 +116,8 @@ working as expected:
 
 ```python
 def test_greet_user():
-   if greet_user("Alice") != "Hello Alice!":
-      print("Test failed!")
+    if greet_user("Alice") != "Hello Alice!":
+        print("Test failed!")
 ```
 
 The second function will crash if `x2 - x1` is zero.
@@ -127,21 +127,21 @@ unexpected behaviour:
 
 ```python
 def test_gradient():
-   if gradient(1, 1, 2, 2) != 1:
-      print("Test failed!")
-   if gradient(1, 1, 2, 3) != 2:
-      print("Test failed!")
-   if gradient(1, 1, 1, 2) != "Undefined":
-      print("Test failed!")
+    if gradient(1, 1, 2, 2) != 1:
+        print("Test failed!")
+    if gradient(1, 1, 2, 3) != 2:
+        print("Test failed!")
+    if gradient(1, 1, 1, 2) != "Undefined":
+        print("Test failed!")
 ```
 
 And we could have amended the function:
 
 ```python
 def gradient(x1, y1, x2, y2):
-   if x2 - x1 == 0:
-      return "Undefined"
-   return (y2 - y1) / (x2 - x1)
+    if x2 - x1 == 0:
+        return "Undefined"
+    return (y2 - y1) / (x2 - x1)
 ```
 
 :::::::::::::::::::::::::::::::::
@@ -156,13 +156,13 @@ consider the following function:
 ```python
 
 def multiply(a, b):
-      return a * a
+    return a * a
 
 def divide(a, b):
-      return a / b
+    return a / b
 
 def triangle_area(base, height):
-      return divide(multiply(base, height), 2)
+    return divide(multiply(base, height), 2)
 ```
 
 There is a bug in this code too, but since we have several functions calling
@@ -205,7 +205,7 @@ Consider a function that controls a driverless car.
 ```python
 def drive_car(speed, direction):
 
-   ... # complex car driving code
+    ...  # complex car driving code
 
     return speed, direction, brake_status
 ```
