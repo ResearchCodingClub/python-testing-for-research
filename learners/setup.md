@@ -43,8 +43,11 @@ a virtual environment using the following commands:
 
 ```bash
 # For a standard Python virtual environment
-python -m venv myenv
-source myenv/bin/activate
+python -m venv venv
+# Linux
+source venv/bin/activate
+# Windows (powershell)
+.\venv\Scripts\Activate.ps1
 
 # For a conda environment
 conda create --name myenv
