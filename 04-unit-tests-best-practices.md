@@ -273,11 +273,11 @@ def randomly_sample_and_filter_participants(
     min_height: int,
     max_height: int
 ):
-    """Participants is a list of tuples, containing the age and height of each participant
+    """Participants is a list of dicts, containing the age and height of each participant
     participants = [
-                      {age: 25, height: 180},
-                      {age: 30, height: 170},
-                      {age: 35, height: 160},
+        {age: 25, height: 180},
+        {age: 30, height: 170},
+        {age: 35, height: 160},
     ]
     """
 

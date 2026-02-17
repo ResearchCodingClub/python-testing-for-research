@@ -49,7 +49,7 @@ project_directory/
 
 ```python
 def add(a, b):
-  return a + b
+    return a + b
 ```
 
 - And in `test_calculator.py`, write the test for the add function that we
@@ -61,14 +61,14 @@ def add(a, b):
 from calculator import add
 
 def test_add():
-   # Check that it adds two positive integers
-   assert add(1, 2) == 3
+    # Check that it adds two positive integers
+    assert add(1, 2) == 3
 
-   # Check that it adds zero
-   assert add(5, 0) == 5
+    # Check that it adds zero
+    assert add(5, 0) == 5
 
-   # Check that it adds two negative integers
-   assert add(-1, -2) == -3
+    # Check that it adds two negative integers
+    assert add(-1, -2) == -3
 ```
 
 The `assert` statement will crash the test by raising an `AssertionError` if
@@ -88,7 +88,7 @@ Now, let's run the test. We can do this by running the following command in the 
 (make sure you're in the `my_project` directory before running this command)
 
 ```bash
-❯ pytest ./
+❯ pytest
 ```
 
 This command tells Pytest to run all the tests in the current directory.
@@ -118,7 +118,7 @@ multiplies two numbers together.
 
 ```python
 def multiply(a, b):
-  return a * b
+    return a * b
 ```
 
 - Then write a test for this function in `test_calculator.py`. Remember to
@@ -137,14 +137,14 @@ could look like this:
 
 ```python
 def test_multiply():
-  # Check that positive numbers work
-  assert multiply(5, 5) == 25
-  # Check that multiplying by 1 works
-  assert multiply(1, 5) == 5
-  # Check that multiplying by 0 works
-  assert multiply(0, 3) == 0
-  # Check that negative numbers work
-  assert multiply(-5, 2) == -10
+    # Check that positive numbers work
+    assert multiply(5, 5) == 25
+    # Check that multiplying by 1 works
+    assert multiply(1, 5) == 5
+    # Check that multiplying by 0 works
+    assert multiply(0, 3) == 0
+    # Check that negative numbers work
+    assert multiply(-5, 2) == -10
 ```
 
 :::::::::::::::::::::::::::::::::
