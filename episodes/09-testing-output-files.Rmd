@@ -20,13 +20,6 @@ exercises: 3
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Setup
-
-To use the `snaptol` package in this module, you will need to install it via,
-
-```bash
-pip install "git+https://github.com/PlasmaFAIR/snaptol"
-```
 
 ## 1) Introduction
 
@@ -249,23 +242,24 @@ Consider a simulation code that uses algorithms that depend on convergence – p
 not have an exact answer but can be approximated numerically within a given tolerance. This, along with the common use
 of controlled randomised initial conditions, can lead to results that differ slightly between runs.
 
-In the example below, we approximate the value of pi using a random sample of points in a square. The exact
-implementation of the algorithm is not important, but it relies on the use of randomised input and as a result the
-determined value will vary slightly between runs.
+In the example below, we use the `estimate_pi` function from the "Floating Point Data" module. It relies on the use of
+randomised input and as a result the determined value will vary slightly between runs.
 
 ```python
 # test_tol.py
-import numpy as np
+import random
 
-def approximate_pi(random_points: np.ndarray):
-    return 4 * np.mean(np.sum(random_points ** 2, axis=1) <= 1)
+def estimate_pi(iterations):
+    num_inside = 0
+    for _ in range(iterations):
+        x = random.random()
+        y = random.random()
+        if x**2 + y**2 < 1:
+            num_inside += 1
+    return 4 * num_inside / iterations
 
 def test_something(snaptolshot):
-    rng = np.random.default_rng()
-
-    random_points_in_square = rng.uniform(-1.0, 1.0, size=(10000000, 2))
-
-    result = approximate_pi(random_points_in_square)
+    result = estimate_pi(10000000)
 
     print(result)
 
@@ -361,7 +355,7 @@ def test_something():
 
 ## Implement a regression test with Snaptol
 
-- Using the `approximate_pi` function above, implement a regression test using the `snaptolshot` object.
+- Using the `estimate_pi` function above, implement a regression test using the `snaptolshot` object.
 
 - Ensure to use the `assert_allclose` method to compare the result to the snapshot carefully.
 
@@ -372,17 +366,19 @@ def test_something():
 :::::::::::::::::::::::: solution
 
 ```python
-import numpy as np
+import random
 
-def approximate_pi(random_points: np.ndarray):
-    return 4 * np.mean(np.sum(random_points ** 2, axis=1) <= 1)
+def estimate_pi(iterations):
+    num_inside = 0
+    for _ in range(iterations):
+        x = random.random()
+        y = random.random()
+        if x**2 + y**2 < 1:
+            num_inside += 1
+    return 4 * num_inside / iterations
 
 def test_something(snaptolshot):
-    rng = np.random.default_rng()
-
-    random_points_in_square = rng.uniform(-1.0, 1.0, size=(10000000, 2))
-
-    result = approximate_pi(random_points_in_square)
+    result = estimate_pi(10000000)
 
     snaptolshot.assert_allclose(result, rtol=1e-03, atol=0.0)
 ```
@@ -395,7 +391,7 @@ def test_something(snaptolshot):
 
 ## More complex regression tests
 
-- Create two separate tests that both utilise the `approximate_pi` function as a fixture.
+- Create two separate tests that both utilise the `estimate_pi` function as a fixture.
 
 - Using different tolerances for each test, assert that the first passes successfully, and assert that the second raises
 an `AssertionError`. Hints: 1) remember to look back at the "Testing for Exceptions" and "Fixtures" modules, 2) the
@@ -404,25 +400,28 @@ error in the pi calculation algorithm is $\frac{1}{\sqrt{N}}$ where $N$ is the n
 :::::::::::::::::::::::: solution
 
 ```python
-import numpy as np
+import random
 import pytest
 
 @pytest.fixture
-def approximate_pi():
-    rng = np.random.default_rng()
+def estimate_pi():
+    iterations = 10000000
+    num_inside = 0
+    for _ in range(iterations):
+        x = random.random()
+        y = random.random()
+        if x**2 + y**2 < 1:
+            num_inside += 1
+    return 4 * num_inside / iterations
 
-    random_points = rng.uniform(-1.0, 1.0, size=(10000000, 2))
-
-    return 4 * np.mean(np.sum(random_points ** 2, axis=1) <= 1)
-
-def test_pi_passes(snaptolshot, approximate_pi):
+def test_pi_passes(snaptolshot, estimate_pi):
     # Passes due to loose tolerance.
-    snaptolshot.assert_allclose(approximate_pi, rtol=1e-03, atol=0.0)
+    snaptolshot.assert_allclose(estimate_pi, rtol=1e-03, atol=0.0)
 
-def test_pi_fails(snaptolshot, approximate_pi):
+def test_pi_fails(snaptolshot, estimate_pi):
     # Fails due to tight tolerance.
     with pytest.raises(AssertionError):
-        snaptolshot.assert_allclose(approximate_pi, rtol=1e-04, atol=0.0)
+        snaptolshot.assert_allclose(estimate_pi, rtol=1e-04, atol=0.0)
 ```
 
 :::::::::::::::::::::::::::::::::
