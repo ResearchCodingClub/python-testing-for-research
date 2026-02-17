@@ -1,223 +1,438 @@
 ---
-title: 'Regression Testing and Plots'
+title: 'Regression Tests'
 teaching: 10
-exercises: 2
+exercises: 3
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How to test for changes in program outputs?
-- How to test for changes in plots?
+- How can we detect changes in program outputs?
+- How can snapshots make this easier?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Learn how to test for changes in images & plots
+- Explain what regression tests are and when they’re useful
+- Write a manual regression test (save output and compare later)
+- Use Snaptol snapshots to simplify output/array regression testing
+- Use tolerances (rtol/atol) to handle numerical outputs safely
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Regression testing
 
-When you have a large processing pipeline or you are just starting out adding tests to an existing project, you might not have the
-time to carefully define exactly what each function should do, or your code may be so complex that it's hard to write unit tests for it all.
+## 1) Introduction
 
-In these cases, you can use regression testing. This is where you just test that the output of a function matches the output of a previous version of the function.
+In short, a regression test asks "this test used to produce X, does it still produce X?". This can help us detect
+unexpected or unwanted changes in the output of a program.
 
-The library `pytest-regtest` provides a simple way to do this. When writing a test, we pass the argument `regtest` to the test function and use `regtest.write()` to log the output of the function.
-This tells pytest-regtest to compare the output of the test to the output of the previous test run.
+They are particularly useful,
 
-To install `pytest-regtest`:
+- when beginning to add tests to an existing project,
 
-```bash
-pip install pytest-regtest
-```
+- when adding unit tests to all parts of a project is not feasible,
 
-::::::::::::::::::::::: callout
+- to quickly give a good test coverage,
 
-This `regtest` argument is actually a fixture that is provided by the `pytest-regtest` package. It captures
-the output of the test function and compares it to the output of the previous test run. If the output is
-different, the test will fail.
+- when it does not matter if the output is correct or not.
 
-:::::::::::::::::::::::::::::::
+These types of tests are not a substitute for unit tests, but rather are complimentary.
 
-Let's make a regression test:
 
-- Create a new function in `statistics/stats.py` called `very_complex_processing()`:
+## 2) Manual example
+
+Let's make a regression test in a `test.py` file. It is going to utilise a "very complex" processing function to
+simulate the processing of data,
 
 ```python
+# test.py
 
 def very_complex_processing(data: list):
-
-    # Do some very complex processing
-    processed_data = [x * 2 for x in data]
-
-    return processed_data
+    return [x ** 2 - 10 * x + 42 for x in data]
 ```
 
-- Then in `test_stats.py`, we can add a regression test for this function using the `regtest` argument.
+Let's write the basic structure for a test with example input data, but for now we will simply print the output,
 
 ```python
+# test.py continued
+
+def test_something():
+    input_data = [i for i in range(8)]
+
+    processed_data = very_complex_processing(input_data)
+
+    print(processed_data)
+```
+
+Let's run `pytest` with reduced verbosity `-q` and print the statement from the test `-s`,
+
+```console
+$ pytest -qs test.py
+[42, 33, 26, 21, 18, 17, 18, 21]
+.
+1 passed in 0.00s
+```
+
+We get a list of output numbers that simulate the result of a complex function in our project. Let's save this data at
+the top of our `test.py` file so that we can `assert` that it is always equal to the output of the processing function,
+
+```python
+# test.py
+
+SNAPSHOT_DATA = [42, 33, 26, 21, 18, 17, 18, 21]
+
+def very_complex_processing(data: list):
+    return [x ** 2 - 10 * x + 42 for x in data]
+
+def test_something():
+    input_data = [i for i in range(8)]
+
+    processed_data = very_complex_processing(input_data)
+
+    assert SNAPSHOT_DATA == processed_data
+```
+
+We call the saved version of the data a "snapshot".
+
+We can now be assured that any development of the code that erroneously alters the output of the function will cause the
+test to fail. For example, suppose we slightly altered the `very_complex_processing` function,
+
+```python
+def very_complex_processing(data: list):
+    return [3 * x ** 2 - 10 * x + 42 for x in data]
+#           ^^^^ small change
+```
+
+Then, running the test causes it to fail,
+```console
+$ pytest -q test.py
+F
+__________________________________ FAILURES _________________________________
+_______________________________ test_something ______________________________
+
+    def test_something():
+        input_data = [i for i in range(8)]
+
+        processed_data = very_complex_processing(input_data)
+
+>       assert SNAPSHOT_DATA == processed_data
+E       assert [42, 33, 26, 21, 18, 17, ...] == [42, 35, 34, 39, 50, 67, ...]
+E         At index 1 diff: 33 != 35
+
+test.py:12: AssertionError
+1 failed in 0.03s
+```
+
+If the change was intentional, then we could print the output again and update `SNAPSHOT_DATA`. Otherwise, we would want
+to investigate the cause of the change and fix it.
+
+
+## 3) Snaptol
+
+So far, performing a regression test manually has been a bit tedious. Storing the output data at the top of our test
+file,
+
+- adds clutter,
+
+- is laborious,
+
+- is prone to errors.
+
+We could move the data to a separate file, but once again we would have to handle its contents manually.
+
+There are tools out there that can handle this for us, one widely known is Syrupy. A new tool has also been developed
+called Snaptol, that we will use here.
+
+Let's use the original `very_complex_processing` function, and introduce the `snaptolshot` fixture,
+
+```python
+# test.py
+
+def very_complex_processing(data: list):
+    return [x ** 2 - 10 * x + 42 for x in data]
+
+def test_something(snaptolshot):
+    input_data = [i for i in range(8)]
+
+    processed_data = very_complex_processing(input_data)
+
+    assert snaptolshot == processed_data
+```
+
+Notice that we have replaced the `SNAPSHOT_DATA` variable with `snaptolshot`, which is an object provided by
+Snaptol that can handle the snapshot file management, amongst other smart features, for us.
+
+When we run the test for the first time, we will be met with a `FileNotFoundError`,
+
+```console
+$ pytest -q test.py
+F
+================================== FAILURES =================================
+_______________________________ test_something ______________________________
+
+    def test_something(snaptolshot):
+        input_data = [i for i in range(8)]
+
+        processed_data = very_complex_processing(input_data)
+
+>       assert snaptolshot == processed_data
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test.py:10:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.../snapshot.py:167: FileNotFoundError
+========================== short test summary info ==========================
+FAILED test.py::test_something - FileNotFoundError: Snapshot file not found.
+1 failed in 0.03s
+```
+
+This is because we have not yet created the snapshot file. Let's run `snaptol` in update mode so that it knows to create
+the snapshot file for us. This is similar to the print, copy and paste step in the manual approach above,
+
+```console
+$ pytest -q test.py --snaptol-update
+.
+1 passed in 0.00s
+```
+
+This tells us that the test performed successfully, and, because we were in update mode, an associated snapshot file was
+created with the name format `<test_file>.<test_name>.json` in a dedicated directory,
+
+```console
+$ tree
+.
+├── __snapshots__
+│   └── test.test_something.json
+└── test.py
+```
+
+The contents of the JSON file are the same as in the manual example,
+```json
+[
+  42,
+  33,
+  26,
+  21,
+  18,
+  17,
+  18,
+  21
+]
+```
+
+As the data is saved in JSON format, almost any Python object can be used in a snapshot test – not just integers and
+lists.
+
+Just as previously, if we alter the function then the test will fail. We can similarly update the snapshot file with
+the new output with the `--snaptol-update` flag as above.
+
+::::::::::::::::::::::::::::::::::::: callout
+
+**Note:** `--snaptol-update` will only update snapshot files for tests that failed in the previous run of `pytest`. This
+is because the expected workflow is 1) run `pytest`, 2) observe a test failure, 3) if happy with the change then run
+the update, `--snaptol-update`. This stops the unnecessary rewrite of snapshot files in tests that pass – which is
+particularly important when we allow for tolerance as explained in the next section.
+
+:::::::::::::::::::::::::::::::::::::::::::::
+
+
+### Floating point numbers
+
+Consider a simulation code that uses algorithms that depend on convergence – perhaps a complicated equation that does
+not have an exact answer but can be approximated numerically within a given tolerance. This, along with the common use
+of controlled randomised initial conditions, can lead to results that differ slightly between runs.
+
+In the example below, we use the `estimate_pi` function from the "Floating Point Data" module. It relies on the use of
+randomised input and as a result the determined value will vary slightly between runs.
+
+```python
+# test_tol.py
+import random
+
+def estimate_pi(iterations):
+    num_inside = 0
+    for _ in range(iterations):
+        x = random.random()
+        y = random.random()
+        if x**2 + y**2 < 1:
+            num_inside += 1
+    return 4 * num_inside / iterations
+
+def test_something(snaptolshot):
+    result = estimate_pi(10000000)
+
+    print(result)
+
+    snaptolshot.assert_allclose(result, rtol=1e-03, atol=0.0)
+```
+
+Notice that here we use a method of the `snaptolshot` object called `assert_allclose`. This is a wrapper around the
+`numpy.testing.assert_allclose` function, as discussed in the "Floating Point Data" module, and allows us to specify
+tolerances for the comparison rather than asserting an exact equality.
+
+Let's run the test initially like before but create the snapshot file straight away by running in update mode,
+
+```console
+$ pytest -qs test_tol.py --snaptol-update-all
+3.1423884
+.
+1 passed in 0.30s
+```
+
+Even with ten million data points, the approximation of pi, 3.1423884, isn't great!
+
+::::::::::::::::::::::::::::::::::::: callout
+
+**Note:** remember that the result of a regression test is not the important part, but rather on how that result changes
+in future runs. We want to focus on whether our code reproduces the result in future runs – in this case within a given
+tolerance to account for the randomness.
+
+:::::::::::::::::::::::::::::::::::::::::::::
+
+In the test above, we supplied `rtol` and `atol` arguments to the function in the assertion. These  are used to control
+the tolerance of the comparison between the snapshot and the actual output. This means on future runs of the test, the
+computed value will not be required to exactly match the snapshot, but rather within the given tolerance. Remember,
+
+- `rtol` is the relative tolerance, useful for handling large numbers (e.g magnitude much greater than 1),
+- `atol` is the absolute tolerance, useful for numbers "near zero" (e.g magnitude much less than 1).
+
+If we run the test again, we see the printed output is different to that saved to file, but the test still passes,
+
+```console
+$ pytest -qs test_tol.py
+3.1408724
+.
+1 passed in 0.24s
+```
+
+
+## Exercises
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Create your own regression test
+
+- Add the below code to a new file and add your own code to the `...` sections.
+
+- On the first run, capture the output of your implemented `very_complex_processing` function and store it
+appropriately.
+
+- After, ensure the test compares the stored data to the result, and passes successfully. Avoid using `float`s for now.
+
+```python
+def very_complex_processing(data):
+    return ...
+
+def test_something():
+    input_data = ...
+
+    processed_data = very_complex_processing(input_data)
+
+    assert ...
+```
+
+:::::::::::::::::::::::: solution
+
+```python
+SNAPSHOT_DATA = [42, 33, 26, 21, 18, 17, 18, 21]
+
+def very_complex_processing(data: list):
+    return [x ** 2 - 10 * x + 42 for x in data]
+
+def test_something():
+    input_data = [i for i in range(8)]
+
+    processed_data = very_complex_processing(input_data)
+
+    assert SNAPSHOT_DATA == processed_data
+```
+
+:::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Implement a regression test with Snaptol
+
+- Using the `estimate_pi` function above, implement a regression test using the `snaptolshot` object.
+
+- Ensure to use the `assert_allclose` method to compare the result to the snapshot carefully.
+
+- On the first pass, ensure that it fails due to a `FileNotFoundError`.
+
+- Run it in update mode to save the snapshot, and ensure it passes successfuly on future runs.
+
+:::::::::::::::::::::::: solution
+
+```python
+import random
+
+def estimate_pi(iterations):
+    num_inside = 0
+    for _ in range(iterations):
+        x = random.random()
+        y = random.random()
+        if x**2 + y**2 < 1:
+            num_inside += 1
+    return 4 * num_inside / iterations
+
+def test_something(snaptolshot):
+    result = estimate_pi(10000000)
+
+    snaptolshot.assert_allclose(result, rtol=1e-03, atol=0.0)
+```
+
+:::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## More complex regression tests
+
+- Create two separate tests that both utilise the `estimate_pi` function as a fixture.
+
+- Using different tolerances for each test, assert that the first passes successfully, and assert that the second raises
+an `AssertionError`. Hints: 1) remember to look back at the "Testing for Exceptions" and "Fixtures" modules, 2) the
+error in the pi calculation algorithm is $\frac{1}{\sqrt{N}}$ where $N$ is the number of points used.
+
+:::::::::::::::::::::::: solution
+
+```python
+import random
 import pytest
 
-from stats import very_complex_processing
+@pytest.fixture
+def estimate_pi():
+    iterations = 10000000
+    num_inside = 0
+    for _ in range(iterations):
+        x = random.random()
+        y = random.random()
+        if x**2 + y**2 < 1:
+            num_inside += 1
+    return 4 * num_inside / iterations
 
-def test_very_complex_processing(regtest):
+def test_pi_passes(snaptolshot, estimate_pi):
+    # Passes due to loose tolerance.
+    snaptolshot.assert_allclose(estimate_pi, rtol=1e-03, atol=0.0)
 
-    data = [1, 2, 3]
-    processed_data = very_complex_processing(data)
-
-    regtest.write(str(processed_data))
+def test_pi_fails(snaptolshot, estimate_pi):
+    # Fails due to tight tolerance.
+    with pytest.raises(AssertionError):
+        snaptolshot.assert_allclose(estimate_pi, rtol=1e-04, atol=0.0)
 ```
 
-- Now because we haven't run the test yet, there is no reference output to compare against, 
-so we need to generate it using the `--regtest-generate` flag:
+:::::::::::::::::::::::::::::::::
 
-```bash
-pytest --regtest-generate
-```
-
-This tells pytest to run the test but instead of comparing the result, it will save the result for use in future tests.
-
-- Try running pytest and since we haven't changed how the function works, the test should pass.
-
-- Then change the function to break the test and re-run pytest. The test will fail and show you the difference between the expected and actual output.
-
-```bash
-
-=== FAILURES ===
-___ test_very_complex_processing ___
-
-regression test output differences for statistics/test_stats.py::test_very_complex_processing:
-(recorded output from statistics/_regtest_outputs/test_stats.test_very_complex_processing.out)
-
->   --- current
->   +++ expected
->   @@ -1 +1 @@
->   -[3, 6, 9]
->   +[2, 4, 6]
-```
-
-Here we can see that it has picked up on the difference between the expected and actual output, and displayed it for us to see.
-
-Regression tests, while not as powerful as unit tests, are a great way to quickly add tests to a project and ensure that changes to the code don't break existing functionality.
-It is also a good idea to add regression tests to your main processing pipelines just in case your unit tests don't cover all the edge cases, this will
-ensure that the output of your program remains consistent between versions.
-
-## Testing plots
-
-When you are working with plots, you may want to test that the output is as expected. This can be done by comparing the output to a reference image or plot.
-The `pytest-mpl` package provides a simple way to do this, automating the comparison of the output of a test function to a reference image.
-
-To install `pytest-mpl`:
-
-```bash
-pip install pytest-mpl
-```
-
-- Create a new folder called `plotting` and add a file `plotting.py` with the following function:
-
-```python
-import matplotlib.pyplot as plt
-
-def plot_data(data: list):
-    fig, ax = plt.subplots()
-    ax.plot(data)
-    return fig
-```
-
-This function takes a list of points to plot, plots them and returns the figure produced.
-
-In order to test that this funciton produces the correct plots, we will need to store the correct plots to compare against.
-- Create a new folder called `test_plots` inside the `plotting` folder. This is where we will store the reference images.
-
-`pytest-mpl` adds the `@pytest.mark.mpl_image_compare` decorator that is used to compare the output of a test function to a reference image.
-It takes a `baseline_dir` argument that specifies the directory where the reference images are stored.
-
-- Create a new file called `test_plotting.py` in the `plotting` folder with the following content:
-
-```python
-import pytest
-from plotting import plot_data
-
-@pytest.mark.mpl_image_compare(baseline_dir="test_plots/")
-def test_plot_data():
-    data = [1, 3, 2]
-    fig = plot_data(data)
-    return fig
-```
-
-Here we have told pytest that we want it to compare the output of the `test_plot_data` function to the images in the `test_plots` directory.
-
-- Run the following command to generate the reference image:
-(make sure you are in the base directory in your project and not in the plotting folder)
-
-```bash
-pytest --mpl-generate-path=plotting/test_plots
-```
-
-This tells pytest to run the test but instead of comparing the result, it will save the result into the `test_plots` directory for use in future tests.
-
-Now we have the reference image, we can run the test to ensure that the output of `plot_data` matches the reference image.
-Pytest doesn't check the images by default, so we need to pass it the `--mpl` flag to tell it to check the images.
-
-```bash
-pytest --mpl
-```
-
-Since we just generated the reference image, the test should pass.
-
-Now let's edit the `plot_data` function to plot a different set of points by adding a 4 to the data:
-
-```python
-import matplotlib.pyplot as plt
-
-def plot_data(data: list):
-    fig, ax = plt.subplots()
-    # Add 4 to the data
-    data.append(4)
-    ax.plot(data)
-    return fig
-```
-
-- Now re-run the test. You should see that it fails.
-
-```bash
-=== FAILURES ===
-___ test_plot_data ___
-Error: Image files did not match.
-  RMS Value: 15.740441786649093
-  Expected:  
-    /var/folders/sr/wjtfqr9s6x3bw1s647t649x80000gn/T/tmp6d0p4yvm/test_plotting.test_plot_data/baseline.png
-  Actual:    
-    /var/folders/sr/wjtfqr9s6x3bw1s647t649x80000gn/T/tmp6d0p4yvm/test_plotting.test_plot_data/result.png
-  Difference:
-    /var/folders/sr/wjtfqr9s6x3bw1s647t649x80000gn/T/tmp6d0p4yvm/test_plotting.test_plot_data/result-failed-diff.png
-  Tolerance: 
-    2
-```
-
-Notice that the test shows you three image files.
-(All of these files are stored in a temporary directory that pytest creates when running the test.
-Depending on your system, you may be able to click on the paths to view the images. Try holding down CTRL or Command and clicking on the path.)
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 
-- The first, "Expected" is the reference image that the test is comparing against.
-- The second, "Actual" is the image that was produced by the test.
-- And the third is a difference image that shows the differences between the two images. This is very useful as it enables us to cleraly see
-what went wrong with the plotting, allowing us to fix the issue more easily. In this example, we can clearly see that the axes ticks are different, and
-the line plot is a completely different shape.
+::::::::::::::::::::::::::::::::::::: keypoints
 
-This doesn't just work with line plots, but with any type of plot that matplotlib can produce.
+- Regression testing ensures that the output of a function remains consistent between test runs.
+- The `pytest` plugin, `snaptol`, can be used to simplify this process and cater for floating point numbers that may
+need tolerances on assertion checks.
 
-Testing your plots can be very useful especially if your project allows users to define their own plots.
-
-
-::::::::::::::::::::::::::::::::::::: keypoints 
-
-- Regression testing ensures that the output of a function remains consistent between changes and are a great first step in adding tests to an existing project.
-- `pytest-regtest` provides a simple way to do regression testing.
-- `pytest-mpl` provides a simple way to test plots by comparing the output of a test function to a reference image.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
+:::::::::::::::::::::::::::::::::::::::::::::::
