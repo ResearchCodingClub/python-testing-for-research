@@ -27,106 +27,105 @@ Notice how we have to repeat the exact same setup code in each test.
 ```python
 
 class Point:
-   def __init__(self, x, y):
-      self.x = x
-      self.y = y
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-   def distance_from_origin(self):
-      return (self.x ** 2 + self.y ** 2) ** 0.5
+    def distance_from_origin(self):
+        return (self.x ** 2 + self.y ** 2) ** 0.5
 
-   def move(self, dx, dy):
-      self.x += dx
-      self.y += dy
+    def move(self, dx, dy):
+        self.x += dx
+        self.y += dy
    
-   def reflect_over_x(self):
-      self.y = -self.y
+    def reflect_over_x(self):
+        self.y = -self.y
 
-   def reflect_over_y(self):
-      self.x = -self.x
+    def reflect_over_y(self):
+        self.x = -self.x
 
 ```
 
 ```python
 
 def test_distance_from_origin():
-   # Positive coordinates
-   point_positive_coords = Point(3, 4)
-   # Negative coordinates
-   point_negative_coords = Point(-3, -4)
-   # Mix of positive and negative coordinates
-   point_mixed_coords = Point(-3, 4)
+    # Positive coordinates
+    point_positive_coords = Point(3, 4)
+    # Negative coordinates
+    point_negative_coords = Point(-3, -4)
+    # Mix of positive and negative coordinates
+    point_mixed_coords = Point(-3, 4)
 
-   assert point_positive_coords.distance_from_origin() == 5.0
-   assert point_negative_coords.distance_from_origin() == 5.0
-   assert point_mixed_coords.distance_from_origin() == 5.0
+    assert point_positive_coords.distance_from_origin() == 5.0
+    assert point_negative_coords.distance_from_origin() == 5.0
+    assert point_mixed_coords.distance_from_origin() == 5.0
 
 def test_move():
-   # Repeated setup again...
+    # Repeated setup again...
 
-   # Positive coordinates
-   point_positive_coords = Point(3, 4)
-   # Negative coordinates
-   point_negative_coords = Point(-3, -4)
-   # Mix of positive and negative coordinates
-   point_mixed_coords = Point(-3, 4)
+    # Positive coordinates
+    point_positive_coords = Point(3, 4)
+    # Negative coordinates
+    point_negative_coords = Point(-3, -4)
+    # Mix of positive and negative coordinates
+    point_mixed_coords = Point(-3, 4)
 
+    # Test logic
+    point_positive_coords.move(2, -1)
+    point_negative_coords.move(2, -1)
+    point_mixed_coords.move(2, -1)
 
-   # Test logic
-   point_positive_coords.move(2, -1)
-   point_negative_coords.move(2, -1)
-   point_mixed_coords.move(2, -1)
-
-   assert point_positive_coords.x == 5
-   assert point_positive_coords.y == 3
-   assert point_negative_coords.x == -1
-   assert point_negative_coords.y == -5
-   assert point_mixed_coords.x == -1
-   assert point_mixed_coords.y == 3
+    assert point_positive_coords.x == 5
+    assert point_positive_coords.y == 3
+    assert point_negative_coords.x == -1
+    assert point_negative_coords.y == -5
+    assert point_mixed_coords.x == -1
+    assert point_mixed_coords.y == 3
 
 def test_reflect_over_x():
-   # Yet another setup repetition
+    # Yet another setup repetition
 
-   # Positive coordinates
-   point_positive_coordinates = Point(3, 4)
-   # Negative coordinates
-   point_negative_coordinates = Point(-3, -4)
-   # Mix of positive and negative coordinates
-   point_mixed_coordinates = Point(-3, 4)
+    # Positive coordinates
+    point_positive_coordinates = Point(3, 4)
+    # Negative coordinates
+    point_negative_coordinates = Point(-3, -4)
+    # Mix of positive and negative coordinates
+    point_mixed_coordinates = Point(-3, 4)
 
-   # Test logic
-   point_positive_coordinates.reflect_over_x()
-   point_negative_coordinates.reflect_over_x()
-   point_mixed_coordinates.reflect_over_x()
+    # Test logic
+    point_positive_coordinates.reflect_over_x()
+    point_negative_coordinates.reflect_over_x()
+    point_mixed_coordinates.reflect_over_x()
 
-   assert point_positive_coordinates.x == 3
-   assert point_positive_coordinates.y == -4
-   assert point_negative_coordinates.x == -3
-   assert point_negative_coordinates.y == 4
-   assert point_mixed_coordinates.x == -3
-   assert point_mixed_coordinates.y == -4
+    assert point_positive_coordinates.x == 3
+    assert point_positive_coordinates.y == -4
+    assert point_negative_coordinates.x == -3
+    assert point_negative_coordinates.y == 4
+    assert point_mixed_coordinates.x == -3
+    assert point_mixed_coordinates.y == -4
 
 
 def test_reflect_over_y():
-   # One more time...
+    # One more time...
 
-   # Positive coordinates
-   point_positive_coordinates = Point(3, 4)
-   # Negative coordinates
-   point_negative_coordinates = Point(-3, -4)
-   # Mix of positive and negative coordinates
-   point_mixed_coordinates = Point(-3, 4)
+    # Positive coordinates
+    point_positive_coordinates = Point(3, 4)
+    # Negative coordinates
+    point_negative_coordinates = Point(-3, -4)
+    # Mix of positive and negative coordinates
+    point_mixed_coordinates = Point(-3, 4)
 
-   # Test logic
-   point_positive_coordinates.reflect_over_y()
-   point_negative_coordinates.reflect_over_y()
-   point_mixed_coordinates.reflect_over_y()
+    # Test logic
+    point_positive_coordinates.reflect_over_y()
+    point_negative_coordinates.reflect_over_y()
+    point_mixed_coordinates.reflect_over_y()
 
-   assert point_positive_coordinates.x == -3
-   assert point_positive_coordinates.y == 4
-   assert point_negative_coordinates.x == 3
-   assert point_negative_coordinates.y == -4
-   assert point_mixed_coordinates.x == 3
-   assert point_mixed_coordinates.y == 4
+    assert point_positive_coordinates.x == -3
+    assert point_positive_coordinates.y == 4
+    assert point_negative_coordinates.x == 3
+    assert point_negative_coordinates.y == -4
+    assert point_mixed_coordinates.x == 3
+    assert point_mixed_coordinates.y == 4
 
 ```
 
@@ -147,10 +146,10 @@ import pytest
 
 @pytest.fixture
 def my_fixture():
-   return "Hello, world!"
+    return "Hello, world!"
 
 def test_my_fixture(my_fixture):
-   assert my_fixture == "Hello, world!"
+    assert my_fixture == "Hello, world!"
 ```
 
 Here, Pytest will notice that `my_fixture` is a fixture due to the `@pytest.fixture` decorator, and will run `my_fixture`, then pass the result into `test_my_fixture`.
@@ -162,56 +161,56 @@ import pytest
 
 @pytest.fixture
 def point_positive_3_4():
-   return Point(3, 4)
+    return Point(3, 4)
 
 @pytest.fixture
 def point_negative_3_4():
-   return Point(-3, -4)
+    return Point(-3, -4)
 
 @pytest.fixture
 def point_mixed_3_4():
-   return Point(-3, 4)
+    return Point(-3, 4)
 
 def test_distance_from_origin(point_positive_3_4, point_negative_3_4, point_mixed_3_4):
-   assert point_positive_3_4.distance_from_origin() == 5.0
-   assert point_negative_3_4.distance_from_origin() == 5.0
-   assert point_mixed_3_4.distance_from_origin() == 5.0
+    assert point_positive_3_4.distance_from_origin() == 5.0
+    assert point_negative_3_4.distance_from_origin() == 5.0
+    assert point_mixed_3_4.distance_from_origin() == 5.0
 
 def test_move(point_positive_3_4, point_negative_3_4, point_mixed_3_4):
-   point_positive_3_4.move(2, -1)
-   point_negative_3_4.move(2, -1)
-   point_mixed_3_4.move(2, -1)
+    point_positive_3_4.move(2, -1)
+    point_negative_3_4.move(2, -1)
+    point_mixed_3_4.move(2, -1)
 
-   assert point_positive_3_4.x == 5
-   assert point_positive_3_4.y == 3
-   assert point_negative_3_4.x == -1
-   assert point_negative_3_4.y == -5
-   assert point_mixed_3_4.x == -1
-   assert point_mixed_3_4.y == 3
+    assert point_positive_3_4.x == 5
+    assert point_positive_3_4.y == 3
+    assert point_negative_3_4.x == -1
+    assert point_negative_3_4.y == -5
+    assert point_mixed_3_4.x == -1
+    assert point_mixed_3_4.y == 3
 
 def test_reflect_over_x(point_positive_3_4, point_negative_3_4, point_mixed_3_4):
-   point_positive_3_4.reflect_over_x()
-   point_negative_3_4.reflect_over_x()
-   point_mixed_3_4.reflect_over_x()
+    point_positive_3_4.reflect_over_x()
+    point_negative_3_4.reflect_over_x()
+    point_mixed_3_4.reflect_over_x()
 
-   assert point_positive_3_4.x == 3
-   assert point_positive_3_4.y == -4
-   assert point_negative_3_4.x == -3
-   assert point_negative_3_4.y == 4
-   assert point_mixed_3_4.x == -3
-   assert point_mixed_3_4.y == -4
+    assert point_positive_3_4.x == 3
+    assert point_positive_3_4.y == -4
+    assert point_negative_3_4.x == -3
+    assert point_negative_3_4.y == 4
+    assert point_mixed_3_4.x == -3
+    assert point_mixed_3_4.y == -4
 
 def test_reflect_over_y(point_positive_3_4, point_negative_3_4, point_mixed_3_4):
-   point_positive_3_4.reflect_over_y()
-   point_negative_3_4.reflect_over_y()
-   point_mixed_3_4.reflect_over_y()
+    point_positive_3_4.reflect_over_y()
+    point_negative_3_4.reflect_over_y()
+    point_mixed_3_4.reflect_over_y()
 
-   assert point_positive_3_4.x == -3
-   assert point_positive_3_4.y == 4
-   assert point_negative_3_4.x == 3
-   assert point_negative_3_4.y == -4
-   assert point_mixed_3_4.x == 3
-   assert point_mixed_3_4.y == 4
+    assert point_positive_3_4.x == -3
+    assert point_positive_3_4.y == 4
+    assert point_negative_3_4.x == 3
+    assert point_negative_3_4.y == -4
+    assert point_mixed_3_4.x == 3
+    assert point_mixed_3_4.y == 4
 ```
 
 With the setup code defined in the fixtures, the tests are more concise and it won't take as much effort to add more tests in the future.
@@ -360,42 +359,42 @@ def participants():
     ]
 
 def test_sample_participants(participants):
-   # set random seed
-   random.seed(0)
+    # set random seed
+    random.seed(0)
 
-   sample_size = 2
-   sampled_participants = sample_participants(participants, sample_size)
-   expected = [{"age": 38, "height": 165}, {"age": 45, "height": 200}]
-   assert sampled_participants == expected
+    sample_size = 2
+    sampled_participants = sample_participants(participants, sample_size)
+    expected = [{"age": 38, "height": 165}, {"age": 45, "height": 200}]
+    assert sampled_participants == expected
 
 def test_filter_participants_by_age(participants):
-   min_age = 30
-   max_age = 35
-   filtered_participants = filter_participants_by_age(participants, min_age, max_age)
-   expected = [{"age": 30, "height": 170}, {"age": 35, "height": 160}]
-   assert filtered_participants == expected
+    min_age = 30
+    max_age = 35
+    filtered_participants = filter_participants_by_age(participants, min_age, max_age)
+    expected = [{"age": 30, "height": 170}, {"age": 35, "height": 160}]
+    assert filtered_participants == expected
 
 def test_filter_participants_by_height(participants):
-   min_height = 160
-   max_height = 170
-   filtered_participants = filter_participants_by_height(participants, min_height, max_height)
-   expected = [{"age": 30, "height": 170}, {"age": 35, "height": 160}, {"age": 38, "height": 165}]
-   assert filtered_participants == expected
+    min_height = 160
+    max_height = 170
+    filtered_participants = filter_participants_by_height(participants, min_height, max_height)
+    expected = [{"age": 30, "height": 170}, {"age": 35, "height": 160}, {"age": 38, "height": 165}]
+    assert filtered_participants == expected
 
 def test_randomly_sample_and_filter_participants(participants):
-   # set random seed
-   random.seed(0)
+    # set random seed
+    random.seed(0)
 
-   sample_size = 5
-   min_age = 28
-   max_age = 42
-   min_height = 159
-   max_height = 172
-   filtered_participants = randomly_sample_and_filter_participants(
-       participants, sample_size, min_age, max_age, min_height, max_height
-   )
-   expected = [{"age": 38, "height": 165}, {"age": 30, "height": 170}, {"age": 35, "height": 160}]
-   assert filtered_participants == expected
+    sample_size = 5
+    min_age = 28
+    max_age = 42
+    min_height = 159
+    max_height = 172
+    filtered_participants = randomly_sample_and_filter_participants(
+        participants, sample_size, min_age, max_age, min_height, max_height
+    )
+    expected = [{"age": 38, "height": 165}, {"age": 30, "height": 170}, {"age": 35, "height": 160}]
+    assert filtered_participants == expected
 
 ```
 
